@@ -8,7 +8,10 @@ namespace QLKS_Winform.QuerySQL
 {
     public class CreateProc
     {
-        
+        public void CreaProcEmpl()
+        {
+            string query = "";
+        }
         ~CreateProc() { }
     }
 }

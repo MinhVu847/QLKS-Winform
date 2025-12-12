@@ -9,5 +9,7 @@ namespace QLKS_Winform.QuerySQL
     public static class Query
     {
         public static string LoginCheckQr = "select * from NhanVien where MaNV=@manv and MatKhau =@matkhau";
+
+        public static string ThemNV = "";
     }
 }
