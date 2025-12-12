@@ -38,6 +38,13 @@ namespace QLKS_Winform
             {
                 
             }
+            else
+            {
+                MessageBox.Show("User hoặc Pass không chính xác! Vui lòng nhập lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtUser.Focus();
+            }    
+                
+
         }
         bool checklogin() 
         {
