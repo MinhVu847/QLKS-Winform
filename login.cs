@@ -1,12 +1,15 @@
-﻿using System;
+﻿using QLKS_Winform.QuerySQL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace QLKS_Winform
 {
@@ -31,7 +34,26 @@ namespace QLKS_Winform
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            if (checklogin())
+            {
+                
+            }
+        }
+        bool checklogin() 
+        {
+            DataSet ds = new DataSet();
+            using (SqlConnection con = new SqlConnection(ConnectionString.connectionString))
+            {
+                con.Open(); 
+                SqlCommand cmd = new SqlCommand(Query.LoginCheckQr, con);
+                cmd.Parameters.AddWithValue("@manv", txtUser.Text);
+                cmd.Parameters.AddWithValue("@matkhau", txtPass.Text);
+                if (cmd.ExecuteScalar() != null)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         
     }

@@ -112,10 +112,10 @@
             // 
             // txtPass
             // 
-            this.txtPass.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.Location = new System.Drawing.Point(46, 297);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(252, 33);
+            this.txtPass.Size = new System.Drawing.Size(252, 29);
             this.txtPass.TabIndex = 5;
             // 
             // label4
@@ -131,10 +131,10 @@
             // 
             // txtUser
             // 
-            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUser.Location = new System.Drawing.Point(46, 208);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(252, 33);
+            this.txtUser.Size = new System.Drawing.Size(252, 29);
             this.txtUser.TabIndex = 3;
             // 
             // label3

@@ -362,4 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-QLKS_Winform/QuerySQL/ConnectionString.cs
+BTL_QuanLyKhachSan_Winform/ConnectionString.cs
