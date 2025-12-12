@@ -12,6 +12,8 @@ namespace QLKS_Winform
 {
     public partial class login : Form
     {
+
+
         public login()
         {
             InitializeComponent();
