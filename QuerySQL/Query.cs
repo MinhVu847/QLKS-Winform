@@ -8,5 +8,6 @@ namespace QLKS_Winform.QuerySQL
 {
     public static class Query
     {
+
     }
 }

@@ -21,7 +21,19 @@ namespace QLKS_Winform
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dr = new DialogResult();
+            dr = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+        
     }
+
 }
