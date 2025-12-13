@@ -230,7 +230,6 @@ namespace QLKS_Winform
 
         private void cbbSeachPosition_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("Hello");
             loadData();
         }
 
