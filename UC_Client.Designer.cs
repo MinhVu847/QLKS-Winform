@@ -44,20 +44,20 @@
             this.btnEditClient = new System.Windows.Forms.Button();
             this.btnAddClient = new System.Windows.Forms.Button();
             this.cbbGender = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtSeachID = new System.Windows.Forms.TextBox();
+            this.txtSeachAddress = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtSeachPhoneNo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtSeachCitizenID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtSeachCustomerName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvClient = new System.Windows.Forms.DataGridView();
             this.btnSeach = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).BeginInit();
             this.SuspendLayout();
             // 
             // lblID
@@ -237,21 +237,21 @@
             this.cbbGender.Size = new System.Drawing.Size(239, 25);
             this.cbbGender.TabIndex = 17;
             // 
-            // textBox1
+            // txtSeachID
             // 
-            this.textBox1.Location = new System.Drawing.Point(480, 21);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(239, 25);
-            this.textBox1.TabIndex = 24;
+            this.txtSeachID.Location = new System.Drawing.Point(480, 21);
+            this.txtSeachID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSeachID.Name = "txtSeachID";
+            this.txtSeachID.Size = new System.Drawing.Size(239, 25);
+            this.txtSeachID.TabIndex = 24;
             // 
-            // textBox2
+            // txtSeachAddress
             // 
-            this.textBox2.Location = new System.Drawing.Point(480, 170);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(239, 25);
-            this.textBox2.TabIndex = 28;
+            this.txtSeachAddress.Location = new System.Drawing.Point(480, 170);
+            this.txtSeachAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSeachAddress.Name = "txtSeachAddress";
+            this.txtSeachAddress.Size = new System.Drawing.Size(239, 25);
+            this.txtSeachAddress.TabIndex = 28;
             // 
             // label1
             // 
@@ -264,13 +264,13 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "ID:";
             // 
-            // textBox3
+            // txtSeachPhoneNo
             // 
-            this.textBox3.Location = new System.Drawing.Point(480, 131);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(239, 25);
-            this.textBox3.TabIndex = 27;
+            this.txtSeachPhoneNo.Location = new System.Drawing.Point(480, 131);
+            this.txtSeachPhoneNo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSeachPhoneNo.Name = "txtSeachPhoneNo";
+            this.txtSeachPhoneNo.Size = new System.Drawing.Size(239, 25);
+            this.txtSeachPhoneNo.TabIndex = 27;
             // 
             // label2
             // 
@@ -283,13 +283,13 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "Customer Name:";
             // 
-            // textBox4
+            // txtSeachCitizenID
             // 
-            this.textBox4.Location = new System.Drawing.Point(480, 95);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(239, 25);
-            this.textBox4.TabIndex = 26;
+            this.txtSeachCitizenID.Location = new System.Drawing.Point(480, 95);
+            this.txtSeachCitizenID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSeachCitizenID.Name = "txtSeachCitizenID";
+            this.txtSeachCitizenID.Size = new System.Drawing.Size(239, 25);
+            this.txtSeachCitizenID.TabIndex = 26;
             // 
             // label3
             // 
@@ -302,13 +302,13 @@
             this.label3.TabIndex = 20;
             this.label3.Text = "Citizen ID:";
             // 
-            // textBox5
+            // txtSeachCustomerName
             // 
-            this.textBox5.Location = new System.Drawing.Point(480, 58);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(239, 25);
-            this.textBox5.TabIndex = 25;
+            this.txtSeachCustomerName.Location = new System.Drawing.Point(480, 58);
+            this.txtSeachCustomerName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSeachCustomerName.Name = "txtSeachCustomerName";
+            this.txtSeachCustomerName.Size = new System.Drawing.Size(239, 25);
+            this.txtSeachCustomerName.TabIndex = 25;
             // 
             // label5
             // 
@@ -332,14 +332,14 @@
             this.label6.TabIndex = 23;
             this.label6.Text = "Phone No:";
             // 
-            // dataGridView1
+            // dgvClient
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(356, 227);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(606, 332);
-            this.dataGridView1.TabIndex = 29;
+            this.dgvClient.BackgroundColor = System.Drawing.Color.White;
+            this.dgvClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClient.Location = new System.Drawing.Point(356, 227);
+            this.dgvClient.Name = "dgvClient";
+            this.dgvClient.Size = new System.Drawing.Size(606, 332);
+            this.dgvClient.TabIndex = 29;
             // 
             // btnSeach
             // 
@@ -358,15 +358,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnSeach);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.dgvClient);
+            this.Controls.Add(this.txtSeachID);
+            this.Controls.Add(this.txtSeachAddress);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtSeachPhoneNo);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtSeachCitizenID);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtSeachCustomerName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
@@ -375,7 +375,7 @@
             this.Size = new System.Drawing.Size(972, 574);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,17 +399,17 @@
         private System.Windows.Forms.Button btnEditClient;
         private System.Windows.Forms.Button btnAddClient;
         private System.Windows.Forms.ComboBox cbbGender;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSeachID;
+        private System.Windows.Forms.TextBox txtSeachAddress;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtSeachPhoneNo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtSeachCitizenID;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtSeachCustomerName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvClient;
         private System.Windows.Forms.Button btnSeach;
     }
 }
