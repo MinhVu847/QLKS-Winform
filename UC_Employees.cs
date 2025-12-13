@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLKS_Winform
 {
-    public partial class UC_Client : UserControl
+    public partial class UC_Employees : UserControl
     {
-        public UC_Client()
+        public UC_Employees()
         {
             InitializeComponent();
         }

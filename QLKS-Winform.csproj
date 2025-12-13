@@ -63,11 +63,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuerySQL\Query.cs" />
-    <Compile Include="UC_Client.cs">
+    <Compile Include="UC_Employees.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_Client.Designer.cs">
-      <DependentUpon>UC_Client.cs</DependentUpon>
+    <Compile Include="UC_Employees.Designer.cs">
+      <DependentUpon>UC_Employees.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Index.resx">
       <DependentUpon>Index.cs</DependentUpon>
@@ -84,8 +84,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UC_Client.resx">
-      <DependentUpon>UC_Client.cs</DependentUpon>
+    <EmbeddedResource Include="UC_Employees.resx">
+      <DependentUpon>UC_Employees.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

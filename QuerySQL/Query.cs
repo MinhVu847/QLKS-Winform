@@ -14,7 +14,13 @@ namespace QLKS_Winform.QuerySQL
         //Thêm nhân viên
         public static string AddEmpl = @"INSERT INTO NhanVien(MaNV, HoTen, GioiTinh, NgaySinh, SDT, ChucVu, MatKhau)
                                         VALUES (@MaNV, @HoTen, @GioiTinh, @NgaySinh, @SDT, @ChucVu, @MatKhau);";
-        
+
+        //Thêm khách hàng
+        public static string AddCustomer = @"INSERT INTO KhachHang(MaKH, HoTen, GioiTinh, CCCD, SDT, DiaChi)
+                                            VALUES (@MaKH, @HoTen, @GioiTinh, @CCCD, @SDT, DiaChi);";
+
+
+
         //tìm kiếm nhân viên theo mã
         public static string SeachEmpl = @"SELECT * FROM NhanVien 
                                            WHERE (@MaNV = '' OR MaNV LIKE '%' + @MaNV + '%')
