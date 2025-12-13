@@ -58,6 +58,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cbbSeachPosition = new System.Windows.Forms.ComboBox();
             this.timeStop = new System.Windows.Forms.Timer(this.components);
+            this.cbbSeachEmpl = new System.Windows.Forms.ComboBox();
+            this.lblListEmp = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpl)).BeginInit();
             this.SuspendLayout();
@@ -279,7 +282,7 @@
             // 
             // txtSeachID
             // 
-            this.txtSeachID.Location = new System.Drawing.Point(500, 81);
+            this.txtSeachID.Location = new System.Drawing.Point(464, 83);
             this.txtSeachID.Margin = new System.Windows.Forms.Padding(4);
             this.txtSeachID.Name = "txtSeachID";
             this.txtSeachID.Size = new System.Drawing.Size(239, 29);
@@ -299,7 +302,7 @@
             // 
             // txtSeachPhoneNo
             // 
-            this.txtSeachPhoneNo.Location = new System.Drawing.Point(500, 155);
+            this.txtSeachPhoneNo.Location = new System.Drawing.Point(464, 157);
             this.txtSeachPhoneNo.Margin = new System.Windows.Forms.Padding(4);
             this.txtSeachPhoneNo.Name = "txtSeachPhoneNo";
             this.txtSeachPhoneNo.Size = new System.Drawing.Size(239, 29);
@@ -319,7 +322,7 @@
             // 
             // txtSeachEmplName
             // 
-            this.txtSeachEmplName.Location = new System.Drawing.Point(500, 118);
+            this.txtSeachEmplName.Location = new System.Drawing.Point(464, 120);
             this.txtSeachEmplName.Margin = new System.Windows.Forms.Padding(4);
             this.txtSeachEmplName.Name = "txtSeachEmplName";
             this.txtSeachEmplName.Size = new System.Drawing.Size(239, 29);
@@ -386,7 +389,7 @@
             "Quản lý",
             "Bảo vệ",
             "Kế toán"});
-            this.cbbSeachPosition.Location = new System.Drawing.Point(500, 197);
+            this.cbbSeachPosition.Location = new System.Drawing.Point(464, 199);
             this.cbbSeachPosition.Name = "cbbSeachPosition";
             this.cbbSeachPosition.Size = new System.Drawing.Size(239, 29);
             this.cbbSeachPosition.TabIndex = 34;
@@ -397,10 +400,49 @@
             this.timeStop.Interval = 1000;
             this.timeStop.Tick += new System.EventHandler(this.timeStop_Tick);
             // 
+            // cbbSeachEmpl
+            // 
+            this.cbbSeachEmpl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbSeachEmpl.FormattingEnabled = true;
+            this.cbbSeachEmpl.Items.AddRange(new object[] {
+            "All Employees",
+            "Active Employees",
+            "Terminated Employees"});
+            this.cbbSeachEmpl.Location = new System.Drawing.Point(780, 81);
+            this.cbbSeachEmpl.Name = "cbbSeachEmpl";
+            this.cbbSeachEmpl.Size = new System.Drawing.Size(239, 29);
+            this.cbbSeachEmpl.TabIndex = 35;
+            this.cbbSeachEmpl.SelectedIndexChanged += new System.EventHandler(this.cbbSeachPosition_SelectedIndexChanged);
+            // 
+            // lblListEmp
+            // 
+            this.lblListEmp.AutoSize = true;
+            this.lblListEmp.Location = new System.Drawing.Point(731, 84);
+            this.lblListEmp.Name = "lblListEmp";
+            this.lblListEmp.Size = new System.Drawing.Size(43, 23);
+            this.lblListEmp.TabIndex = 36;
+            this.lblListEmp.Text = "List:";
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.Black;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(912, 194);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(97, 32);
+            this.btnClear.TabIndex = 37;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // UC_Employees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.lblListEmp);
+            this.Controls.Add(this.cbbSeachEmpl);
             this.Controls.Add(this.cbbSeachPosition);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -454,5 +496,8 @@
         private System.Windows.Forms.ComboBox cbbPosition;
         private System.Windows.Forms.ComboBox cbbSeachPosition;
         private System.Windows.Forms.Timer timeStop;
+        private System.Windows.Forms.ComboBox cbbSeachEmpl;
+        private System.Windows.Forms.Label lblListEmp;
+        private System.Windows.Forms.Button btnClear;
     }
 }

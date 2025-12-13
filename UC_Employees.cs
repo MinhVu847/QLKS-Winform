@@ -19,8 +19,9 @@ namespace QLKS_Winform
         public UC_Employees()
         {
             InitializeComponent();
-            loadData();
             cbbPosition.SelectedIndex = 0;
+            cbbSeachEmpl.SelectedIndex = 0;
+            loadData();
         }
 
         void loadData()
@@ -30,20 +31,6 @@ namespace QLKS_Winform
         }
 
         //lấy dữ liệu đổ vào dataset
-        DataSet getData()
-        {
-            DataSet ds = new DataSet();
-            ds.Tables.Clear();
-            using (SqlConnection con = new SqlConnection(ConnectionString.connectionString))
-            {
-                con.Open();
-                using (SqlDataAdapter adapter = new SqlDataAdapter(Query.ShowEmpl, con))
-                {
-                    adapter.Fill(ds);
-                }
-            }
-            return ds;
-        }
 
         private void btnAddClient_Click(object sender, EventArgs e)
         {
@@ -210,7 +197,7 @@ namespace QLKS_Winform
         }
 
         //Tìm kiếm nhân viên
-        DataSet SeachEmpl()
+        DataSet getData()
         {
             DataSet ds = new DataSet();
             using (SqlConnection con = new SqlConnection(ConnectionString.connectionString))
@@ -222,6 +209,7 @@ namespace QLKS_Winform
                     cmd.Parameters.AddWithValue("@HoTen", txtSeachEmplName.Text);
                     cmd.Parameters.AddWithValue("@SDT", txtSeachPhoneNo.Text);
                     cmd.Parameters.AddWithValue("@ChucVu", cbbSeachPosition.Text);
+                    cmd.Parameters.AddWithValue("@EmployeeStatus", cbbSeachEmpl.Text);
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     adapter.Fill(ds);
                 }
@@ -237,14 +225,22 @@ namespace QLKS_Winform
 
         private void timeStop_Tick(object sender, EventArgs e)
         {
-            dgvEmpl.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvEmpl.DataSource = SeachEmpl().Tables[0];
+            loadData();
         }
 
         private void cbbSeachPosition_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgvEmpl.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvEmpl.DataSource = SeachEmpl().Tables[0];
+            MessageBox.Show("Hello");
+            loadData();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtSeachID.Clear();
+            txtSeachEmplName.Clear();
+            txtSeachPhoneNo.Clear();
+            cbbSeachPosition.SelectedIndex = 0;
+            cbbSeachEmpl.SelectedIndex = 0;
         }
     }
 }

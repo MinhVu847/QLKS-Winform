@@ -36,7 +36,11 @@ namespace QLKS_Winform.QuerySQL
                                            WHERE (@MaNV = '' OR MaNV LIKE '%' + @MaNV + '%')
                                               AND (@HoTen = '' OR HoTen LIKE '%' + @HoTen + '%')
                                               AND (@SDT = '' OR SDT LIKE '%' + @SDT + '%')
-                                              AND (@ChucVu = '' OR ChucVu LIKE '%' + @ChucVu + '%');";
+                                              AND (@ChucVu = '' OR ChucVu LIKE '%' + @ChucVu + '%')
+                                              AND (@EmployeeStatus = 'All Employees'
+                                                  OR (@EmployeeStatus = 'Active Employees' AND MatKhau IS NOT NULL AND MatKhau <> '')
+                                                  OR (@EmployeeStatus = 'Terminated Employees' AND (MatKhau IS NULL OR MatKhau = ''))
+                                                  );";
         //Thêm khách hàng
         public static string AddCustomer = @"INSERT INTO KhachHang(MaKH, HoTen, GioiTinh, CCCD, SDT, DiaChi)
                                             VALUES (@MaKH, @HoTen, @GioiTinh, @CCCD, @SDT, DiaChi);";
