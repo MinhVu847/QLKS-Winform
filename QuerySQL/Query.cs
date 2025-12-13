@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,23 +12,34 @@ namespace QLKS_Winform.QuerySQL
     {
         public static string LoginCheckQr = "select * from NhanVien where MaNV=@manv and MatKhau =@matkhau";
 
+        //Hiển thị thông tin tất cả nhân viên
+        public static string ShowEmpl = @"SELECT * FROM NhanVien";
+
         //Thêm nhân viên
         public static string AddEmpl = @"INSERT INTO NhanVien(MaNV, HoTen, GioiTinh, NgaySinh, SDT, ChucVu, MatKhau)
                                         VALUES (@MaNV, @HoTen, @GioiTinh, @NgaySinh, @SDT, @ChucVu, @MatKhau);";
 
-        //Thêm khách hàng
-        public static string AddCustomer = @"INSERT INTO KhachHang(MaKH, HoTen, GioiTinh, CCCD, SDT, DiaChi)
-                                            VALUES (@MaKH, @HoTen, @GioiTinh, @CCCD, @SDT, DiaChi);";
+        //Sửa thông tin nhân viên
+        public static string EditEmpl = @"UPDATE NhanVien 
+                                        SET 
+                                        HoTen = @HoTen, GioiTinh = @GioiTinh, NgaySinh = @NgaySinh, SDT = @SDT 
+                                        WHERE MaNV = @MaNV";
 
+        //Xóa thông tin nhân viên
+        public static string DelEmpl = @"UPDATE NhanVien 
+                                        SET 
+                                        MatKhau = ''
+                                        WHERE MaNV = @MaNV";
 
-
-        //tìm kiếm nhân viên theo mã
+        //tìm kiếm nhân viên
         public static string SeachEmpl = @"SELECT * FROM NhanVien 
                                            WHERE (@MaNV = '' OR MaNV LIKE '%' + @MaNV + '%')
                                               AND (@HoTen = '' OR HoTen LIKE '%' + @HoTen + '%')
-                                              AND (@GioiTinh = '' OR GioiTinh LIKE '%' + @GioiTinh + '%')
-                                              AND (@ChucVu = '' OR ChucVu LIKE '%' + @ChucVu + '%')
-                                              AND (@SDT = '' OR SDT LIKE '%' + @SDT + '%');";
+                                              AND (@SDT = '' OR SDT LIKE '%' + @SDT + '%')
+                                              AND (@ChucVu = '' OR ChucVu LIKE '%' + @ChucVu + '%');";
+        //Thêm khách hàng
+        public static string AddCustomer = @"INSERT INTO KhachHang(MaKH, HoTen, GioiTinh, CCCD, SDT, DiaChi)
+                                            VALUES (@MaKH, @HoTen, @GioiTinh, @CCCD, @SDT, DiaChi);";
 
         //Tìm kiếm thông tin khách hàng
         public static string SeachClient = @"SELECT * FROM KhachHang
