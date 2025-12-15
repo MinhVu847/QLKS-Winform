@@ -74,7 +74,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(218, 60);
             this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
+            this.button1.Text = "Information";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // Index
