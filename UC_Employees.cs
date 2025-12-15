@@ -241,5 +241,10 @@ namespace QLKS_Winform
             cbbSeachPosition.SelectedIndex = 0;
             cbbSeachEmpl.SelectedIndex = 0;
         }
+
+        private void UC_Employees_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

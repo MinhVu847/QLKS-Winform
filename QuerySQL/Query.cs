@@ -41,9 +41,15 @@ namespace QLKS_Winform.QuerySQL
                                                   OR (@EmployeeStatus = 'Active Employees' AND MatKhau IS NOT NULL AND MatKhau <> '')
                                                   OR (@EmployeeStatus = 'Terminated Employees' AND (MatKhau IS NULL OR MatKhau = ''))
                                                   );";
-        //Thêm khách hàng
-        public static string AddCustomer = @"INSERT INTO KhachHang(MaKH, HoTen, GioiTinh, CCCD, SDT, DiaChi)
-                                            VALUES (@MaKH, @HoTen, @GioiTinh, @CCCD, @SDT, DiaChi);";
+
+        //Check In
+        public static string CheckIn = @"insert into KhachHang(MaKH, HoTen, GioiTinh, CCCD, SDT, DiaChi)
+                                        values ( @MaKH, @HoTen, @GioiTinh, @CCCD, @SDT, @DiaChi);
+
+                                        insert into DatPhong(MaDP, MaKH, MaPhong, NgayDat, NgayTra, MaNV_CheckIn, MaNV_CheckOut, GhiChu)
+                                        values (@MaDP, @MaKH, @MaPhong, @NgayDat, null, @MaNV, null, @GhiChu);
+
+                                        update Phong set TrangThai = N'Đang Chờ' where MaPhong = @MaPhong";
 
         //Tìm kiếm thông tin khách hàng
         public static string SeachClient = @"SELECT * FROM KhachHang

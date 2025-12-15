@@ -68,7 +68,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuerySQL\AutoID.cs" />
     <Compile Include="QuerySQL\Query.cs" />
+    <Compile Include="UC_CheckIn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_CheckIn.Designer.cs">
+      <DependentUpon>UC_CheckIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_Employees.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -93,6 +100,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UC_CheckIn.resx">
+      <DependentUpon>UC_CheckIn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_Employees.resx">
       <DependentUpon>UC_Employees.cs</DependentUpon>
     </EmbeddedResource>
