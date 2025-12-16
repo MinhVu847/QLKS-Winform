@@ -12,9 +12,47 @@ namespace QLKS_Winform
 {
     public partial class Index : Form
     {
+        // Khai báo ngoài phạm vi của các phương thức (ví dụ: trong class Form)
+        private Control button = null;
         public Index()
         {
             InitializeComponent();
+        }
+
+        private void Index_Load(object sender, EventArgs e)
+        {
+            btnData.Click += Button_Click;
+            btnAltic.Click += Button_Click;           
+            btnChkin.Click += Button_Click;
+            btnChkout.Click += Button_Click;
+            btnEx.Click += Button_Click;
+            btnFind.Click += Button_Click;
+            btnSting.Click += Button_Click;
+        }
+        private void Button_Click(object sender, EventArgs e)
+        {
+            // Bước 1: Khôi phục màu nền cho nút vừa được chọn (nếu có)
+            if (button != null)
+            {
+                // Giả sử màu nền mặc định là màu xanh navy nhạt hơn
+                button.BackColor = Color.FromArgb(14, 27, 53); // Màu nền ban đầu
+            }
+
+            // Bước 2: Thiết lập nút hiện tại là nút được chọn
+            Control clickedControl = (Control)sender; // 'sender' là nút vừa được click
+
+            // Thiết lập màu nền đậm hơn (Active Color)
+            clickedControl.BackColor = Color.FromArgb(30, 36, 61); // Màu xanh navy đậm hơn (hoặc màu bạn muốn)
+
+            // Bước 3: Cập nhật biến theo dõi
+            button = clickedControl;
+
+            // (Tùy chọn) Thêm logic để hiển thị nội dung/Form tương ứng ở đây...
+
+
+
+
+
         }
     }
 }
