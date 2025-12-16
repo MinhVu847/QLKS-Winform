@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.plMenu = new System.Windows.Forms.Panel();
-            this.plData = new System.Windows.Forms.Panel();
             this.plLogo = new System.Windows.Forms.Panel();
+            this.plData = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -59,15 +59,6 @@
             this.plMenu.Size = new System.Drawing.Size(218, 681);
             this.plMenu.TabIndex = 0;
             // 
-            // plData
-            // 
-            this.plData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.plData.Dock = System.Windows.Forms.DockStyle.Right;
-            this.plData.Location = new System.Drawing.Point(214, 0);
-            this.plData.Name = "plData";
-            this.plData.Size = new System.Drawing.Size(1050, 681);
-            this.plData.TabIndex = 1;
-            // 
             // plLogo
             // 
             this.plLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
@@ -78,6 +69,15 @@
             this.plLogo.Size = new System.Drawing.Size(218, 128);
             this.plLogo.TabIndex = 0;
             // 
+            // plData
+            // 
+            this.plData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.plData.Dock = System.Windows.Forms.DockStyle.Right;
+            this.plData.Location = new System.Drawing.Point(214, 0);
+            this.plData.Name = "plData";
+            this.plData.Size = new System.Drawing.Size(1050, 681);
+            this.plData.TabIndex = 1;
+            // 
             // button6
             // 
             this.button6.Dock = System.Windows.Forms.DockStyle.Top;
@@ -85,14 +85,14 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Image = global::QLKS_Winform.Properties.Resources.icons8_user_24;
+            this.button6.Image = global::QLKS_Winform.Properties.Resources.setting;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.Location = new System.Drawing.Point(0, 428);
             this.button6.Name = "button6";
             this.button6.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.button6.Size = new System.Drawing.Size(218, 60);
             this.button6.TabIndex = 6;
-            this.button6.Text = " User";
+            this.button6.Text = " Setting";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button6.UseVisualStyleBackColor = true;
@@ -104,14 +104,14 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Image = global::QLKS_Winform.Properties.Resources.icons8_user_24;
+            this.button5.Image = global::QLKS_Winform.Properties.Resources.analytics;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.Location = new System.Drawing.Point(0, 368);
             this.button5.Name = "button5";
             this.button5.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.button5.Size = new System.Drawing.Size(218, 60);
             this.button5.TabIndex = 5;
-            this.button5.Text = " User";
+            this.button5.Text = " Analytics";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button5.UseVisualStyleBackColor = true;
@@ -123,14 +123,14 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = global::QLKS_Winform.Properties.Resources.icons8_user_24;
+            this.button4.Image = global::QLKS_Winform.Properties.Resources.remove;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.Location = new System.Drawing.Point(0, 308);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.button4.Size = new System.Drawing.Size(218, 60);
             this.button4.TabIndex = 4;
-            this.button4.Text = " User";
+            this.button4.Text = " Check out";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = true;
@@ -142,14 +142,14 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::QLKS_Winform.Properties.Resources.icons8_user_24;
+            this.button3.Image = global::QLKS_Winform.Properties.Resources.add;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(0, 248);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.button3.Size = new System.Drawing.Size(218, 60);
             this.button3.TabIndex = 3;
-            this.button3.Text = " User";
+            this.button3.Text = " Check in";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = true;
@@ -161,14 +161,14 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::QLKS_Winform.Properties.Resources.icons8_user_24;
+            this.button2.Image = global::QLKS_Winform.Properties.Resources.find;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(0, 188);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.button2.Size = new System.Drawing.Size(218, 60);
             this.button2.TabIndex = 2;
-            this.button2.Text = " User";
+            this.button2.Text = " Find";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = true;
@@ -180,14 +180,14 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::QLKS_Winform.Properties.Resources.icons8_user_24;
+            this.button1.Image = global::QLKS_Winform.Properties.Resources.dataprovider;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(0, 128);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.button1.Size = new System.Drawing.Size(218, 60);
             this.button1.TabIndex = 1;
-            this.button1.Text = " User";
+            this.button1.Text = " Data";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
