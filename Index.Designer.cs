@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
             this.plMenu = new System.Windows.Forms.Panel();
-            this.plLogo = new System.Windows.Forms.Panel();
-            this.plData = new System.Windows.Forms.Panel();
             this.btnEx = new System.Windows.Forms.Button();
             this.btnSting = new System.Windows.Forms.Button();
             this.btnAltic = new System.Windows.Forms.Button();
@@ -38,7 +37,9 @@
             this.btnChkin = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
             this.btnData = new System.Windows.Forms.Button();
+            this.plLogo = new System.Windows.Forms.Panel();
             this.ptrLogo = new System.Windows.Forms.PictureBox();
+            this.plData = new System.Windows.Forms.Panel();
             this.plMenu.SuspendLayout();
             this.plLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptrLogo)).BeginInit();
@@ -46,6 +47,8 @@
             // 
             // plMenu
             // 
+            this.plMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.plMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
             this.plMenu.Controls.Add(this.btnEx);
             this.plMenu.Controls.Add(this.btnSting);
@@ -55,30 +58,10 @@
             this.plMenu.Controls.Add(this.btnFind);
             this.plMenu.Controls.Add(this.btnData);
             this.plMenu.Controls.Add(this.plLogo);
-            this.plMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.plMenu.Location = new System.Drawing.Point(0, 0);
             this.plMenu.Name = "plMenu";
             this.plMenu.Size = new System.Drawing.Size(218, 681);
             this.plMenu.TabIndex = 0;
-            // 
-            // plLogo
-            // 
-            this.plLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
-            this.plLogo.Controls.Add(this.ptrLogo);
-            this.plLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.plLogo.Location = new System.Drawing.Point(0, 0);
-            this.plLogo.Name = "plLogo";
-            this.plLogo.Size = new System.Drawing.Size(218, 128);
-            this.plLogo.TabIndex = 0;
-            // 
-            // plData
-            // 
-            this.plData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.plData.Dock = System.Windows.Forms.DockStyle.Right;
-            this.plData.Location = new System.Drawing.Point(214, 0);
-            this.plData.Name = "plData";
-            this.plData.Size = new System.Drawing.Size(1050, 681);
-            this.plData.TabIndex = 1;
             // 
             // btnEx
             // 
@@ -214,6 +197,16 @@
             this.btnData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnData.UseVisualStyleBackColor = true;
             // 
+            // plLogo
+            // 
+            this.plLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
+            this.plLogo.Controls.Add(this.ptrLogo);
+            this.plLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.plLogo.Location = new System.Drawing.Point(0, 0);
+            this.plLogo.Name = "plLogo";
+            this.plLogo.Size = new System.Drawing.Size(218, 128);
+            this.plLogo.TabIndex = 0;
+            // 
             // ptrLogo
             // 
             this.ptrLogo.Image = global::QLKS_Winform.Properties.Resources.logo2;
@@ -224,6 +217,17 @@
             this.ptrLogo.TabIndex = 0;
             this.ptrLogo.TabStop = false;
             // 
+            // plData
+            // 
+            this.plData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.plData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.plData.Location = new System.Drawing.Point(214, 0);
+            this.plData.Name = "plData";
+            this.plData.Size = new System.Drawing.Size(1050, 681);
+            this.plData.TabIndex = 1;
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -232,10 +236,11 @@
             this.Controls.Add(this.plData);
             this.Controls.Add(this.plMenu);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Index";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Index";
+            this.Text = "Trong Vu Hotel Management";
             this.Load += new System.EventHandler(this.Index_Load);
             this.plMenu.ResumeLayout(false);
             this.plLogo.ResumeLayout(false);
