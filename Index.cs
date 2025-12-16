@@ -48,7 +48,7 @@ namespace QLKS_Winform
             button = clickedControl;
 
             // thêm form hiện ra
-
+              
 
 
 
