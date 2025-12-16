@@ -36,7 +36,10 @@ namespace QLKS_Winform
         {
             if (checklogin())
             {
-                
+                Index id = new Index();
+                this.Hide();
+                id.ShowDialog();
+                this.Close();
             }
             else
             {

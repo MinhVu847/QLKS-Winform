@@ -129,5 +129,17 @@
   <ItemGroup>
     <None Include="icon\icons8-user-24.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\img\z7305401203397_8a7b9d58f9e1c5f31d93168c1c697448.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\img\logobe.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\img\logo1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\img\logo2.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
