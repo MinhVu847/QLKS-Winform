@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace QLKS_Winform.QuerySQL
 {
-    public static class Query
+    public class Query
     {
         public static string LoginCheckQr = "select * from NhanVien where MaNV=@manv and MatKhau =@matkhau";
 
@@ -41,6 +41,14 @@ namespace QLKS_Winform.QuerySQL
                                                   OR (@EmployeeStatus = 'Active Employees' AND MatKhau IS NOT NULL AND MatKhau <> '')
                                                   OR (@EmployeeStatus = 'Terminated Employees' AND (MatKhau IS NULL OR MatKhau = ''))
                                                   );";
+
+        //ktra phòng trống
+        public static string CheckRoom = @"Select * from Phong 
+                                            where TrangThai = N'Trống'
+                                            AND (@LoaiPhong = '' OR LoaiPhong LIKE '%' + @LoaiPhong + '%')
+                                            AND (@SoGiuong = '' OR SoGiuong LIKE '%' + @SoGiuong + '%')
+                                            AND (@TenPhong = '' OR TenPhong LIKE '%' + @TenPhong + '%')
+                                            ";
 
         //Check In
         public static string CheckIn = @"insert into KhachHang(MaKH, HoTen, GioiTinh, CCCD, SDT, DiaChi)

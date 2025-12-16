@@ -15,6 +15,12 @@ namespace QLKS_Winform
         public FormTest()
         {
             InitializeComponent();
+            uC_CheckIn1.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            uC_CheckIn1.Visible = !uC_CheckIn1.Visible;
         }
     }
 }
