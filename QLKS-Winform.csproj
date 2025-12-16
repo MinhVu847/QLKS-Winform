@@ -75,6 +75,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuerySQL\AutoID.cs" />
+    <Compile Include="QuerySQL\DataProvider.cs" />
     <Compile Include="QuerySQL\Query.cs" />
     <Compile Include="UC_CheckIn.cs">
       <SubType>UserControl</SubType>
