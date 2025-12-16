@@ -12,7 +12,7 @@ namespace QLKS_Winform
 {
     public partial class Index : Form
     {
-        // Khai báo ngoài phạm vi của các phương thức (ví dụ: trong class Form)
+        // Khai báo ngoài phạm vi của các phương thức 
         private Control button = null;
         public Index()
         {
@@ -22,7 +22,7 @@ namespace QLKS_Winform
         private void Index_Load(object sender, EventArgs e)
         {
             btnData.Click += Button_Click;
-            btnAltic.Click += Button_Click;           
+            btnAltic.Click += Button_Click;
             btnChkin.Click += Button_Click;
             btnChkout.Click += Button_Click;
             btnEx.Click += Button_Click;
@@ -34,7 +34,7 @@ namespace QLKS_Winform
             // Bước 1: Khôi phục màu nền cho nút vừa được chọn (nếu có)
             if (button != null)
             {
-                // Giả sử màu nền mặc định là màu xanh navy nhạt hơn
+                
                 button.BackColor = Color.FromArgb(14, 27, 53); // Màu nền ban đầu
             }
 
@@ -42,17 +42,26 @@ namespace QLKS_Winform
             Control clickedControl = (Control)sender; // 'sender' là nút vừa được click
 
             // Thiết lập màu nền đậm hơn (Active Color)
-            clickedControl.BackColor = Color.FromArgb(30, 36, 61); // Màu xanh navy đậm hơn (hoặc màu bạn muốn)
+            clickedControl.BackColor = Color.FromArgb(30, 36, 61); // Màu đậm hơn
 
             // Bước 3: Cập nhật biến theo dõi
             button = clickedControl;
 
-            // (Tùy chọn) Thêm logic để hiển thị nội dung/Form tương ứng ở đây...
+            // thêm form hiện ra
 
 
 
 
 
+        }
+
+        private void btnEx_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }
