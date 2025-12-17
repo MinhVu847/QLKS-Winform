@@ -41,7 +41,6 @@ namespace QLKS_Winform.QuerySQL
                 result = cmd.ExecuteNonQuery();
                 con.Close();
             }
-
             return result;
         }
 

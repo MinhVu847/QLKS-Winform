@@ -24,14 +24,20 @@ namespace QLKS_Winform
             loadData();
         }
 
+        //load dữ liệu nhân viên
         void loadData()
         {
             dgvEmpl.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvEmpl.DataSource = getData().Tables[0];
+            SqlParameter[] param =
+            {
+                new SqlParameter("@MaNV", txtSeachID.Text),
+                new SqlParameter("@HoTen", txtSeachEmplName.Text),
+                new SqlParameter("@SDT", txtSeachPhoneNo.Text),
+                new SqlParameter("@ChucVu", cbbSeachPosition.Text),
+                new SqlParameter("@EmployeeStatus", cbbSeachEmpl.Text)
+            };
+            dgvEmpl.DataSource = DataProvider.ExcuteQuery(Query.SeachEmpl, param);
         }
-
-        //lấy dữ liệu đổ vào dataset
-
         private void btnAddClient_Click(object sender, EventArgs e)
         {
             if (!checkEmpl())
@@ -53,36 +59,31 @@ namespace QLKS_Winform
         //Thêm nhân viên
         void AddEmpl()
         {
-            using(SqlConnection con = new SqlConnection(ConnectionString.connectionString))
-            {
-                con.Open();
-                using (SqlCommand cmd = new SqlCommand(Query.AddEmpl, con))
-                {
-                    cmd.Parameters.AddWithValue("@MaNV", txtID.Text);
-                    cmd.Parameters.AddWithValue("@HoTen", txtEmplName.Text);
-                    cmd.Parameters.AddWithValue("@GioiTinh", cbbGender.Text);
-                    cmd.Parameters.AddWithValue("@NgaySinh", dtDOBEmpl.Value.Date);
-                    cmd.Parameters.AddWithValue("@SDT", txtPhoneNo.Text);
-                    cmd.Parameters.AddWithValue("@ChucVu", cbbPosition.Text);
-                    cmd.Parameters.AddWithValue("@MatKhau", txtPass.Text);
-                    cmd.ExecuteNonQuery();
-                }
-                loadData();
-            }
+            SqlParameter[] param = {
+                    new SqlParameter("@MaNV", txtID.Text),
+                    new SqlParameter("@HoTen", txtEmplName.Text),
+                    new SqlParameter("@GioiTinh", cbbGender.Text),
+                    new SqlParameter("@NgaySinh", dtDOBEmpl.Value.Date),
+                    new SqlParameter("@SDT", txtPhoneNo.Text),
+                    new SqlParameter("@ChucVu", cbbPosition.Text),
+                    new SqlParameter("@MatKhau", txtPass.Text)
+                };
+            DataProvider.ExcuteNonQuery(Query.AddEmpl, param);
+            loadData();
         }
         //Kiểm tra tồn tại
         bool checkEmpl()
         {
             string queryCheck = Query.ShowEmpl + "\n WHERE MaNV = @ID";
-            using (SqlConnection con = new SqlConnection(ConnectionString.connectionString))
+            SqlParameter[] param = 
             {
-                con.Open();
-                using (SqlCommand command = new SqlCommand(queryCheck, con))
-                {
-                    command.Parameters.AddWithValue("@ID", txtID.Text);
-                    return command.ExecuteScalar() != null;
-                }
-            }
+                    new SqlParameter("@ID", txtID.Text)
+            };
+            object data = DataProvider.ExcuteScalar(queryCheck, param);
+            if (data != null)
+                return true;
+            else
+                return false;
         }
 
         private void dgvEmpl_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -105,7 +106,7 @@ namespace QLKS_Winform
                     string info = "ID: " + txtID.Text + "\n" + "Name: " + txtEmplName.Text +
                     "\n" + "Gender: " + cbbGender.Text + "\n" + "Date of birth: " + dtDOBEmpl.Text + "\n" + "Phone No: " + txtPhoneNo.Text;
                     DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn sửa thông tin này?\n" + info, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if(dr == DialogResult.Yes)
+                    if (dr == DialogResult.Yes)
                         EditEmpl();
                 }
                 else
@@ -119,7 +120,7 @@ namespace QLKS_Winform
         {
             if (txtEmplName.Text.Trim() == "")
                 return false;
-            else if(cbbGender.Text.Trim() == "")
+            else if (cbbGender.Text.Trim() == "")
                 return false;
             else if (txtPhoneNo.Text.Trim() == "")
                 return false;
@@ -128,29 +129,16 @@ namespace QLKS_Winform
         //Sửa thông tin
         void EditEmpl()
         {
-            using(SqlConnection con = new SqlConnection(ConnectionString.connectionString))
+            SqlParameter[] param =
             {
-                con.Open();
-                using (SqlCommand cmd = new SqlCommand(Query.EditEmpl, con)) 
-                {
-                    cmd.Parameters.AddWithValue("@HoTen", txtEmplName.Text);
-                    cmd.Parameters.AddWithValue("@GioiTinh", cbbGender.Text);
-                    cmd.Parameters.AddWithValue("@NgaySinh", dtDOBEmpl.Value.Date);
-                    cmd.Parameters.AddWithValue("@SDT", txtPhoneNo.Text);
-                    cmd.ExecuteNonQuery();
-                }
-                foreach (DataGridViewRow row in dgvEmpl.Rows)
-                {
-                    if (row.Cells[0].Value.ToString() == txtID.Text)
-                    {
-                        row.Cells[1].Value = txtEmplName.Text;
-                        row.Cells[2].Value = cbbGender.Text;
-                        row.Cells[3].Value = dtDOBEmpl.Value.Date;
-                        row.Cells[4].Value = txtPhoneNo.Text;
-                        break;
-                    }
-                }
-            }
+                new SqlParameter("@MaNV", txtID.Text),
+                new SqlParameter("@HoTen", txtEmplName.Text),
+                new SqlParameter("@GioiTinh", cbbGender.Text),
+                new SqlParameter("@NgaySinh", dtDOBEmpl.Value.Date),
+                new SqlParameter("@SDT", txtPhoneNo.Text)
+            };
+            DataProvider.ExcuteNonQuery(Query.EditEmpl, param);
+            loadData();
         }
 
         private void btnDelClient_Click(object sender, EventArgs e)
@@ -173,50 +161,15 @@ namespace QLKS_Winform
         //Xóa nhân viên
         void DelEmpl()
         {
-            using(SqlConnection con = new SqlConnection(ConnectionString.connectionString))
+            SqlParameter[] param =
             {
-                con.Open();
-                using(SqlCommand cmd = new SqlCommand(Query.DelEmpl, con))
-                {
-                    cmd.Parameters.AddWithValue("@MaNV", txtID.Text);
-                    cmd.ExecuteNonQuery();
-                }
-            }
-            foreach (DataGridViewRow row in dgvEmpl.Rows)
-            {
-                if (row.Cells[0].Value.ToString() == txtID.Text)
-                {
-                    row.Cells[1].Value = txtEmplName.Text;
-                    row.Cells[2].Value = cbbGender.Text;
-                    row.Cells[3].Value = dtDOBEmpl.Value.Date;
-                    row.Cells[4].Value = txtPhoneNo.Text;
-                    row.Cells[6].Value = "";
-                    break;
-                }
-            }
+                new SqlParameter("@MaNV", txtID.Text)
+            };
+            DataProvider.ExcuteNonQuery(Query.DelEmpl, param);
+            loadData();
         }
 
         //Tìm kiếm nhân viên
-        DataSet getData()
-        {
-            DataSet ds = new DataSet();
-            using (SqlConnection con = new SqlConnection(ConnectionString.connectionString))
-            {
-                con.Open();
-                using(SqlCommand cmd = new SqlCommand(Query.SeachEmpl, con))
-                {
-                    cmd.Parameters.AddWithValue("@MaNV", txtSeachID.Text);
-                    cmd.Parameters.AddWithValue("@HoTen", txtSeachEmplName.Text);
-                    cmd.Parameters.AddWithValue("@SDT", txtSeachPhoneNo.Text);
-                    cmd.Parameters.AddWithValue("@ChucVu", cbbSeachPosition.Text);
-                    cmd.Parameters.AddWithValue("@EmployeeStatus", cbbSeachEmpl.Text);
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    adapter.Fill(ds);
-                }
-            }
-            return ds;
-        }
-
         private void txtSeachID_TextChanged(object sender, EventArgs e)
         {
             timeStop.Stop();
