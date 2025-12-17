@@ -97,7 +97,7 @@
             this.btnSting.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnSting.Size = new System.Drawing.Size(218, 60);
             this.btnSting.TabIndex = 6;
-            this.btnSting.Text = " Setting";
+            this.btnSting.Text = " Employees manager";
             this.btnSting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSting.UseVisualStyleBackColor = true;
@@ -192,7 +192,7 @@
             this.btnData.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnData.Size = new System.Drawing.Size(218, 60);
             this.btnData.TabIndex = 1;
-            this.btnData.Text = " Data";
+            this.btnData.Text = " Guest data";
             this.btnData.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnData.UseVisualStyleBackColor = true;
