@@ -64,10 +64,24 @@ namespace QLKS_Winform
                 Application.Exit();
             }
         }
+        private void showUserControl(UserControl uc)
+        {
+            foreach (Control c in plData.Controls)
+            {
+                c.Visible = false;
+            }
 
+            uc.Visible = true;
+            uc.BringToFront();
+        }
         private void btnSting_Click(object sender, EventArgs e)
         {
-            uC_Employees1.Visible = !uC_Employees1.Visible;
+            showUserControl(uC_Employees1);
+        }
+
+        private void btnChkin_Click(object sender, EventArgs e)
+        {
+           showUserControl(uC_CheckIn1);
         }
     }
 }

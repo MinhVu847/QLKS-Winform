@@ -40,6 +40,8 @@
             this.plLogo = new System.Windows.Forms.Panel();
             this.ptrLogo = new System.Windows.Forms.PictureBox();
             this.plData = new System.Windows.Forms.Panel();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.uC_CheckIn1 = new QLKS_Winform.UC_CheckIn();
             this.uC_Employees1 = new QLKS_Winform.UC_Employees();
             this.plMenu.SuspendLayout();
             this.plLogo.SuspendLayout();
@@ -161,6 +163,7 @@
             this.btnChkin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChkin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnChkin.UseVisualStyleBackColor = true;
+            this.btnChkin.Click += new System.EventHandler(this.btnChkin_Click);
             // 
             // btnFind
             // 
@@ -227,11 +230,23 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.plData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.plData.Controls.Add(this.uC_CheckIn1);
             this.plData.Controls.Add(this.uC_Employees1);
-            this.plData.Location = new System.Drawing.Point(230, 0);
+            this.plData.Location = new System.Drawing.Point(230, 59);
             this.plData.Name = "plData";
             this.plData.Size = new System.Drawing.Size(1050, 574);
             this.plData.TabIndex = 1;
+            // 
+            // uC_CheckIn1
+            // 
+            this.uC_CheckIn1.Location = new System.Drawing.Point(0, 0);
+            this.uC_CheckIn1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uC_CheckIn1.MaximumSize = new System.Drawing.Size(1050, 574);
+            this.uC_CheckIn1.MinimumSize = new System.Drawing.Size(1050, 574);
+            this.uC_CheckIn1.Name = "uC_CheckIn1";
+            this.uC_CheckIn1.Size = new System.Drawing.Size(1050, 574);
+            this.uC_CheckIn1.TabIndex = 1;
+            this.uC_CheckIn1.Visible = false;
             // 
             // uC_Employees1
             // 
@@ -280,5 +295,7 @@
         private System.Windows.Forms.Panel plLogo;
         private System.Windows.Forms.Button btnEx;
         private UC_Employees uC_Employees1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private UC_CheckIn uC_CheckIn1;
     }
 }
