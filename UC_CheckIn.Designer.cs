@@ -72,7 +72,7 @@
             this.dtCin.CustomFormat = "yyyy/MM/dd";
             this.dtCin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtCin.Location = new System.Drawing.Point(460, 498);
-            this.dtCin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtCin.Margin = new System.Windows.Forms.Padding(4);
             this.dtCin.Name = "dtCin";
             this.dtCin.Size = new System.Drawing.Size(317, 22);
             this.dtCin.TabIndex = 36;
@@ -97,7 +97,7 @@
             "Nữ",
             "Khác"});
             this.cbbGender.Location = new System.Drawing.Point(56, 316);
-            this.cbbGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbGender.Margin = new System.Windows.Forms.Padding(4);
             this.cbbGender.Name = "cbbGender";
             this.cbbGender.Size = new System.Drawing.Size(317, 24);
             this.cbbGender.TabIndex = 34;
@@ -108,7 +108,7 @@
             this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckIn.ForeColor = System.Drawing.Color.White;
             this.btnCheckIn.Location = new System.Drawing.Point(1177, 590);
-            this.btnCheckIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCheckIn.Margin = new System.Windows.Forms.Padding(4);
             this.btnCheckIn.Name = "btnCheckIn";
             this.btnCheckIn.Size = new System.Drawing.Size(129, 39);
             this.btnCheckIn.TabIndex = 31;
@@ -119,7 +119,7 @@
             // txtID
             // 
             this.txtID.Location = new System.Drawing.Point(56, 135);
-            this.txtID.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtID.Margin = new System.Windows.Forms.Padding(5);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(317, 22);
             this.txtID.TabIndex = 27;
@@ -138,7 +138,7 @@
             // txtPhoneNo
             // 
             this.txtPhoneNo.Location = new System.Drawing.Point(56, 479);
-            this.txtPhoneNo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtPhoneNo.Margin = new System.Windows.Forms.Padding(5);
             this.txtPhoneNo.Name = "txtPhoneNo";
             this.txtPhoneNo.Size = new System.Drawing.Size(317, 22);
             this.txtPhoneNo.TabIndex = 29;
@@ -168,7 +168,7 @@
             // txtClientName
             // 
             this.txtClientName.Location = new System.Drawing.Point(56, 224);
-            this.txtClientName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtClientName.Margin = new System.Windows.Forms.Padding(5);
             this.txtClientName.Name = "txtClientName";
             this.txtClientName.Size = new System.Drawing.Size(317, 22);
             this.txtClientName.TabIndex = 28;
@@ -187,7 +187,7 @@
             // txtNatiID
             // 
             this.txtNatiID.Location = new System.Drawing.Point(56, 399);
-            this.txtNatiID.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtNatiID.Margin = new System.Windows.Forms.Padding(5);
             this.txtNatiID.Name = "txtNatiID";
             this.txtNatiID.Size = new System.Drawing.Size(317, 22);
             this.txtNatiID.TabIndex = 38;
@@ -206,7 +206,7 @@
             // txtAddress
             // 
             this.txtAddress.Location = new System.Drawing.Point(56, 558);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(5);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(317, 22);
             this.txtAddress.TabIndex = 40;
@@ -227,7 +227,7 @@
             this.cbbRoomType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbRoomType.FormattingEnabled = true;
             this.cbbRoomType.Location = new System.Drawing.Point(460, 134);
-            this.cbbRoomType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbRoomType.Margin = new System.Windows.Forms.Padding(4);
             this.cbbRoomType.Name = "cbbRoomType";
             this.cbbRoomType.Size = new System.Drawing.Size(317, 24);
             this.cbbRoomType.TabIndex = 42;
@@ -238,7 +238,7 @@
             this.cbbRoomName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbRoomName.FormattingEnabled = true;
             this.cbbRoomName.Location = new System.Drawing.Point(460, 329);
-            this.cbbRoomName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbRoomName.Margin = new System.Windows.Forms.Padding(4);
             this.cbbRoomName.Name = "cbbRoomName";
             this.cbbRoomName.Size = new System.Drawing.Size(317, 24);
             this.cbbRoomName.TabIndex = 43;
@@ -258,7 +258,7 @@
             // txtPrice
             // 
             this.txtPrice.Location = new System.Drawing.Point(460, 415);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(5);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.ReadOnly = true;
             this.txtPrice.Size = new System.Drawing.Size(317, 22);
@@ -277,8 +277,8 @@
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(941, 162);
-            this.txtNote.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtNote.Location = new System.Drawing.Point(928, 134);
+            this.txtNote.Margin = new System.Windows.Forms.Padding(5);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(364, 105);
@@ -288,7 +288,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(937, 137);
+            this.label6.Location = new System.Drawing.Point(924, 109);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 23);
@@ -324,7 +324,7 @@
             this.cbbNumOfBeds.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbNumOfBeds.FormattingEnabled = true;
             this.cbbNumOfBeds.Location = new System.Drawing.Point(460, 224);
-            this.cbbNumOfBeds.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbNumOfBeds.Margin = new System.Windows.Forms.Padding(4);
             this.cbbNumOfBeds.Name = "cbbNumOfBeds";
             this.cbbNumOfBeds.Size = new System.Drawing.Size(317, 24);
             this.cbbNumOfBeds.TabIndex = 50;
@@ -360,7 +360,7 @@
             this.Controls.Add(this.lblGender);
             this.Controls.Add(this.txtClientName);
             this.Controls.Add(this.lblPhone);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_CheckIn";
             this.Size = new System.Drawing.Size(1400, 706);
             this.ResumeLayout(false);
