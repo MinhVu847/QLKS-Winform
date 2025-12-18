@@ -24,7 +24,6 @@ namespace QLKS_Winform
         {
             if (CheckInfo())
             {
-                MessageBox.Show(roomID);
                 
             }
             else
