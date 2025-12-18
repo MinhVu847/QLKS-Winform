@@ -45,20 +45,22 @@ namespace QLKS_Winform
                 txtUser.Focus();
             }    
         }
-        bool checklogin() 
+        bool checklogin()
         {
-            DataSet ds = new DataSet();
-            using (SqlConnection con = new SqlConnection(ConnectionString.connectionString))
+            SqlParameter[] parameter =
             {
-                con.Open(); 
-                SqlCommand cmd = new SqlCommand(Query.LoginCheckQr, con);
-                cmd.Parameters.AddWithValue("@manv", txtUser.Text);
-                cmd.Parameters.AddWithValue("@matkhau", txtPass.Text);
-                if (cmd.ExecuteScalar() != null)
-                {
-                    return true;
-                }
+                new SqlParameter("@manv", txtUser.Text),
+                new SqlParameter("@matkhau", txtPass.Text)
+            };
+            DataTable dt = DataProvider.ExcuteQuery(Query.LoginCheckQr, parameter);
+            if (dt.Rows.Count > 0) 
+            {
+                Index ix = new Index();
+                this.Hide();
+                ConnectionString.MaNV = txtUser.Text.Trim();
+                ix.ShowDialog();
             }
+            
             return false;
         }       
     }
