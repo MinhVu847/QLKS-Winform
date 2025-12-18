@@ -17,6 +17,7 @@ namespace QLKS_Winform
         public Index()
         {
             InitializeComponent();
+            
         }
 
         private void Index_Load(object sender, EventArgs e)
@@ -62,6 +63,11 @@ namespace QLKS_Winform
             {
                 Application.Exit();
             }
+        }
+
+        private void btnSting_Click(object sender, EventArgs e)
+        {
+            uC_Employees1.Visible = !uC_Employees1.Visible;
         }
     }
 }

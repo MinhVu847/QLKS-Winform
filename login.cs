@@ -15,8 +15,6 @@ namespace QLKS_Winform
 {
     public partial class login : Form
     {
-
-
         public login()
         {
             InitializeComponent();
@@ -46,8 +44,6 @@ namespace QLKS_Winform
                 MessageBox.Show("User hoặc Pass không chính xác! Vui lòng nhập lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtUser.Focus();
             }    
-                
-
         }
         bool checklogin() 
         {
@@ -64,8 +60,6 @@ namespace QLKS_Winform
                 }
             }
             return false;
-        }
-        
+        }       
     }
-
 }
