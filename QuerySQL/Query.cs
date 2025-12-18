@@ -50,6 +50,10 @@ namespace QLKS_Winform.QuerySQL
                                             AND (@TenPhong = '' OR TenPhong LIKE '%' + @TenPhong + '%')
                                             ";
 
+        //ktra giá tiền
+        public static string ShowPrice = @"Select * from Phong 
+                                          where LoaiPhong = @LoaiPhong AND SoGiuong = @SoGiuong AND TenPhong = @TenPhong";
+
         //Check In
         public static string CheckIn = @"insert into KhachHang(MaKH, HoTen, GioiTinh, CCCD, SDT, DiaChi)
                                         values ( @MaKH, @HoTen, @GioiTinh, @CCCD, @SDT, @DiaChi);
