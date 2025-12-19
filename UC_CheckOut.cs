@@ -10,15 +10,11 @@ using System.Windows.Forms;
 
 namespace QLKS_Winform
 {
-    public partial class FormTest : Form
+    public partial class UC_CheckOut : UserControl
     {
-        public FormTest()
+        public UC_CheckOut()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
         }
     }
 }

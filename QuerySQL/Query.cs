@@ -63,6 +63,9 @@ namespace QLKS_Winform.QuerySQL
 
                                         update Phong set TrangThai = N'Đang Chờ' where MaPhong = @MaPhong";
 
+        //Tìm phòng trc khi check out
+        public static string GetCustomerForCheckoutQuery = @""
+
         //Tìm kiếm thông tin khách hàng
         public static string SeachClient = @"SELECT * FROM KhachHang
                                             WHERE (@MaKH = '' OR MaKH LIKE '%' + @MaKH + '%')

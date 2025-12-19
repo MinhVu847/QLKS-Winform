@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.uC_CheckIn1 = new QLKS_Winform.UC_CheckIn();
+            this.uC_CheckOut1 = new QLKS_Winform.UC_CheckOut();
             this.SuspendLayout();
             // 
             // button1
@@ -43,20 +43,20 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // uC_CheckIn1
+            // uC_CheckOut1
             // 
-            this.uC_CheckIn1.Location = new System.Drawing.Point(144, 139);
-            this.uC_CheckIn1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.uC_CheckIn1.Name = "uC_CheckIn1";
-            this.uC_CheckIn1.Size = new System.Drawing.Size(1400, 706);
-            this.uC_CheckIn1.TabIndex = 2;
+            this.uC_CheckOut1.Location = new System.Drawing.Point(144, 128);
+            this.uC_CheckOut1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uC_CheckOut1.Name = "uC_CheckOut1";
+            this.uC_CheckOut1.Size = new System.Drawing.Size(1400, 706);
+            this.uC_CheckOut1.TabIndex = 2;
             // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1540, 838);
-            this.Controls.Add(this.uC_CheckIn1);
+            this.Controls.Add(this.uC_CheckOut1);
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormTest";
@@ -68,6 +68,6 @@
 
         #endregion
         private System.Windows.Forms.Button button1;
-        private UC_CheckIn uC_CheckIn1;
+        private UC_CheckOut uC_CheckOut1;
     }
 }
