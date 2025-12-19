@@ -40,9 +40,9 @@
             this.plLogo = new System.Windows.Forms.Panel();
             this.ptrLogo = new System.Windows.Forms.PictureBox();
             this.plData = new System.Windows.Forms.Panel();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.uC_CheckIn1 = new QLKS_Winform.UC_CheckIn();
             this.uC_Employees1 = new QLKS_Winform.UC_Employees();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.plMenu.SuspendLayout();
             this.plLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptrLogo)).BeginInit();
@@ -69,6 +69,7 @@
             // 
             // btnEx
             // 
+            this.btnEx.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEx.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEx.FlatAppearance.BorderSize = 0;
             this.btnEx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -89,6 +90,7 @@
             // 
             // btnSting
             // 
+            this.btnSting.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSting.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSting.FlatAppearance.BorderSize = 0;
             this.btnSting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -109,6 +111,7 @@
             // 
             // btnAltic
             // 
+            this.btnAltic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAltic.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAltic.FlatAppearance.BorderSize = 0;
             this.btnAltic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -128,6 +131,7 @@
             // 
             // btnChkout
             // 
+            this.btnChkout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChkout.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnChkout.FlatAppearance.BorderSize = 0;
             this.btnChkout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -147,6 +151,7 @@
             // 
             // btnChkin
             // 
+            this.btnChkin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChkin.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnChkin.FlatAppearance.BorderSize = 0;
             this.btnChkin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -167,6 +172,7 @@
             // 
             // btnFind
             // 
+            this.btnFind.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFind.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFind.FlatAppearance.BorderSize = 0;
             this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -186,6 +192,7 @@
             // 
             // btnData
             // 
+            this.btnData.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnData.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnData.FlatAppearance.BorderSize = 0;
             this.btnData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -260,7 +267,7 @@
             // 
             // Index
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.plData);

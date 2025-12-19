@@ -54,11 +54,10 @@ namespace QLKS_Winform
             };
             DataTable dt = DataProvider.ExcuteQuery(Query.LoginCheckQr, parameter);
             if (dt.Rows.Count > 0) 
-            {
-                Index ix = new Index();
-                this.Hide();
+            {              
                 ConnectionString.MaNV = txtUser.Text.Trim();
-                ix.ShowDialog();
+                ConnectionString.ChucVu = dt.Rows[0]["ChucVu"].ToString();               
+                return true;
             }
             
             return false;
