@@ -63,8 +63,25 @@ namespace QLKS_Winform.QuerySQL
 
                                         update Phong set TrangThai = N'Đang Chờ' where MaPhong = @MaPhong";
 
-        //Tìm phòng trc khi check out
-        public static string GetCustomerForCheckoutQuery = @""
+        //Hiển thị thông tin trong datagridview
+        public static string GetCustomerInfoQuery = @"select p.MaPhong, kh.MaKH, kh.HoTen, kh.CCCD,kh.DiaChi, p.TenPhong, p.LoaiPhong, p.GiaPhong, dp.NgayDat, dp.NgayTra from KhachHang kh
+                                                        join DatPhong dp on kh.MaKH = dp.MaKH
+                                                        join Phong p on p.MaPhong = dp.MaPhong
+                                                        where (@MaKH = '' or kh.MaKH = @MaKH)
+	                                                        and(@MaPhong = '' or p.MaPhong = @MaPhong)
+	                                                        and(@CustomerStatus = 'All Customers'
+		                                                        or (@CustomerStatus = 'Checked-out Customers' and dp.NgayTra is not null)
+		                                                        or (@CustomerStatus = 'Checked-in Customers' and dp.NgayTra is null))";
+
+        //Check out
+        public static string GetCustomerForCheckoutQuery = @"update DatPhong set NgayTra = @NgayTra
+                                                            where MaDP = @MaDP
+
+                                                            update Phong set TrangThai = N'Trống'
+                                                            where MaPhong = @MaPhong
+
+                                                            insert into HoaDon(MaHD, MaDP, MaKH, MaPhong, TongTien)
+                                                            values (@MaHD, @MaDP, @MaKH, @MaPhong, @TongTien)";
 
         //Tìm kiếm thông tin khách hàng
         public static string SeachClient = @"SELECT * FROM KhachHang
