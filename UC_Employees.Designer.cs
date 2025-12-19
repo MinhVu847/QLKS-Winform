@@ -243,8 +243,9 @@
             // 
             // btnDelClient
             // 
-            this.btnDelClient.BackColor = System.Drawing.Color.Black;
+            this.btnDelClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
             this.btnDelClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelClient.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelClient.ForeColor = System.Drawing.Color.White;
             this.btnDelClient.Location = new System.Drawing.Point(238, 463);
             this.btnDelClient.Name = "btnDelClient";
@@ -256,8 +257,9 @@
             // 
             // btnEditClient
             // 
-            this.btnEditClient.BackColor = System.Drawing.Color.Black;
+            this.btnEditClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
             this.btnEditClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditClient.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditClient.ForeColor = System.Drawing.Color.White;
             this.btnEditClient.Location = new System.Drawing.Point(123, 463);
             this.btnEditClient.Name = "btnEditClient";
@@ -269,8 +271,9 @@
             // 
             // btnAddClient
             // 
-            this.btnAddClient.BackColor = System.Drawing.Color.Black;
+            this.btnAddClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
             this.btnAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddClient.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddClient.ForeColor = System.Drawing.Color.White;
             this.btnAddClient.Location = new System.Drawing.Point(6, 463);
             this.btnAddClient.Name = "btnAddClient";
@@ -364,7 +367,7 @@
             // 
             // label5
             // 
-            this.label5.BackColor = System.Drawing.Color.Black;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
             this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(0, 0);
@@ -425,7 +428,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.BackColor = System.Drawing.Color.Black;
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.Location = new System.Drawing.Point(912, 194);

@@ -46,7 +46,7 @@ namespace QLKS_Winform
                 btnSting.Enabled= false;
                 btnSting.Cursor = default;
             }
-            else //bảo vệ-buồng phòng
+            else if(ConnectionString.ChucVu=="Bảo vệ" || ConnectionString.ChucVu=="Buồng phòng")
             {
                 btnData.Enabled = false;
                 btnData.Cursor = default;

@@ -42,7 +42,6 @@
             this.plData = new System.Windows.Forms.Panel();
             this.uC_CheckIn1 = new QLKS_Winform.UC_CheckIn();
             this.uC_Employees1 = new QLKS_Winform.UC_Employees();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.plMenu.SuspendLayout();
             this.plLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptrLogo)).BeginInit();
@@ -273,7 +272,6 @@
             this.Controls.Add(this.plData);
             this.Controls.Add(this.plMenu);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Index";
@@ -302,7 +300,6 @@
         private System.Windows.Forms.Panel plLogo;
         private System.Windows.Forms.Button btnEx;
         private UC_Employees uC_Employees1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private UC_CheckIn uC_CheckIn1;
     }
 }
