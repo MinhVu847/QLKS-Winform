@@ -18,6 +18,7 @@ namespace QLKS_Winform
         public login()
         {
             InitializeComponent();
+            
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -31,7 +32,7 @@ namespace QLKS_Winform
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
-        {
+        {          
             if (checklogin())
             {
                 Index id = new Index();
@@ -54,14 +55,29 @@ namespace QLKS_Winform
             };
             DataTable dt = DataProvider.ExcuteQuery(Query.LoginCheckQr, parameter);
             if (dt.Rows.Count > 0) 
-            {
-                Index ix = new Index();
-                this.Hide();
+            {              
                 ConnectionString.MaNV = txtUser.Text.Trim();
-                ix.ShowDialog();
+                ConnectionString.ChucVu = dt.Rows[0]["ChucVu"].ToString();               
+                return true;
             }
             
             return false;
-        }       
+        }
+
+        private void btnEyePass_Click(object sender, EventArgs e)
+        {
+            if(txtPass.UseSystemPasswordChar)
+            {
+                txtPass.UseSystemPasswordChar = false;
+                btnEyePass.Image = Properties.Resources.eye;
+                txtPass.Focus();
+            }
+            else
+            {
+                txtPass.UseSystemPasswordChar = true;
+                btnEyePass.Image = Properties.Resources.eyeclose;
+                txtPass.Focus();
+            }
+        }   
     }
 }

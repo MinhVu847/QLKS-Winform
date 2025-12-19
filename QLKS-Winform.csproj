@@ -172,5 +172,8 @@
   <ItemGroup>
     <None Include="icon\exits.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\eyeclose.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

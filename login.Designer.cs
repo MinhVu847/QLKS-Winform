@@ -40,6 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnEyePass = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -68,6 +69,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnEyePass);
             this.panel2.Controls.Add(this.btnExit);
             this.panel2.Controls.Add(this.btnLogin);
             this.panel2.Controls.Add(this.txtPass);
@@ -85,10 +87,11 @@
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(46, 441);
+            this.btnExit.Location = new System.Drawing.Point(46, 449);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(252, 40);
             this.btnExit.TabIndex = 7;
@@ -99,12 +102,13 @@
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
+            this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(46, 378);
+            this.btnLogin.Location = new System.Drawing.Point(46, 389);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(252, 41);
+            this.btnLogin.Size = new System.Drawing.Size(252, 40);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -170,10 +174,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Login";
             // 
+            // btnEyePass
+            // 
+            this.btnEyePass.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEyePass.Image = global::QLKS_Winform.Properties.Resources.eye;
+            this.btnEyePass.Location = new System.Drawing.Point(271, 297);
+            this.btnEyePass.MaximumSize = new System.Drawing.Size(27, 27);
+            this.btnEyePass.MinimumSize = new System.Drawing.Size(27, 27);
+            this.btnEyePass.Name = "btnEyePass";
+            this.btnEyePass.Size = new System.Drawing.Size(27, 27);
+            this.btnEyePass.TabIndex = 8;
+            this.btnEyePass.UseVisualStyleBackColor = true;
+            this.btnEyePass.Click += new System.EventHandler(this.btnEyePass_Click);
+            // 
             // login
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(672, 534);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
@@ -205,6 +224,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnEyePass;
     }
 }
 
