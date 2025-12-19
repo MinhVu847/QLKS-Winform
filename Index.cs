@@ -17,7 +17,48 @@ namespace QLKS_Winform
         public Index()
         {
             InitializeComponent();
+            Phanquyen();
             
+        }
+
+        //Phân quyền
+        private void Phanquyen()
+        {
+            if(ConnectionString.ChucVu=="Quản lý")
+            {
+                btnSting.Enabled = false;
+                btnSting.Cursor = default;
+            }    
+                                
+            else if(ConnectionString.ChucVu=="Lễ tân")
+            {
+                btnSting.Enabled = false;
+                btnSting.Cursor = default;
+                btnAltic.Enabled = false;
+                btnAltic.Cursor = default;
+            }    
+            else if(ConnectionString.ChucVu=="Kế toán")
+            {
+                btnChkin.Enabled= false;
+                btnChkin.Cursor = default;
+                btnChkout.Enabled = false;
+                btnChkout.Cursor = default;
+                btnSting.Enabled= false;
+                btnSting.Cursor = default;
+            }
+            else if(ConnectionString.ChucVu=="Bảo vệ" || ConnectionString.ChucVu=="Buồng phòng")
+            {
+                btnData.Enabled = false;
+                btnData.Cursor = default;
+                btnChkin.Enabled = false;
+                btnChkin.Cursor = default;
+                btnChkout.Enabled = false;
+                btnChkout.Cursor = default;
+                btnSting.Enabled=false;
+                btnSting.Cursor = default;
+                btnAltic.Enabled=false;
+                btnAltic.Cursor = default;
+            }    
         }
 
         private void Index_Load(object sender, EventArgs e)
@@ -32,12 +73,9 @@ namespace QLKS_Winform
         }
         private void Button_Click(object sender, EventArgs e)
         {
-            // Bước 1: Khôi phục màu nền cho nút vừa được chọn (nếu có)
-            if (button != null)
-            {
-                
-                button.BackColor = Color.FromArgb(14, 27, 53); // Màu nền ban đầu
-            }
+            
+            if (button != null)                      
+                button.BackColor = Color.FromArgb(14, 27, 53); // Màu nền ban đầu          
 
             // Bước 2: Thiết lập nút hiện tại là nút được chọn
             Control clickedControl = (Control)sender; // 'sender' là nút vừa được click
@@ -50,8 +88,6 @@ namespace QLKS_Winform
 
             // thêm form hiện ra
               
-
-
 
 
         }

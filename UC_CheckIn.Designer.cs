@@ -111,8 +111,9 @@
             // 
             // btnCheckIn
             // 
-            this.btnCheckIn.BackColor = System.Drawing.Color.Black;
+            this.btnCheckIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
             this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckIn.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckIn.ForeColor = System.Drawing.Color.White;
             this.btnCheckIn.Location = new System.Drawing.Point(885, 501);
             this.btnCheckIn.Margin = new System.Windows.Forms.Padding(4);
@@ -351,7 +352,7 @@
             // 
             // label8
             // 
-            this.label8.BackColor = System.Drawing.Color.Black;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
             this.label8.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(0, 0);
