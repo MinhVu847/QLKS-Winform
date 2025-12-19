@@ -42,6 +42,7 @@
             this.plData = new System.Windows.Forms.Panel();
             this.uC_CheckIn1 = new QLKS_Winform.UC_CheckIn();
             this.uC_Employees1 = new QLKS_Winform.UC_Employees();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.plMenu.SuspendLayout();
             this.plLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptrLogo)).BeginInit();
@@ -264,11 +265,19 @@
             this.uC_Employees1.TabIndex = 0;
             this.uC_Employees1.Visible = false;
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(230, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1050, 59);
+            this.panel1.TabIndex = 2;
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.plData);
             this.Controls.Add(this.plMenu);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -301,5 +310,6 @@
         private System.Windows.Forms.Button btnEx;
         private UC_Employees uC_Employees1;
         private UC_CheckIn uC_CheckIn1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
