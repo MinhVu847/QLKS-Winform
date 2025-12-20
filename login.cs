@@ -63,9 +63,10 @@ namespace QLKS_Winform
             
             return false;
         }
-
+        
         private void btnEyePass_Click(object sender, EventArgs e)
         {
+            
             if(txtPass.UseSystemPasswordChar)
             {
                 txtPass.UseSystemPasswordChar = false;
@@ -78,6 +79,11 @@ namespace QLKS_Winform
                 btnEyePass.Image = Properties.Resources.eyeclose;
                 txtPass.Focus();
             }
-        }   
+        }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+            txtPass.UseSystemPasswordChar = true;
+        }
     }
 }

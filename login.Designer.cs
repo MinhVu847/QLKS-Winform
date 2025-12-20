@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnEyePass = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtPass = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnEyePass = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -83,6 +83,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(333, 534);
             this.panel2.TabIndex = 1;
+            // 
+            // btnEyePass
+            // 
+            this.btnEyePass.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEyePass.Image = global::QLKS_Winform.Properties.Resources.eye;
+            this.btnEyePass.Location = new System.Drawing.Point(271, 297);
+            this.btnEyePass.MaximumSize = new System.Drawing.Size(27, 27);
+            this.btnEyePass.MinimumSize = new System.Drawing.Size(27, 27);
+            this.btnEyePass.Name = "btnEyePass";
+            this.btnEyePass.Size = new System.Drawing.Size(27, 27);
+            this.btnEyePass.TabIndex = 8;
+            this.btnEyePass.UseVisualStyleBackColor = true;
+            this.btnEyePass.Click += new System.EventHandler(this.btnEyePass_Click);
             // 
             // btnExit
             // 
@@ -174,19 +187,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Login";
             // 
-            // btnEyePass
-            // 
-            this.btnEyePass.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEyePass.Image = global::QLKS_Winform.Properties.Resources.eye;
-            this.btnEyePass.Location = new System.Drawing.Point(271, 297);
-            this.btnEyePass.MaximumSize = new System.Drawing.Size(27, 27);
-            this.btnEyePass.MinimumSize = new System.Drawing.Size(27, 27);
-            this.btnEyePass.Name = "btnEyePass";
-            this.btnEyePass.Size = new System.Drawing.Size(27, 27);
-            this.btnEyePass.TabIndex = 8;
-            this.btnEyePass.UseVisualStyleBackColor = true;
-            this.btnEyePass.Click += new System.EventHandler(this.btnEyePass_Click);
-            // 
             // login
             // 
             this.AcceptButton = this.btnLogin;
@@ -203,6 +203,7 @@
             this.Name = "login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
+            this.Load += new System.EventHandler(this.login_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
