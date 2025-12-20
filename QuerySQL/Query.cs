@@ -74,7 +74,7 @@ namespace QLKS_Winform.QuerySQL
 		                                                        or (@CustomerStatus = 'Checked-in Customers' and dp.NgayTra is null))";
 
         //Check out
-        public static string GetCustomerForCheckoutQuery = @"update DatPhong set NgayTra = @NgayTra
+        public static string GetCustomerForCheckoutQuery = @"update DatPhong set NgayTra = @NgayTra, MaNV_CheckOut = @MaNV
                                                             where MaDP = @MaDP
 
                                                             update Phong set TrangThai = N'Trống'

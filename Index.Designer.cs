@@ -149,6 +149,7 @@
             this.btnChkout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChkout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnChkout.UseVisualStyleBackColor = true;
+            this.btnChkout.Click += new System.EventHandler(this.btnChkout_Click);
             // 
             // btnChkin
             // 
@@ -254,6 +255,7 @@
             this.uC_CheckOut1.Name = "uC_CheckOut1";
             this.uC_CheckOut1.Size = new System.Drawing.Size(1050, 574);
             this.uC_CheckOut1.TabIndex = 2;
+            this.uC_CheckOut1.Visible = false;
             // 
             // uC_CheckIn1
             // 

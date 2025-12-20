@@ -17,7 +17,6 @@ namespace QLKS_Winform
         public UC_CheckIn()
         {
             InitializeComponent();
-            loadData();
         }
         string roomID;
         private void btnCheckIn_Click(object sender, EventArgs e)
@@ -75,7 +74,7 @@ namespace QLKS_Winform
                 new SqlParameter("@MaDP", MaDP),
                 new SqlParameter("@MaPhong", roomID),//truyền mã mã phòng
                 new SqlParameter("@NgayDat", dtCin.Value.ToString()),
-                new SqlParameter("@MaNV", DBNull.Value),
+                new SqlParameter("@MaNV", ConnectionString.MaNV),
                 new SqlParameter("@GhiChu", txtNote.Text),
             };
             DataProvider.ExcuteNonQuery(Query.CheckIn, parameters);
@@ -126,7 +125,7 @@ namespace QLKS_Winform
                 new SqlParameter("@TenPhong", cbbRoomName.Text)
             };
             DataTable dt = DataProvider.ExcuteQuery(Query.CheckRoom, parameters);
-            if (cbbRoomType.Text == "")
+            if (cbbRoomType.Text == "")//ltr
             {
                 cbbRoomType.Items.Clear();
                 foreach (DataRow row in dt.Rows)
@@ -198,6 +197,14 @@ namespace QLKS_Winform
                     this.SelectNextControl((Control)sender, true, true, true, true);
                 }
                 e.SuppressKeyPress = true;
+            }
+        }
+
+        private void UC_CheckIn_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)//load lại data khi visible = true trên Index
+            {
+                loadData();
             }
         }
     }

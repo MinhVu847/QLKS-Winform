@@ -396,6 +396,7 @@
             this.MinimumSize = new System.Drawing.Size(1050, 574);
             this.Name = "UC_CheckIn";
             this.Size = new System.Drawing.Size(1050, 574);
+            this.VisibleChanged += new System.EventHandler(this.UC_CheckIn_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

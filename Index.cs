@@ -119,5 +119,10 @@ namespace QLKS_Winform
         {
            showUserControl(uC_CheckIn1);
         }
+
+        private void btnChkout_Click(object sender, EventArgs e)
+        {
+            showUserControl(uC_CheckOut1);
+        }
     }
 }

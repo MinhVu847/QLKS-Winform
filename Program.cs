@@ -16,7 +16,7 @@ namespace QLKS_Winform
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Index());
+            Application.Run(new login());
         }
     }
 }

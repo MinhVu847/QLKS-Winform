@@ -199,6 +199,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_CheckOut";
             this.Size = new System.Drawing.Size(1050, 574);
+            this.VisibleChanged += new System.EventHandler(this.UC_CheckOut_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -19,9 +19,6 @@ namespace QLKS_Winform
         public UC_Employees()
         {
             InitializeComponent();
-            cbbPosition.SelectedIndex = 0;
-            cbbSeachEmpl.SelectedIndex = 0;
-            loadData();
         }
 
         //load dữ liệu nhân viên
@@ -79,7 +76,7 @@ namespace QLKS_Winform
             {
                     new SqlParameter("@ID", txtID.Text)
             };
-            object data = DataProvider.ExcuteScalar(queryCheck, param);
+            object data = DataProvider.ExcuteScalar(queryCheck, param);//ktra xem mã nhân viên có tồn tại hay không
             if (data != null)
                 return true;
             else
@@ -193,6 +190,16 @@ namespace QLKS_Winform
             txtSeachPhoneNo.Clear();
             cbbSeachPosition.SelectedIndex = 0;
             cbbSeachEmpl.SelectedIndex = 0;
+        }
+
+        private void txtSeachID_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)//load lại data khi visible = true trên Index
+            {
+                cbbPosition.SelectedIndex = 0;
+                cbbSeachEmpl.SelectedIndex = 0;
+                loadData();
+            }
         }
     }
 }

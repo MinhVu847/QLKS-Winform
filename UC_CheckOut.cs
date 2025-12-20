@@ -17,8 +17,6 @@ namespace QLKS_Winform
         public UC_CheckOut()
         {
             InitializeComponent();
-            cboCustomerStatus.SelectedIndex = 0;
-            loadData();
         }
         string MaDP;
         string MaKH;
@@ -56,28 +54,44 @@ namespace QLKS_Winform
         private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string query = @"Select MaDP from DatPhong
-                                where MaKH = @MaKH and MaPhong = @MaPhong";
+                                where MaKH = @MaKH and MaPhong = @MaPhong";//truy vấn để lấy Mã đặt phòng
             MaPhong = dgvCustomer.CurrentRow.Cells["MaPhong"].Value.ToString();
             MaKH = dgvCustomer.CurrentRow.Cells["MaKH"].Value.ToString();// lấy mã khách hàng
             try
             {
                 int giaPhong = Convert.ToInt32(dgvCustomer.CurrentRow.Cells["GiaPhong"].Value);
-                double soNgay = (dtCheckOut.Value - Convert.ToDateTime(dgvCustomer.CurrentRow.Cells["NgayDat"].Value)).TotalDays;
-                TongTien = (int)(soNgay * giaPhong);
-            
+
+                // 2. Tính khoảng cách thời gian
+                TimeSpan kcach = dtCheckOut.Value - Convert.ToDateTime(dgvCustomer.CurrentRow.Cells["NgayDat"].Value);
+
+                // 3. Lấy tổng số ngày dưới dạng số thực
+                double soNgayThucTe = kcach.TotalDays;
+
+                //Làm tròn và ép sang kiểu nguyên
+                int soNgayTinhTien = (int)Math.Ceiling(soNgayThucTe);
+
+                // Đảm bảo tối thiểu là 1 ngày
+                if (soNgayTinhTien <= 0)
+                {
+                    soNgayTinhTien = 1;
+                }
+
+                // 5. Tính tổng tiền
+                TongTien = soNgayTinhTien * giaPhong;
+
                 SqlParameter[] parameters =
                 {
                     new SqlParameter("@MaKH", MaKH),
                     new SqlParameter("@MaPhong", MaPhong)
                 };
                 DataTable dt = DataProvider.ExcuteQuery(query, parameters);
-                MaDP = dt.Rows[0][0].ToString();
+                MaDP = dt.Rows[0][0].ToString();//gán MaDp cho MaDP
             }
             catch (Exception) { }
         }
         void CheckIn()
         {
-            string MaHD = AutoID.nextID("HoaDon", "MaHD", "HD", 3);
+            string MaHD = AutoID.nextID("HoaDon", "MaHD", "HD", 3);//lấy mã hóa đơn lớn nhất rồi cộng thêm 1
             if(TongTien <= 0)
             {
                 MessageBox.Show("Tổng tiền không hợp lệ!");
@@ -88,6 +102,7 @@ namespace QLKS_Winform
                 new SqlParameter("@MaHD", MaHD),
                 new SqlParameter("@NgayTra", dtCheckOut.Value),
                 new SqlParameter("@MaDP", MaDP),
+                new SqlParameter("@MaNV", ConnectionString.MaNV),
                 new SqlParameter("@MaPhong", MaPhong),
                 new SqlParameter("@MaKH", MaKH),
                 new SqlParameter("@TongTien", TongTien)
@@ -97,7 +112,7 @@ namespace QLKS_Winform
         }
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(MaDP) || string.IsNullOrEmpty(MaKH))
+            if (string.IsNullOrEmpty(MaDP) || string.IsNullOrEmpty(MaKH))//ktra xem mã khách hàng được gán chưa
             {
                 MessageBox.Show("Vui lòng chọn khách hàng cụ thể từ danh sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -105,7 +120,7 @@ namespace QLKS_Winform
             string query = @"select count(MaDP) from DatPhong
                             where MaDP = @MaDP AND NgayTra <> NULL";
             SqlParameter parameters = new SqlParameter("@MaDP", MaDP);
-            int count = (int)DataProvider.ExcuteScalar(query, parameters);
+            int count = (int)DataProvider.ExcuteScalar(query, parameters);//ktra xem phòng đấy được trả chưa
             if (count > 0)
             {
                 MessageBox.Show("Lượt đặt phòng này đã được thanh toán trước đó!", "Thông báo");
@@ -117,6 +132,15 @@ namespace QLKS_Winform
                 CheckIn();
                 MessageBox.Show("Trả phòng thành công!", "Thông báo");
                 MaDP = ""; MaKH = ""; MaPhong = ""; TongTien = 0;
+            }
+        }
+
+        private void UC_CheckOut_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)//load lại data khi visible = true trên Index
+            {
+                cboCustomerStatus.SelectedIndex = 0;
+                loadData();
             }
         }
     }

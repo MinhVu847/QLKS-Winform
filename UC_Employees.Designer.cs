@@ -291,6 +291,7 @@
             this.txtSeachID.Size = new System.Drawing.Size(239, 25);
             this.txtSeachID.TabIndex = 24;
             this.txtSeachID.TextChanged += new System.EventHandler(this.txtSeachID_TextChanged);
+            this.txtSeachID.VisibleChanged += new System.EventHandler(this.txtSeachID_VisibleChanged);
             // 
             // label1
             // 
