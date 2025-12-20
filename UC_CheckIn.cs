@@ -91,8 +91,6 @@ namespace QLKS_Winform
         }
         private void cbbRoomType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbbNumOfBeds.SelectedIndex = -1;
-            cbbRoomName.SelectedIndex = -1;
             if (cbbRoomType.Text != "" && cbbNumOfBeds.Text != "" && cbbRoomName.Text != "")
             {
                 txtPrice.Text = getPriceRoomID();
@@ -125,7 +123,7 @@ namespace QLKS_Winform
                 new SqlParameter("@TenPhong", cbbRoomName.Text)
             };
             DataTable dt = DataProvider.ExcuteQuery(Query.CheckRoom, parameters);
-            if (cbbRoomType.Text == "")//ltr
+            if (cbbRoomType.Text == "")//nếu text của cbbRoomType rỗng thì thực hiện lọc dữ liệu để tìm loại phòng còn trống 
             {
                 cbbRoomType.Items.Clear();
                 foreach (DataRow row in dt.Rows)
@@ -135,7 +133,7 @@ namespace QLKS_Winform
                         cbbRoomType.Items.Add(value);
                 }
             }
-            if (cbbNumOfBeds.Text == "")
+            if (cbbNumOfBeds.Text == "")//nếu text của cbbNumOfBeds rỗng thì thực hiện lọc dữ liệu để tìm số giường còn trống 
             {
                 cbbNumOfBeds.Items.Clear();
                 foreach (DataRow row in dt.Rows)
@@ -145,7 +143,7 @@ namespace QLKS_Winform
                         cbbNumOfBeds.Items.Add(value);
                 }
             }
-            if(cbbRoomName.Text == "")
+            if(cbbRoomName.Text == "")//nếu text của cbbRoomName rỗng thì thực hiện lọc dữ liệu để tìm loại tên phòng còn trống còn trống 
             {
                 cbbRoomName.Items.Clear();
                 foreach (DataRow row in dt.Rows)

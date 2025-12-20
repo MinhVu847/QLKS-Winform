@@ -248,6 +248,8 @@
             this.cbbRoomType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbRoomType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbRoomType.FormattingEnabled = true;
+            this.cbbRoomType.Items.AddRange(new object[] {
+            ""});
             this.cbbRoomType.Location = new System.Drawing.Point(359, 121);
             this.cbbRoomType.Margin = new System.Windows.Forms.Padding(4);
             this.cbbRoomType.Name = "cbbRoomType";
@@ -261,6 +263,8 @@
             this.cbbRoomName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbRoomName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbRoomName.FormattingEnabled = true;
+            this.cbbRoomName.Items.AddRange(new object[] {
+            ""});
             this.cbbRoomName.Location = new System.Drawing.Point(359, 257);
             this.cbbRoomName.Margin = new System.Windows.Forms.Padding(4);
             this.cbbRoomName.Name = "cbbRoomName";
@@ -338,6 +342,8 @@
             this.cbbNumOfBeds.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbNumOfBeds.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbNumOfBeds.FormattingEnabled = true;
+            this.cbbNumOfBeds.Items.AddRange(new object[] {
+            ""});
             this.cbbNumOfBeds.Location = new System.Drawing.Point(358, 184);
             this.cbbNumOfBeds.Margin = new System.Windows.Forms.Padding(4);
             this.cbbNumOfBeds.Name = "cbbNumOfBeds";
