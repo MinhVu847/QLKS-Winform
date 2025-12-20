@@ -16,7 +16,10 @@ namespace QLKS_Winform
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new login());
+            //tối ưu bộ nhớ
+            login lg = new login();
+            if(lg.ShowDialog() == DialogResult.OK)
+                Application.Run(new Index());
         }
     }
 }

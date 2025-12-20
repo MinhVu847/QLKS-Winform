@@ -17,8 +17,7 @@ namespace QLKS_Winform
         public Index()
         {
             InitializeComponent();
-            Phanquyen();
-            
+            Phanquyen();          
         }
 
         //Phân quyền
@@ -26,8 +25,9 @@ namespace QLKS_Winform
         {
             if(ConnectionString.ChucVu=="Quản lý")
             {
-                btnSting.Enabled = false;
-                btnSting.Cursor = default;
+                btnData.Enabled=false;
+                btnData.Cursor = default;
+                OffCorlor(btnData);
             }    
                                 
             else if(ConnectionString.ChucVu=="Lễ tân")
@@ -36,6 +36,8 @@ namespace QLKS_Winform
                 btnSting.Cursor = default;
                 btnAltic.Enabled = false;
                 btnAltic.Cursor = default;
+                OffCorlor(btnSting);
+                OffCorlor(btnAltic); 
             }    
             else if(ConnectionString.ChucVu=="Kế toán")
             {
@@ -45,6 +47,9 @@ namespace QLKS_Winform
                 btnChkout.Cursor = default;
                 btnSting.Enabled= false;
                 btnSting.Cursor = default;
+                OffCorlor(btnChkin);
+                OffCorlor(btnChkout);
+                OffCorlor(btnSting);
             }
             else if(ConnectionString.ChucVu=="Bảo vệ" || ConnectionString.ChucVu=="Buồng phòng")
             {
@@ -58,7 +63,18 @@ namespace QLKS_Winform
                 btnSting.Cursor = default;
                 btnAltic.Enabled=false;
                 btnAltic.Cursor = default;
+                OffCorlor(btnData);
+                OffCorlor(btnChkin);
+                OffCorlor(btnChkout);
+                OffCorlor(btnSting);
+                OffCorlor(btnAltic);
             }    
+            //quản trị- full chức năng
+        }
+        private void OffCorlor(Button bt)
+        {
+            bt.BackColor = Color.FromArgb(10, 23, 49);
+            
         }
 
         private void Index_Load(object sender, EventArgs e)
@@ -88,8 +104,6 @@ namespace QLKS_Winform
 
             // thêm form hiện ra
               
-
-
         }
 
         private void btnEx_Click(object sender, EventArgs e)
@@ -123,6 +137,14 @@ namespace QLKS_Winform
         private void btnChkout_Click(object sender, EventArgs e)
         {
             showUserControl(uC_CheckOut1);
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = new DialogResult();
+            dr = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(dr==DialogResult.Yes)
+                Application.Restart();
         }
     }
 }

@@ -17,10 +17,8 @@ namespace QLKS_Winform
     {
         public login()
         {
-            InitializeComponent();
-            
+            InitializeComponent();           
         }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             DialogResult dr = new DialogResult();
@@ -30,15 +28,12 @@ namespace QLKS_Winform
                 Application.Exit();
             }
         }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {          
             if (checklogin())
             {
-                Index id = new Index();
-                this.Hide();
-                id.ShowDialog();
-                this.Close();
+                this.DialogResult = DialogResult.OK;
+                this.Close();           
             }
             else
             {
@@ -59,14 +54,12 @@ namespace QLKS_Winform
                 ConnectionString.MaNV = txtUser.Text.Trim();
                 ConnectionString.ChucVu = dt.Rows[0]["ChucVu"].ToString();               
                 return true;
-            }
-            
+            }         
             return false;
         }
         
         private void btnEyePass_Click(object sender, EventArgs e)
-        {
-            
+        {           
             if(txtPass.UseSystemPasswordChar)
             {
                 txtPass.UseSystemPasswordChar = false;
