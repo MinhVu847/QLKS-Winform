@@ -40,6 +40,7 @@
             this.plLogo = new System.Windows.Forms.Panel();
             this.ptrLogo = new System.Windows.Forms.PictureBox();
             this.plData = new System.Windows.Forms.Panel();
+            this.uC_CheckOut1 = new QLKS_Winform.UC_CheckOut();
             this.uC_CheckIn1 = new QLKS_Winform.UC_CheckIn();
             this.uC_Employees1 = new QLKS_Winform.UC_Employees();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -237,12 +238,22 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.plData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.plData.Controls.Add(this.uC_CheckOut1);
             this.plData.Controls.Add(this.uC_CheckIn1);
             this.plData.Controls.Add(this.uC_Employees1);
             this.plData.Location = new System.Drawing.Point(230, 59);
             this.plData.Name = "plData";
             this.plData.Size = new System.Drawing.Size(1050, 574);
             this.plData.TabIndex = 1;
+            // 
+            // uC_CheckOut1
+            // 
+            this.uC_CheckOut1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_CheckOut1.Location = new System.Drawing.Point(0, 0);
+            this.uC_CheckOut1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uC_CheckOut1.Name = "uC_CheckOut1";
+            this.uC_CheckOut1.Size = new System.Drawing.Size(1050, 574);
+            this.uC_CheckOut1.TabIndex = 2;
             // 
             // uC_CheckIn1
             // 
@@ -311,5 +322,6 @@
         private UC_Employees uC_Employees1;
         private UC_CheckIn uC_CheckIn1;
         private System.Windows.Forms.Panel panel1;
+        private UC_CheckOut uC_CheckOut1;
     }
 }
