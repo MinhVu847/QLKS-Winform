@@ -91,6 +91,8 @@ namespace QLKS_Winform
         }
         private void cbbRoomType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cbbNumOfBeds.SelectedIndex = -1;
+            cbbRoomName.SelectedIndex = -1;
             if (cbbRoomType.Text != "" && cbbNumOfBeds.Text != "" && cbbRoomName.Text != "")
             {
                 txtPrice.Text = getPriceRoomID();
