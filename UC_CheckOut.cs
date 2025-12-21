@@ -117,8 +117,8 @@ namespace QLKS_Winform
                 MessageBox.Show("Vui lòng chọn khách hàng cụ thể từ danh sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            string query = @"select count(MaDP) from DatPhong
-                            where MaDP = @MaDP AND NgayTra <> NULL";
+            string query = @"SELECT COUNT(MaDP) FROM DatPhong
+                            WHERE MaDP = @MaDP AND NgayTra IS NOT NULL";
             SqlParameter parameters = new SqlParameter("@MaDP", MaDP);
             int count = (int)DataProvider.ExcuteScalar(query, parameters);//ktra xem phòng đấy được trả chưa
             if (count > 0)

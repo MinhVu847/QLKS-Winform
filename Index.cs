@@ -32,12 +32,15 @@ namespace QLKS_Winform
                                 
             else if(ConnectionString.ChucVu=="Lễ tân")
             {
+                btnData.Enabled = false;
+                btnData.Cursor = default;
                 btnSting.Enabled = false;
                 btnSting.Cursor = default;
                 btnAltic.Enabled = false;
                 btnAltic.Cursor = default;
                 OffCorlor(btnSting);
                 OffCorlor(btnAltic); 
+                OffCorlor(btnData);
             }    
             else if(ConnectionString.ChucVu=="Kế toán")
             {
