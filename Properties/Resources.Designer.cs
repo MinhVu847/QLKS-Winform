@@ -183,6 +183,16 @@ namespace QLKS_Winform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap longlogo {
+            get {
+                object obj = ResourceManager.GetObject("longlogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap online_shopping {
             get {
                 object obj = ResourceManager.GetObject("online-shopping", resourceCulture);

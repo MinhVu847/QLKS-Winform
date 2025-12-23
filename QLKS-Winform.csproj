@@ -95,6 +95,12 @@
     <Compile Include="UC_Employees.Designer.cs">
       <DependentUpon>UC_Employees.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_MyAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_MyAccount.Designer.cs">
+      <DependentUpon>UC_MyAccount.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormTest.resx">
       <DependentUpon>FormTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Employees.resx">
       <DependentUpon>UC_Employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_MyAccount.resx">
+      <DependentUpon>UC_MyAccount.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -177,6 +186,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="icon\end.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\img\longlogo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
