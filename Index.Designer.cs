@@ -42,10 +42,11 @@
             this.plLogo = new System.Windows.Forms.Panel();
             this.ptrLogo = new System.Windows.Forms.PictureBox();
             this.plData = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.uC_CheckOut1 = new QLKS_Winform.UC_CheckOut();
             this.uC_CheckIn1 = new QLKS_Winform.UC_CheckIn();
             this.uC_Employees1 = new QLKS_Winform.UC_Employees();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.uC_RoomManagement1 = new QLKS_Winform.UC_RoomManagement();
             this.plMenu.SuspendLayout();
             this.plLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptrLogo)).BeginInit();
@@ -284,6 +285,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.plData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.plData.Controls.Add(this.uC_RoomManagement1);
             this.plData.Controls.Add(this.uC_CheckOut1);
             this.plData.Controls.Add(this.uC_CheckIn1);
             this.plData.Controls.Add(this.uC_Employees1);
@@ -291,6 +293,13 @@
             this.plData.Name = "plData";
             this.plData.Size = new System.Drawing.Size(1050, 574);
             this.plData.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(230, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1050, 59);
+            this.panel1.TabIndex = 2;
             // 
             // uC_CheckOut1
             // 
@@ -323,12 +332,15 @@
             this.uC_Employees1.TabIndex = 0;
             this.uC_Employees1.Visible = false;
             // 
-            // panel1
+            // uC_RoomManagement1
             // 
-            this.panel1.Location = new System.Drawing.Point(230, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1050, 59);
-            this.panel1.TabIndex = 2;
+            this.uC_RoomManagement1.Location = new System.Drawing.Point(0, 0);
+            this.uC_RoomManagement1.Margin = new System.Windows.Forms.Padding(2);
+            this.uC_RoomManagement1.MaximumSize = new System.Drawing.Size(1050, 574);
+            this.uC_RoomManagement1.MinimumSize = new System.Drawing.Size(1050, 574);
+            this.uC_RoomManagement1.Name = "uC_RoomManagement1";
+            this.uC_RoomManagement1.Size = new System.Drawing.Size(1050, 574);
+            this.uC_RoomManagement1.TabIndex = 3;
             // 
             // Index
             // 
@@ -372,5 +384,6 @@
         private UC_CheckOut uC_CheckOut1;
         private System.Windows.Forms.Button btnAccount;
         private System.Windows.Forms.Button btnLogout;
+        private UC_RoomManagement uC_RoomManagement1;
     }
 }
