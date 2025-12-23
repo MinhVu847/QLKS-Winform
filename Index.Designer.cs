@@ -30,12 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
             this.plMenu = new System.Windows.Forms.Panel();
-            this.plLogo = new System.Windows.Forms.Panel();
-            this.plData = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.uC_CheckOut1 = new QLKS_Winform.UC_CheckOut();
-            this.uC_CheckIn1 = new QLKS_Winform.UC_CheckIn();
-            this.uC_Employees1 = new QLKS_Winform.UC_Employees();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnEx = new System.Windows.Forms.Button();
@@ -45,11 +39,17 @@
             this.btnChkin = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
             this.btnData = new System.Windows.Forms.Button();
+            this.plLogo = new System.Windows.Forms.Panel();
             this.ptrLogo = new System.Windows.Forms.PictureBox();
+            this.plData = new System.Windows.Forms.Panel();
+            this.uC_CheckOut1 = new QLKS_Winform.UC_CheckOut();
+            this.uC_CheckIn1 = new QLKS_Winform.UC_CheckIn();
+            this.uC_Employees1 = new QLKS_Winform.UC_Employees();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.plMenu.SuspendLayout();
             this.plLogo.SuspendLayout();
-            this.plData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptrLogo)).BeginInit();
+            this.plData.SuspendLayout();
             this.SuspendLayout();
             // 
             // plMenu
@@ -71,68 +71,6 @@
             this.plMenu.Name = "plMenu";
             this.plMenu.Size = new System.Drawing.Size(230, 720);
             this.plMenu.TabIndex = 0;
-            // 
-            // plLogo
-            // 
-            this.plLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
-            this.plLogo.Controls.Add(this.ptrLogo);
-            this.plLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.plLogo.Location = new System.Drawing.Point(0, 0);
-            this.plLogo.Name = "plLogo";
-            this.plLogo.Size = new System.Drawing.Size(230, 131);
-            this.plLogo.TabIndex = 0;
-            // 
-            // plData
-            // 
-            this.plData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.plData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.plData.Controls.Add(this.uC_CheckOut1);
-            this.plData.Controls.Add(this.uC_CheckIn1);
-            this.plData.Controls.Add(this.uC_Employees1);
-            this.plData.Location = new System.Drawing.Point(230, 59);
-            this.plData.Name = "plData";
-            this.plData.Size = new System.Drawing.Size(1050, 574);
-            this.plData.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(230, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1050, 59);
-            this.panel1.TabIndex = 2;
-            // 
-            // uC_CheckOut1
-            // 
-            this.uC_CheckOut1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_CheckOut1.Location = new System.Drawing.Point(0, 0);
-            this.uC_CheckOut1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uC_CheckOut1.Name = "uC_CheckOut1";
-            this.uC_CheckOut1.Size = new System.Drawing.Size(1050, 574);
-            this.uC_CheckOut1.TabIndex = 2;
-            this.uC_CheckOut1.Visible = false;
-            // 
-            // uC_CheckIn1
-            // 
-            this.uC_CheckIn1.Location = new System.Drawing.Point(0, 0);
-            this.uC_CheckIn1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uC_CheckIn1.MaximumSize = new System.Drawing.Size(1050, 574);
-            this.uC_CheckIn1.MinimumSize = new System.Drawing.Size(1050, 574);
-            this.uC_CheckIn1.Name = "uC_CheckIn1";
-            this.uC_CheckIn1.Size = new System.Drawing.Size(1050, 574);
-            this.uC_CheckIn1.TabIndex = 1;
-            this.uC_CheckIn1.Visible = false;
-            // 
-            // uC_Employees1
-            // 
-            this.uC_Employees1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_Employees1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uC_Employees1.Location = new System.Drawing.Point(0, 0);
-            this.uC_Employees1.Name = "uC_Employees1";
-            this.uC_Employees1.Size = new System.Drawing.Size(1050, 574);
-            this.uC_Employees1.TabIndex = 0;
-            this.uC_Employees1.Visible = false;
             // 
             // btnLogout
             // 
@@ -319,6 +257,16 @@
             this.btnData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnData.UseVisualStyleBackColor = true;
             // 
+            // plLogo
+            // 
+            this.plLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
+            this.plLogo.Controls.Add(this.ptrLogo);
+            this.plLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.plLogo.Location = new System.Drawing.Point(0, 0);
+            this.plLogo.Name = "plLogo";
+            this.plLogo.Size = new System.Drawing.Size(230, 131);
+            this.plLogo.TabIndex = 0;
+            // 
             // ptrLogo
             // 
             this.ptrLogo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -329,6 +277,58 @@
             this.ptrLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptrLogo.TabIndex = 0;
             this.ptrLogo.TabStop = false;
+            // 
+            // plData
+            // 
+            this.plData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.plData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.plData.Controls.Add(this.uC_CheckOut1);
+            this.plData.Controls.Add(this.uC_CheckIn1);
+            this.plData.Controls.Add(this.uC_Employees1);
+            this.plData.Location = new System.Drawing.Point(230, 59);
+            this.plData.Name = "plData";
+            this.plData.Size = new System.Drawing.Size(1050, 574);
+            this.plData.TabIndex = 1;
+            // 
+            // uC_CheckOut1
+            // 
+            this.uC_CheckOut1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_CheckOut1.Location = new System.Drawing.Point(0, 0);
+            this.uC_CheckOut1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uC_CheckOut1.Name = "uC_CheckOut1";
+            this.uC_CheckOut1.Size = new System.Drawing.Size(1050, 574);
+            this.uC_CheckOut1.TabIndex = 2;
+            this.uC_CheckOut1.Visible = false;
+            // 
+            // uC_CheckIn1
+            // 
+            this.uC_CheckIn1.Location = new System.Drawing.Point(0, 0);
+            this.uC_CheckIn1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uC_CheckIn1.MaximumSize = new System.Drawing.Size(1050, 574);
+            this.uC_CheckIn1.MinimumSize = new System.Drawing.Size(1050, 574);
+            this.uC_CheckIn1.Name = "uC_CheckIn1";
+            this.uC_CheckIn1.Size = new System.Drawing.Size(1050, 574);
+            this.uC_CheckIn1.TabIndex = 1;
+            this.uC_CheckIn1.Visible = false;
+            // 
+            // uC_Employees1
+            // 
+            this.uC_Employees1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_Employees1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uC_Employees1.Location = new System.Drawing.Point(0, 0);
+            this.uC_Employees1.Name = "uC_Employees1";
+            this.uC_Employees1.Size = new System.Drawing.Size(1050, 574);
+            this.uC_Employees1.TabIndex = 0;
+            this.uC_Employees1.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(230, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1050, 59);
+            this.panel1.TabIndex = 2;
             // 
             // Index
             // 
@@ -347,8 +347,8 @@
             this.Load += new System.EventHandler(this.Index_Load);
             this.plMenu.ResumeLayout(false);
             this.plLogo.ResumeLayout(false);
-            this.plData.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptrLogo)).EndInit();
+            this.plData.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
