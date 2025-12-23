@@ -296,7 +296,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(252, 74);
+            this.label10.Location = new System.Drawing.Point(346, 105);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 17);
@@ -306,30 +306,31 @@
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(254, 90);
+            this.textBox6.Location = new System.Drawing.Point(348, 121);
             this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(111, 25);
+            this.textBox6.Size = new System.Drawing.Size(160, 25);
             this.textBox6.TabIndex = 71;
             // 
             // comboBox2
             // 
+            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Đơn",
             "Đôi",
             "Ba"});
-            this.comboBox2.Location = new System.Drawing.Point(128, 90);
+            this.comboBox2.Location = new System.Drawing.Point(79, 121);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(111, 21);
+            this.comboBox2.Size = new System.Drawing.Size(158, 25);
             this.comboBox2.TabIndex = 69;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(126, 74);
+            this.label9.Location = new System.Drawing.Point(77, 105);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(116, 17);
@@ -338,6 +339,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Tiêu Chuẩn",
@@ -347,7 +349,7 @@
             this.comboBox1.Location = new System.Drawing.Point(330, 34);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(111, 21);
+            this.comboBox1.Size = new System.Drawing.Size(111, 25);
             this.comboBox1.TabIndex = 67;
             // 
             // label8
