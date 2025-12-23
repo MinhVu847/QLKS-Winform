@@ -25,22 +25,22 @@ namespace QLKS_Winform
         {
             if(ConnectionString.ChucVu=="Quản lý")
             {
-                btnData.Enabled=false;
-                btnData.Cursor = default;
-                OffCorlor(btnData);
+                btnRoomManage.Enabled=false;
+                btnRoomManage.Cursor = default;
+                OffCorlor(btnRoomManage);
             }    
                                 
             else if(ConnectionString.ChucVu=="Lễ tân")
             {
-                btnData.Enabled = false;
-                btnData.Cursor = default;
+                btnRoomManage.Enabled = false;
+                btnRoomManage.Cursor = default;
                 btnSting.Enabled = false;
                 btnSting.Cursor = default;
                 btnAltic.Enabled = false;
                 btnAltic.Cursor = default;
                 OffCorlor(btnSting);
                 OffCorlor(btnAltic); 
-                OffCorlor(btnData);
+                OffCorlor(btnRoomManage);
             }
             else if(ConnectionString.ChucVu=="Kế toán")
             {
@@ -56,8 +56,8 @@ namespace QLKS_Winform
             }
             else if(ConnectionString.ChucVu=="Bảo vệ" || ConnectionString.ChucVu=="Buồng phòng")
             {
-                btnData.Enabled = false;
-                btnData.Cursor = default;
+                btnRoomManage.Enabled = false;
+                btnRoomManage.Cursor = default;
                 btnChkin.Enabled = false;
                 btnChkin.Cursor = default;
                 btnChkout.Enabled = false;
@@ -66,7 +66,7 @@ namespace QLKS_Winform
                 btnSting.Cursor = default;
                 btnAltic.Enabled=false;
                 btnAltic.Cursor = default;
-                OffCorlor(btnData);
+                OffCorlor(btnRoomManage);
                 OffCorlor(btnChkin);
                 OffCorlor(btnChkout);
                 OffCorlor(btnSting);
@@ -82,7 +82,7 @@ namespace QLKS_Winform
 
         private void Index_Load(object sender, EventArgs e)
         {
-            btnData.Click += Button_Click;
+            btnRoomManage.Click += Button_Click;
             btnAltic.Click += Button_Click;
             btnChkin.Click += Button_Click;
             btnChkout.Click += Button_Click;
@@ -148,6 +148,11 @@ namespace QLKS_Winform
             dr = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(dr==DialogResult.Yes)
                 Application.Restart();
+        }
+
+        private void btnRoomManage_Click(object sender, EventArgs e)
+        {
+            showUserControl(uC_RoomManagement1);
         }
     }
 }
