@@ -41,7 +41,7 @@ namespace QLKS_Winform
                 OffCorlor(btnSting);
                 OffCorlor(btnAltic); 
                 OffCorlor(btnData);
-            }    
+            }
             else if(ConnectionString.ChucVu=="Kế toán")
             {
                 btnChkin.Enabled= false;
