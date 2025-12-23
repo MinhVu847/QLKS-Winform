@@ -38,14 +38,15 @@
             this.btnChkout = new System.Windows.Forms.Button();
             this.btnChkin = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
-            this.btnData = new System.Windows.Forms.Button();
+            this.btnRoomManage = new System.Windows.Forms.Button();
             this.plLogo = new System.Windows.Forms.Panel();
             this.ptrLogo = new System.Windows.Forms.PictureBox();
             this.plData = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.uC_RoomManagement1 = new QLKS_Winform.UC_RoomManagement();
             this.uC_CheckOut1 = new QLKS_Winform.UC_CheckOut();
             this.uC_CheckIn1 = new QLKS_Winform.UC_CheckIn();
             this.uC_Employees1 = new QLKS_Winform.UC_Employees();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.plMenu.SuspendLayout();
             this.plLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptrLogo)).BeginInit();
@@ -65,7 +66,7 @@
             this.plMenu.Controls.Add(this.btnChkout);
             this.plMenu.Controls.Add(this.btnChkin);
             this.plMenu.Controls.Add(this.btnFind);
-            this.plMenu.Controls.Add(this.btnData);
+            this.plMenu.Controls.Add(this.btnRoomManage);
             this.plMenu.Controls.Add(this.plLogo);
             this.plMenu.Location = new System.Drawing.Point(0, 0);
             this.plMenu.Name = "plMenu";
@@ -237,25 +238,26 @@
             this.btnFind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFind.UseVisualStyleBackColor = true;
             // 
-            // btnData
+            // btnRoomManage
             // 
-            this.btnData.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnData.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnData.FlatAppearance.BorderSize = 0;
-            this.btnData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnData.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnData.ForeColor = System.Drawing.Color.White;
-            this.btnData.Image = global::QLKS_Winform.Properties.Resources.dataprovider;
-            this.btnData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnData.Location = new System.Drawing.Point(0, 131);
-            this.btnData.Name = "btnData";
-            this.btnData.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnData.Size = new System.Drawing.Size(230, 60);
-            this.btnData.TabIndex = 1;
-            this.btnData.Text = " Guest data";
-            this.btnData.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnData.UseVisualStyleBackColor = true;
+            this.btnRoomManage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRoomManage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRoomManage.FlatAppearance.BorderSize = 0;
+            this.btnRoomManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRoomManage.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoomManage.ForeColor = System.Drawing.Color.White;
+            this.btnRoomManage.Image = global::QLKS_Winform.Properties.Resources.dataprovider;
+            this.btnRoomManage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRoomManage.Location = new System.Drawing.Point(0, 131);
+            this.btnRoomManage.Name = "btnRoomManage";
+            this.btnRoomManage.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnRoomManage.Size = new System.Drawing.Size(230, 60);
+            this.btnRoomManage.TabIndex = 1;
+            this.btnRoomManage.Text = "Room Management";
+            this.btnRoomManage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRoomManage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRoomManage.UseVisualStyleBackColor = true;
+            this.btnRoomManage.Click += new System.EventHandler(this.btnRoomManage_Click);
             // 
             // plLogo
             // 
@@ -284,6 +286,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.plData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.plData.Controls.Add(this.uC_RoomManagement1);
             this.plData.Controls.Add(this.uC_CheckOut1);
             this.plData.Controls.Add(this.uC_CheckIn1);
             this.plData.Controls.Add(this.uC_Employees1);
@@ -291,6 +294,24 @@
             this.plData.Name = "plData";
             this.plData.Size = new System.Drawing.Size(1050, 574);
             this.plData.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(230, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1050, 59);
+            this.panel1.TabIndex = 2;
+            // 
+            // uC_RoomManagement1
+            // 
+            this.uC_RoomManagement1.Location = new System.Drawing.Point(0, 0);
+            this.uC_RoomManagement1.Margin = new System.Windows.Forms.Padding(2);
+            this.uC_RoomManagement1.MaximumSize = new System.Drawing.Size(1050, 574);
+            this.uC_RoomManagement1.MinimumSize = new System.Drawing.Size(1050, 574);
+            this.uC_RoomManagement1.Name = "uC_RoomManagement1";
+            this.uC_RoomManagement1.Size = new System.Drawing.Size(1050, 574);
+            this.uC_RoomManagement1.TabIndex = 4;
+            this.uC_RoomManagement1.Visible = false;
             // 
             // uC_CheckOut1
             // 
@@ -323,16 +344,9 @@
             this.uC_Employees1.TabIndex = 0;
             this.uC_Employees1.Visible = false;
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(230, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1050, 59);
-            this.panel1.TabIndex = 2;
-            // 
             // Index
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.panel1);
@@ -357,7 +371,7 @@
 
         private System.Windows.Forms.Panel plMenu;
         private System.Windows.Forms.Panel plData;
-        private System.Windows.Forms.Button btnData;
+        private System.Windows.Forms.Button btnRoomManage;
         private System.Windows.Forms.Button btnSting;
         private System.Windows.Forms.Button btnAltic;
         private System.Windows.Forms.Button btnChkout;
@@ -372,5 +386,6 @@
         private UC_CheckOut uC_CheckOut1;
         private System.Windows.Forms.Button btnAccount;
         private System.Windows.Forms.Button btnLogout;
+        private UC_RoomManagement uC_RoomManagement1;
     }
 }
