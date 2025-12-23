@@ -101,6 +101,12 @@
     <Compile Include="UC_MyAccount.Designer.cs">
       <DependentUpon>UC_MyAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_RoomManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_RoomManagement.Designer.cs">
+      <DependentUpon>UC_RoomManagement.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormTest.resx">
       <DependentUpon>FormTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_MyAccount.resx">
       <DependentUpon>UC_MyAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_RoomManagement.resx">
+      <DependentUpon>UC_RoomManagement.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
