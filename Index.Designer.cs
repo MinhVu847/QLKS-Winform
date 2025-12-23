@@ -47,6 +47,7 @@
             this.uC_CheckOut1 = new QLKS_Winform.UC_CheckOut();
             this.uC_CheckIn1 = new QLKS_Winform.UC_CheckIn();
             this.uC_Employees1 = new QLKS_Winform.UC_Employees();
+            this.uC_MyAccount1 = new QLKS_Winform.UC_MyAccount();
             this.plMenu.SuspendLayout();
             this.plLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptrLogo)).BeginInit();
@@ -113,6 +114,7 @@
             this.btnAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAccount.UseVisualStyleBackColor = true;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // btnEx
             // 
@@ -286,6 +288,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.plData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.plData.Controls.Add(this.uC_MyAccount1);
             this.plData.Controls.Add(this.uC_RoomManagement1);
             this.plData.Controls.Add(this.uC_CheckOut1);
             this.plData.Controls.Add(this.uC_CheckIn1);
@@ -344,6 +347,13 @@
             this.uC_Employees1.TabIndex = 0;
             this.uC_Employees1.Visible = false;
             // 
+            // uC_MyAccount1
+            // 
+            this.uC_MyAccount1.Location = new System.Drawing.Point(0, 0);
+            this.uC_MyAccount1.Name = "uC_MyAccount1";
+            this.uC_MyAccount1.Size = new System.Drawing.Size(1050, 574);
+            this.uC_MyAccount1.TabIndex = 5;
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -387,5 +397,6 @@
         private System.Windows.Forms.Button btnAccount;
         private System.Windows.Forms.Button btnLogout;
         private UC_RoomManagement uC_RoomManagement1;
+        private UC_MyAccount uC_MyAccount1;
     }
 }

@@ -154,5 +154,10 @@ namespace QLKS_Winform
         {
             showUserControl(uC_RoomManagement1);
         }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            showUserControl(uC_MyAccount1);
+        }
     }
 }
