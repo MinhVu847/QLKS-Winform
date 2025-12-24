@@ -34,18 +34,18 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvResult = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnFindPhone = new System.Windows.Forms.Button();
             this.btnFindName = new System.Windows.Forms.Button();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnFindCCCD = new System.Windows.Forms.Button();
             this.txtCCCD = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +75,7 @@
             this.btnFindID.TabIndex = 67;
             this.btnFindID.Text = "Find";
             this.btnFindID.UseVisualStyleBackColor = false;
+            this.btnFindID.Click += new System.EventHandler(this.btnFindID_Click);
             // 
             // label10
             // 
@@ -111,7 +112,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dgvResult);
             this.groupBox1.Location = new System.Drawing.Point(216, 86);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(831, 471);
@@ -119,19 +120,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Result:";
             // 
-            // dataGridView1
+            // dgvResult
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 21);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(825, 447);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvResult.Location = new System.Drawing.Point(3, 21);
+            this.dgvResult.Name = "dgvResult";
+            this.dgvResult.ReadOnly = true;
+            this.dgvResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvResult.Size = new System.Drawing.Size(825, 447);
+            this.dgvResult.TabIndex = 0;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btnFindCCCD);
             this.groupBox2.Controls.Add(this.txtCCCD);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.btnFindPhone);
@@ -163,6 +166,7 @@
             this.btnFindPhone.TabIndex = 84;
             this.btnFindPhone.Text = "Find";
             this.btnFindPhone.UseVisualStyleBackColor = false;
+            this.btnFindPhone.Click += new System.EventHandler(this.btnFindPhone_Click);
             // 
             // btnFindName
             // 
@@ -177,6 +181,7 @@
             this.btnFindName.TabIndex = 83;
             this.btnFindName.Text = "Find";
             this.btnFindName.UseVisualStyleBackColor = false;
+            this.btnFindName.Click += new System.EventHandler(this.btnFindName_Click);
             // 
             // txtPhone
             // 
@@ -205,19 +210,20 @@
             this.txtId.Size = new System.Drawing.Size(174, 25);
             this.txtId.TabIndex = 80;
             // 
-            // button1
+            // btnFindCCCD
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(108, 425);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 29);
-            this.button1.TabIndex = 87;
-            this.button1.Text = "Find";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnFindCCCD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
+            this.btnFindCCCD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFindCCCD.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindCCCD.ForeColor = System.Drawing.Color.White;
+            this.btnFindCCCD.Location = new System.Drawing.Point(108, 425);
+            this.btnFindCCCD.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFindCCCD.Name = "btnFindCCCD";
+            this.btnFindCCCD.Size = new System.Drawing.Size(77, 29);
+            this.btnFindCCCD.TabIndex = 87;
+            this.btnFindCCCD.Text = "Find";
+            this.btnFindCCCD.UseVisualStyleBackColor = false;
+            this.btnFindCCCD.Click += new System.EventHandler(this.btnFindCCCD_Click);
             // 
             // txtCCCD
             // 
@@ -251,7 +257,7 @@
             this.Name = "Find_Client";
             this.Size = new System.Drawing.Size(1050, 574);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -270,10 +276,10 @@
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvResult;
         private System.Windows.Forms.Button btnFindPhone;
         private System.Windows.Forms.Button btnFindName;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFindCCCD;
         private System.Windows.Forms.TextBox txtCCCD;
         private System.Windows.Forms.Label label2;
     }
