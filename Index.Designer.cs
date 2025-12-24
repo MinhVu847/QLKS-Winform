@@ -240,6 +240,7 @@
             this.btnFind.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // btnRoomManage
             // 

@@ -1,6 +1,6 @@
 ﻿namespace QLKS_Winform
 {
-    partial class Find_Client
+    partial class UC_FindClient
     {
         /// <summary> 
         /// Required designer variable.
@@ -245,7 +245,7 @@
             this.label2.TabIndex = 85;
             this.label2.Text = "CCCD: ";
             // 
-            // Find_Client
+            // UC_FindClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -254,7 +254,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Find_Client";
+            this.Name = "UC_FindClient";
             this.Size = new System.Drawing.Size(1050, 574);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).EndInit();

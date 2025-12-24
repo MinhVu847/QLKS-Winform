@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace QLKS_Winform
 {
-    public partial class Find_Client : UserControl
+    public partial class UC_FindClient : UserControl
     {
-        public Find_Client()
+        public UC_FindClient()
         {
             InitializeComponent();
         }
-
+ 
         // Hàm dùng chung để thực hiện tìm kiếm
         // cot: Tên cột trong DB (VD: k.MaKH, k.SDT)
         // giaTriTim: Giá trị người dùng nhập vào

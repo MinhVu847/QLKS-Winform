@@ -159,5 +159,10 @@ namespace QLKS_Winform
         {
             showUserControl(uC_MyAccount1);
         }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            showUserControl();
+        }
     }
 }
