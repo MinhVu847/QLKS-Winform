@@ -79,19 +79,19 @@
             // 
             // txtUser
             // 
-            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUser.Location = new System.Drawing.Point(101, 198);
             this.txtUser.Name = "txtUser";
             this.txtUser.ReadOnly = true;
-            this.txtUser.Size = new System.Drawing.Size(212, 25);
+            this.txtUser.Size = new System.Drawing.Size(212, 27);
             this.txtUser.TabIndex = 3;
             // 
             // txtPass
             // 
-            this.txtPass.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.Location = new System.Drawing.Point(412, 327);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(210, 25);
+            this.txtPass.Size = new System.Drawing.Size(210, 27);
             this.txtPass.TabIndex = 4;
             // 
             // btnUpdate
@@ -126,10 +126,10 @@
             // 
             // txtCurrentPass
             // 
-            this.txtCurrentPass.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCurrentPass.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCurrentPass.Location = new System.Drawing.Point(101, 327);
             this.txtCurrentPass.Name = "txtCurrentPass";
-            this.txtCurrentPass.Size = new System.Drawing.Size(216, 25);
+            this.txtCurrentPass.Size = new System.Drawing.Size(216, 27);
             this.txtCurrentPass.TabIndex = 9;
             // 
             // label4
@@ -148,7 +148,7 @@
             this.pictureBox1.Image = global::QLKS_Winform.Properties.Resources.longlogo;
             this.pictureBox1.Location = new System.Drawing.Point(723, 72);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(326, 502);
+            this.pictureBox1.Size = new System.Drawing.Size(326, 499);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
