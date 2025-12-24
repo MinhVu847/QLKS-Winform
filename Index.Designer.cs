@@ -49,6 +49,7 @@
             this.uC_Employees1 = new QLKS_Winform.UC_Employees();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.uC_FindClient1 = new QLKS_Winform.UC_FindClient();
             this.plMenu.SuspendLayout();
             this.plLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptrLogo)).BeginInit();
@@ -290,6 +291,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.plData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.plData.Controls.Add(this.uC_FindClient1);
             this.plData.Controls.Add(this.uC_MyAccount1);
             this.plData.Controls.Add(this.uC_RoomManagement1);
             this.plData.Controls.Add(this.uC_CheckOut1);
@@ -366,6 +368,17 @@
             this.panel2.Size = new System.Drawing.Size(1050, 87);
             this.panel2.TabIndex = 3;
             // 
+            // uC_FindClient1
+            // 
+            this.uC_FindClient1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_FindClient1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uC_FindClient1.Location = new System.Drawing.Point(0, 0);
+            this.uC_FindClient1.Margin = new System.Windows.Forms.Padding(4);
+            this.uC_FindClient1.Name = "uC_FindClient1";
+            this.uC_FindClient1.Size = new System.Drawing.Size(1050, 574);
+            this.uC_FindClient1.TabIndex = 6;
+            this.uC_FindClient1.Visible = false;
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -376,6 +389,7 @@
             this.Controls.Add(this.plData);
             this.Controls.Add(this.plMenu);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Index";
@@ -412,5 +426,6 @@
         private UC_RoomManagement uC_RoomManagement1;
         private UC_MyAccount uC_MyAccount1;
         private System.Windows.Forms.Panel panel2;
+        private UC_FindClient uC_FindClient1;
     }
 }

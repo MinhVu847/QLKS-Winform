@@ -162,7 +162,7 @@ namespace QLKS_Winform
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            showUserControl();
+            showUserControl(uC_FindClient1);
         }
     }
 }
