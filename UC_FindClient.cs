@@ -16,5 +16,7 @@ namespace QLKS_Winform
         {
             InitializeComponent();
         }
+
+
     }
 }

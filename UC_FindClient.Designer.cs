@@ -29,16 +29,21 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCheckIn = new System.Windows.Forms.Button();
+            this.btnFindID = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnFindPhone = new System.Windows.Forms.Button();
+            this.btnFindName = new System.Windows.Forms.Button();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtCCCD = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -57,19 +62,19 @@
             this.label1.Text = "Find Client";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnCheckIn
+            // btnFindID
             // 
-            this.btnCheckIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
-            this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckIn.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckIn.ForeColor = System.Drawing.Color.White;
-            this.btnCheckIn.Location = new System.Drawing.Point(193, 392);
-            this.btnCheckIn.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCheckIn.Name = "btnCheckIn";
-            this.btnCheckIn.Size = new System.Drawing.Size(129, 39);
-            this.btnCheckIn.TabIndex = 67;
-            this.btnCheckIn.Text = "Find";
-            this.btnCheckIn.UseVisualStyleBackColor = false;
+            this.btnFindID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
+            this.btnFindID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFindID.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindID.ForeColor = System.Drawing.Color.White;
+            this.btnFindID.Location = new System.Drawing.Point(108, 99);
+            this.btnFindID.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFindID.Name = "btnFindID";
+            this.btnFindID.Size = new System.Drawing.Size(77, 32);
+            this.btnFindID.TabIndex = 67;
+            this.btnFindID.Text = "Find";
+            this.btnFindID.UseVisualStyleBackColor = false;
             // 
             // label10
             // 
@@ -86,7 +91,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(8, 109);
+            this.label11.Location = new System.Drawing.Point(8, 139);
             this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(48, 17);
@@ -97,19 +102,19 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(8, 194);
+            this.label12.Location = new System.Drawing.Point(8, 249);
             this.label12.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 17);
+            this.label12.Size = new System.Drawing.Size(75, 17);
             this.label12.TabIndex = 79;
-            this.label12.Text = "Phone: ";
+            this.label12.Text = "Phone no: ";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(391, 86);
+            this.groupBox1.Location = new System.Drawing.Point(216, 86);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(639, 450);
+            this.groupBox1.Size = new System.Drawing.Size(831, 471);
             this.groupBox1.TabIndex = 80;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Result:";
@@ -121,51 +126,118 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 21);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(633, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(825, 447);
             this.dataGridView1.TabIndex = 0;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.txtCCCD);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.btnFindPhone);
+            this.groupBox2.Controls.Add(this.btnFindName);
+            this.groupBox2.Controls.Add(this.txtPhone);
+            this.groupBox2.Controls.Add(this.txtName);
+            this.groupBox2.Controls.Add(this.txtId);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.btnCheckIn);
-            this.groupBox2.Location = new System.Drawing.Point(27, 86);
+            this.groupBox2.Controls.Add(this.btnFindID);
+            this.groupBox2.Location = new System.Drawing.Point(6, 86);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(339, 450);
+            this.groupBox2.Size = new System.Drawing.Size(204, 471);
             this.groupBox2.TabIndex = 81;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Input infomation:";
             // 
-            // textBox3
+            // btnFindPhone
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(11, 226);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(212, 25);
-            this.textBox3.TabIndex = 82;
+            this.btnFindPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
+            this.btnFindPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFindPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindPhone.ForeColor = System.Drawing.Color.White;
+            this.btnFindPhone.Location = new System.Drawing.Point(108, 315);
+            this.btnFindPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFindPhone.Name = "btnFindPhone";
+            this.btnFindPhone.Size = new System.Drawing.Size(77, 33);
+            this.btnFindPhone.TabIndex = 84;
+            this.btnFindPhone.Text = "Find";
+            this.btnFindPhone.UseVisualStyleBackColor = false;
             // 
-            // textBox2
+            // btnFindName
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(11, 143);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(212, 25);
-            this.textBox2.TabIndex = 81;
+            this.btnFindName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
+            this.btnFindName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFindName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindName.ForeColor = System.Drawing.Color.White;
+            this.btnFindName.Location = new System.Drawing.Point(108, 207);
+            this.btnFindName.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFindName.Name = "btnFindName";
+            this.btnFindName.Size = new System.Drawing.Size(77, 29);
+            this.btnFindName.TabIndex = 83;
+            this.btnFindName.Text = "Find";
+            this.btnFindName.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // txtPhone
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(11, 65);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 25);
-            this.textBox1.TabIndex = 80;
+            this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(11, 281);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(5);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(174, 25);
+            this.txtPhone.TabIndex = 82;
+            // 
+            // txtName
+            // 
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(11, 173);
+            this.txtName.Margin = new System.Windows.Forms.Padding(5);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(174, 25);
+            this.txtName.TabIndex = 81;
+            // 
+            // txtId
+            // 
+            this.txtId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(11, 65);
+            this.txtId.Margin = new System.Windows.Forms.Padding(5);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(174, 25);
+            this.txtId.TabIndex = 80;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(108, 425);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(77, 29);
+            this.button1.TabIndex = 87;
+            this.button1.Text = "Find";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // txtCCCD
+            // 
+            this.txtCCCD.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCCCD.Location = new System.Drawing.Point(11, 396);
+            this.txtCCCD.Margin = new System.Windows.Forms.Padding(5);
+            this.txtCCCD.Name = "txtCCCD";
+            this.txtCCCD.Size = new System.Drawing.Size(174, 25);
+            this.txtCCCD.TabIndex = 86;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(8, 364);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 17);
+            this.label2.TabIndex = 85;
+            this.label2.Text = "CCCD: ";
             // 
             // Find_Client
             // 
@@ -189,15 +261,20 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnCheckIn;
+        private System.Windows.Forms.Button btnFindID;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnFindPhone;
+        private System.Windows.Forms.Button btnFindName;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtCCCD;
+        private System.Windows.Forms.Label label2;
     }
 }
