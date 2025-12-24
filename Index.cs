@@ -89,6 +89,7 @@ namespace QLKS_Winform
             btnEx.Click += Button_Click;
             btnFind.Click += Button_Click;
             btnSting.Click += Button_Click;
+            btnAccount.Click += Button_Click;
         }
         private void Button_Click(object sender, EventArgs e)
         {
