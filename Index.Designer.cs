@@ -236,7 +236,7 @@
             this.btnFind.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnFind.Size = new System.Drawing.Size(230, 60);
             this.btnFind.TabIndex = 2;
-            this.btnFind.Text = " Find";
+            this.btnFind.Text = " Find Client";
             this.btnFind.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFind.UseVisualStyleBackColor = true;
@@ -256,7 +256,7 @@
             this.btnRoomManage.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnRoomManage.Size = new System.Drawing.Size(230, 60);
             this.btnRoomManage.TabIndex = 1;
-            this.btnRoomManage.Text = "Room Management";
+            this.btnRoomManage.Text = " Room Management";
             this.btnRoomManage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRoomManage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRoomManage.UseVisualStyleBackColor = true;

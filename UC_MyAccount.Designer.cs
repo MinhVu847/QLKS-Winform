@@ -51,7 +51,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1050, 72);
             this.label1.TabIndex = 0;
-            this.label1.Text = "My account";
+            this.label1.Text = "My Account";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -148,7 +148,7 @@
             this.pictureBox1.Image = global::QLKS_Winform.Properties.Resources.longlogo;
             this.pictureBox1.Location = new System.Drawing.Point(723, 72);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(326, 499);
+            this.pictureBox1.Size = new System.Drawing.Size(326, 502);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
