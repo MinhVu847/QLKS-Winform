@@ -54,6 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionString.cs" />
+    <Compile Include="UC_FindClient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_FindClient.Designer.cs">
+      <DependentUpon>UC_FindClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     <Compile Include="UC_RoomManagement.Designer.cs">
       <DependentUpon>UC_RoomManagement.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UC_FindClient.resx">
+      <DependentUpon>UC_FindClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTest.resx">
       <DependentUpon>FormTest.cs</DependentUpon>
     </EmbeddedResource>
