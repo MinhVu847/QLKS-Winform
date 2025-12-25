@@ -90,5 +90,9 @@ namespace QLKS_Winform.QuerySQL
                                               AND (@DiaChi = '' OR DiaChi LIKE '%' + @DiaChi + '%')
                                               AND (@CCCD = '' OR CCCD LIKE '%' + @CCCD + '%')
                                               AND (@SDT = '' OR SDT LIKE '%' + @SDT + '%');";
+
+        //Thêm phòng
+        public static string AddRoom = @"insert into Phong(MaPhong, TenPhong, LoaiPhong, SoGiuong, TrangThai, GiaPhong)
+values (@MaPhong, @TenPhong, @LoaiPhong, @SoGiuong, @TrangThai, @GiaPhong);";
     }
 }

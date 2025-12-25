@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionString.cs" />
+    <Compile Include="QuerySQL\IsDuplicateID.cs" />
     <Compile Include="UC_Analytics.cs">
       <SubType>UserControl</SubType>
     </Compile>
