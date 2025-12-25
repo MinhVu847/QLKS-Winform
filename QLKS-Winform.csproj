@@ -54,7 +54,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionString.cs" />
+    <Compile Include="dsRevenue.cs">
+      <DependentUpon>dsRevenue.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsRevenue.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRevenue.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QuerySQL\IsDuplicateID.cs" />
+    <Compile Include="rptRevenue.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptRevenue.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UC_Analytics.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +134,10 @@
     <Compile Include="UC_RoomManagement.Designer.cs">
       <DependentUpon>UC_RoomManagement.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="rptRevenue.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRevenue.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_Analytics.resx">
       <DependentUpon>UC_Analytics.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +178,17 @@
     <EmbeddedResource Include="UC_RoomManagement.resx">
       <DependentUpon>UC_RoomManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="dsRevenue.xsc">
+      <DependentUpon>dsRevenue.xsd</DependentUpon>
+    </None>
+    <None Include="dsRevenue.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRevenue.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsRevenue.xss">
+      <DependentUpon>dsRevenue.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -217,6 +246,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\img\longlogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
