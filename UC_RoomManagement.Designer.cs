@@ -47,7 +47,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtClear = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtSeachNumOfBeds = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cbbSeachRoomType = new System.Windows.Forms.ComboBox();
@@ -58,6 +57,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dgvRoom = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbbStatus = new System.Windows.Forms.ComboBox();
+            this.cbbPrice = new System.Windows.Forms.ComboBox();
             this.grbRoomManage.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).BeginInit();
@@ -85,7 +87,7 @@
             this.txtRoomID.Location = new System.Drawing.Point(57, 55);
             this.txtRoomID.Margin = new System.Windows.Forms.Padding(2);
             this.txtRoomID.Name = "txtRoomID";
-            this.txtRoomID.Size = new System.Drawing.Size(212, 30);
+            this.txtRoomID.Size = new System.Drawing.Size(212, 26);
             this.txtRoomID.TabIndex = 1;
             // 
             // txtRoomName
@@ -94,7 +96,7 @@
             this.txtRoomName.Location = new System.Drawing.Point(57, 121);
             this.txtRoomName.Margin = new System.Windows.Forms.Padding(2);
             this.txtRoomName.Name = "txtRoomName";
-            this.txtRoomName.Size = new System.Drawing.Size(212, 30);
+            this.txtRoomName.Size = new System.Drawing.Size(212, 26);
             this.txtRoomName.TabIndex = 2;
             // 
             // label2
@@ -104,7 +106,7 @@
             this.label2.Location = new System.Drawing.Point(54, 36);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 23);
+            this.label2.Size = new System.Drawing.Size(66, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Room ID:";
             // 
@@ -115,7 +117,7 @@
             this.label3.Location = new System.Drawing.Point(54, 102);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 23);
+            this.label3.Size = new System.Drawing.Size(88, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Room Name:";
             // 
@@ -126,7 +128,7 @@
             this.label4.Location = new System.Drawing.Point(54, 180);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 23);
+            this.label4.Size = new System.Drawing.Size(81, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "Room Type:";
             // 
@@ -137,7 +139,7 @@
             this.label5.Location = new System.Drawing.Point(54, 262);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(151, 23);
+            this.label5.Size = new System.Drawing.Size(116, 17);
             this.label5.TabIndex = 7;
             this.label5.Text = "Number of Beds: ";
             // 
@@ -148,7 +150,7 @@
             this.label6.Location = new System.Drawing.Point(54, 343);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 23);
+            this.label6.Size = new System.Drawing.Size(42, 17);
             this.label6.TabIndex = 8;
             this.label6.Text = "Price:";
             // 
@@ -158,7 +160,7 @@
             this.txtPirce.Location = new System.Drawing.Point(57, 362);
             this.txtPirce.Margin = new System.Windows.Forms.Padding(2);
             this.txtPirce.Name = "txtPirce";
-            this.txtPirce.Size = new System.Drawing.Size(212, 30);
+            this.txtPirce.Size = new System.Drawing.Size(212, 26);
             this.txtPirce.TabIndex = 10;
             this.txtPirce.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPirce_KeyPress);
             // 
@@ -218,7 +220,7 @@
             this.cbbRoomType.Location = new System.Drawing.Point(57, 199);
             this.cbbRoomType.Margin = new System.Windows.Forms.Padding(2);
             this.cbbRoomType.Name = "cbbRoomType";
-            this.cbbRoomType.Size = new System.Drawing.Size(212, 31);
+            this.cbbRoomType.Size = new System.Drawing.Size(212, 27);
             this.cbbRoomType.TabIndex = 62;
             // 
             // cbbNumberOfBeds
@@ -232,7 +234,7 @@
             this.cbbNumberOfBeds.Location = new System.Drawing.Point(57, 281);
             this.cbbNumberOfBeds.Margin = new System.Windows.Forms.Padding(2);
             this.cbbNumberOfBeds.Name = "cbbNumberOfBeds";
-            this.cbbNumberOfBeds.Size = new System.Drawing.Size(212, 31);
+            this.cbbNumberOfBeds.Size = new System.Drawing.Size(212, 27);
             this.cbbNumberOfBeds.TabIndex = 63;
             // 
             // grbRoomManage
@@ -263,9 +265,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbbPrice);
+            this.groupBox2.Controls.Add(this.cbbStatus);
+            this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txtClear);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.txtPrice);
             this.groupBox2.Controls.Add(this.txtSeachNumOfBeds);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.cbbSeachRoomType);
@@ -302,21 +306,12 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(355, 78);
+            this.label10.Location = new System.Drawing.Point(244, 78);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 23);
+            this.label10.Size = new System.Drawing.Size(42, 17);
             this.label10.TabIndex = 70;
             this.label10.Text = "Price:";
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(357, 94);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(160, 29);
-            this.txtPrice.TabIndex = 71;
             // 
             // txtSeachNumOfBeds
             // 
@@ -326,20 +321,20 @@
             "Đơn",
             "Đôi",
             "Ba"});
-            this.txtSeachNumOfBeds.Location = new System.Drawing.Point(159, 94);
+            this.txtSeachNumOfBeds.Location = new System.Drawing.Point(61, 94);
             this.txtSeachNumOfBeds.Margin = new System.Windows.Forms.Padding(2);
             this.txtSeachNumOfBeds.Name = "txtSeachNumOfBeds";
-            this.txtSeachNumOfBeds.Size = new System.Drawing.Size(160, 29);
+            this.txtSeachNumOfBeds.Size = new System.Drawing.Size(160, 25);
             this.txtSeachNumOfBeds.TabIndex = 69;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(157, 78);
+            this.label9.Location = new System.Drawing.Point(59, 78);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(151, 23);
+            this.label9.Size = new System.Drawing.Size(116, 17);
             this.label9.TabIndex = 68;
             this.label9.Text = "Number of Beds: ";
             // 
@@ -352,60 +347,60 @@
             "Cao Cấp",
             "VIP",
             "Tổng thống"});
-            this.cbbSeachRoomType.Location = new System.Drawing.Point(438, 36);
+            this.cbbSeachRoomType.Location = new System.Drawing.Point(430, 36);
             this.cbbSeachRoomType.Margin = new System.Windows.Forms.Padding(2);
             this.cbbSeachRoomType.Name = "cbbSeachRoomType";
-            this.cbbSeachRoomType.Size = new System.Drawing.Size(160, 29);
+            this.cbbSeachRoomType.Size = new System.Drawing.Size(160, 25);
             this.cbbSeachRoomType.TabIndex = 67;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(436, 20);
+            this.label8.Location = new System.Drawing.Point(428, 20);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 23);
+            this.label8.Size = new System.Drawing.Size(81, 17);
             this.label8.TabIndex = 66;
             this.label8.Text = "Room Type:";
             // 
             // txtSeachRoomName
             // 
             this.txtSeachRoomName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSeachRoomName.Location = new System.Drawing.Point(254, 36);
+            this.txtSeachRoomName.Location = new System.Drawing.Point(246, 36);
             this.txtSeachRoomName.Margin = new System.Windows.Forms.Padding(2);
             this.txtSeachRoomName.Name = "txtSeachRoomName";
-            this.txtSeachRoomName.Size = new System.Drawing.Size(160, 29);
+            this.txtSeachRoomName.Size = new System.Drawing.Size(160, 25);
             this.txtSeachRoomName.TabIndex = 64;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(252, 20);
+            this.label11.Location = new System.Drawing.Point(244, 20);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(114, 23);
+            this.label11.Size = new System.Drawing.Size(88, 17);
             this.label11.TabIndex = 65;
             this.label11.Text = "Room Name:";
             // 
             // txtSeachRoomID
             // 
             this.txtSeachRoomID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSeachRoomID.Location = new System.Drawing.Point(69, 36);
+            this.txtSeachRoomID.Location = new System.Drawing.Point(61, 36);
             this.txtSeachRoomID.Margin = new System.Windows.Forms.Padding(2);
             this.txtSeachRoomID.Name = "txtSeachRoomID";
-            this.txtSeachRoomID.Size = new System.Drawing.Size(160, 29);
+            this.txtSeachRoomID.Size = new System.Drawing.Size(160, 25);
             this.txtSeachRoomID.TabIndex = 5;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(67, 20);
+            this.label7.Location = new System.Drawing.Point(59, 20);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 23);
+            this.label7.Size = new System.Drawing.Size(66, 17);
             this.label7.TabIndex = 6;
             this.label7.Text = "Room ID:";
             // 
@@ -423,6 +418,41 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(427, 73);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(90, 17);
+            this.label12.TabIndex = 73;
+            this.label12.Text = "Room Status:";
+            // 
+            // cbbStatus
+            // 
+            this.cbbStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbStatus.Items.AddRange(new object[] {
+            "Trống",
+            "Đang chờ"});
+            this.cbbStatus.Location = new System.Drawing.Point(431, 92);
+            this.cbbStatus.Margin = new System.Windows.Forms.Padding(2);
+            this.cbbStatus.Name = "cbbStatus";
+            this.cbbStatus.Size = new System.Drawing.Size(160, 25);
+            this.cbbStatus.TabIndex = 74;
+            // 
+            // cbbPrice
+            // 
+            this.cbbPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbPrice.Items.AddRange(new object[] {
+            "Trống",
+            "Đang chờ"});
+            this.cbbPrice.Location = new System.Drawing.Point(247, 94);
+            this.cbbPrice.Margin = new System.Windows.Forms.Padding(2);
+            this.cbbPrice.Name = "cbbPrice";
+            this.cbbPrice.Size = new System.Drawing.Size(160, 25);
+            this.cbbPrice.TabIndex = 75;
             // 
             // UC_RoomManagement
             // 
@@ -474,7 +504,9 @@
         private System.Windows.Forms.DataGridView dgvRoom;
         private System.Windows.Forms.Button txtClear;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ComboBox cbbStatus;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cbbPrice;
     }
 }

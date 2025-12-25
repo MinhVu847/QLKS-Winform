@@ -20,7 +20,7 @@ namespace QLKS_Winform
         }
         void loadData()
         {
-
+            
         }
 
         //thêm phòng
