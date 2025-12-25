@@ -36,14 +36,15 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvResult = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnFindCCCD = new System.Windows.Forms.Button();
+            this.txtCCCD = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnFindPhone = new System.Windows.Forms.Button();
             this.btnFindName = new System.Windows.Forms.Button();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.btnFindCCCD = new System.Windows.Forms.Button();
-            this.txtCCCD = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -131,9 +132,11 @@
             this.dgvResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvResult.Size = new System.Drawing.Size(825, 447);
             this.dgvResult.TabIndex = 0;
+            this.dgvResult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResult_CellClick);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnClear);
             this.groupBox2.Controls.Add(this.btnFindCCCD);
             this.groupBox2.Controls.Add(this.txtCCCD);
             this.groupBox2.Controls.Add(this.label2);
@@ -152,6 +155,42 @@
             this.groupBox2.TabIndex = 81;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Input infomation:";
+            // 
+            // btnFindCCCD
+            // 
+            this.btnFindCCCD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
+            this.btnFindCCCD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFindCCCD.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindCCCD.ForeColor = System.Drawing.Color.White;
+            this.btnFindCCCD.Location = new System.Drawing.Point(108, 425);
+            this.btnFindCCCD.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFindCCCD.Name = "btnFindCCCD";
+            this.btnFindCCCD.Size = new System.Drawing.Size(77, 33);
+            this.btnFindCCCD.TabIndex = 87;
+            this.btnFindCCCD.Text = "Find";
+            this.btnFindCCCD.UseVisualStyleBackColor = false;
+            this.btnFindCCCD.Click += new System.EventHandler(this.btnFindCCCD_Click);
+            // 
+            // txtCCCD
+            // 
+            this.txtCCCD.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCCCD.Location = new System.Drawing.Point(11, 392);
+            this.txtCCCD.Margin = new System.Windows.Forms.Padding(5);
+            this.txtCCCD.Name = "txtCCCD";
+            this.txtCCCD.Size = new System.Drawing.Size(174, 25);
+            this.txtCCCD.TabIndex = 86;
+            this.txtCCCD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCCCD_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(8, 366);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 17);
+            this.label2.TabIndex = 85;
+            this.label2.Text = "CCCD: ";
             // 
             // btnFindPhone
             // 
@@ -191,6 +230,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(174, 25);
             this.txtPhone.TabIndex = 82;
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             // 
             // txtName
             // 
@@ -210,40 +250,20 @@
             this.txtId.Size = new System.Drawing.Size(174, 25);
             this.txtId.TabIndex = 80;
             // 
-            // btnFindCCCD
+            // btnClear
             // 
-            this.btnFindCCCD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
-            this.btnFindCCCD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFindCCCD.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFindCCCD.ForeColor = System.Drawing.Color.White;
-            this.btnFindCCCD.Location = new System.Drawing.Point(108, 425);
-            this.btnFindCCCD.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFindCCCD.Name = "btnFindCCCD";
-            this.btnFindCCCD.Size = new System.Drawing.Size(77, 29);
-            this.btnFindCCCD.TabIndex = 87;
-            this.btnFindCCCD.Text = "Find";
-            this.btnFindCCCD.UseVisualStyleBackColor = false;
-            this.btnFindCCCD.Click += new System.EventHandler(this.btnFindCCCD_Click);
-            // 
-            // txtCCCD
-            // 
-            this.txtCCCD.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCCCD.Location = new System.Drawing.Point(11, 396);
-            this.txtCCCD.Margin = new System.Windows.Forms.Padding(5);
-            this.txtCCCD.Name = "txtCCCD";
-            this.txtCCCD.Size = new System.Drawing.Size(174, 25);
-            this.txtCCCD.TabIndex = 86;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 364);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 17);
-            this.label2.TabIndex = 85;
-            this.label2.Text = "CCCD: ";
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(11, 425);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(77, 33);
+            this.btnClear.TabIndex = 88;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // UC_FindClient
             // 
@@ -282,5 +302,6 @@
         private System.Windows.Forms.Button btnFindCCCD;
         private System.Windows.Forms.TextBox txtCCCD;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnClear;
     }
 }
