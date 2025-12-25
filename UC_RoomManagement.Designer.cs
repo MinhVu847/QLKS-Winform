@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtRoomID = new System.Windows.Forms.TextBox();
             this.txtRoomName = new System.Windows.Forms.TextBox();
@@ -56,9 +57,11 @@
             this.txtSeachRoomID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvRoom = new System.Windows.Forms.DataGridView();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.grbRoomManage.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -157,6 +160,7 @@
             this.txtPirce.Name = "txtPirce";
             this.txtPirce.Size = new System.Drawing.Size(212, 30);
             this.txtPirce.TabIndex = 10;
+            this.txtPirce.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPirce_KeyPress);
             // 
             // btnAdd
             // 
@@ -200,6 +204,7 @@
             this.btnEdit.TabIndex = 61;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // cbbRoomType
             // 
@@ -415,6 +420,10 @@
             this.dgvRoom.Size = new System.Drawing.Size(681, 355);
             this.dgvRoom.TabIndex = 0;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // UC_RoomManagement
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -431,6 +440,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -465,5 +475,6 @@
         private System.Windows.Forms.Button txtClear;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
