@@ -103,10 +103,11 @@ WHERE MaPhong = @MaPhong";
         //hiển thị phòng
         public static string getInfoRoom = @"select * from Phong
 where (@MaPhong = '' OR MaPhong = @MaPhong)
-	AND (@TenPhong = '' OR TenPhong LIKE '%' @TenPhong '%')
+	AND (@TenPhong = '' OR TenPhong LIKE '%' + @TenPhong + '%')
 	AND (@LoaiPhong = '' OR LoaiPhong = @LoaiPhong)
 	AND (@SoGiuong = '' OR SoGiuong = @SoGiuong)
 	AND (@GiaPhong = '' OR GiaPhong = @GiaPhong)
 	AND (@TrangThai = '' OR TrangThai = @TrangThai)";
+
     }
 }
