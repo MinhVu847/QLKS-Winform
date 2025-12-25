@@ -43,34 +43,47 @@ namespace QLKS_Winform
             }
             loadData();
         }
-        bool kTraTonTai(string roomID)
+        
+        bool ValidateInput()
         {
-            string query = "select MaPhong from Phong where MaPhong = @MaPhong";
-            SqlParameter parameter = new SqlParameter("@MaPhong", roomID);
-            if (DataProvider.ExcuteScalar(query, parameter) != null)
-                return true;
-            return false;
-        }
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            if (IsDuplicateID.isDuplicateID("Phong", "MaPhong", txtRoomID.Text.Trim()))
+            foreach(Control control in grbRoomManage.Controls)
             {
-                DialogResult ds = MessageBox.Show("Xác nhận thêm phòng mới này vào danh sách", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (ds == DialogResult.Yes)
+                if(!(control is Label))
                 {
-                    try
+                    if(control.Text.Trim() == "")
                     {
-                        //addRoom();
-                        MessageBox.Show("Thêm phòng thành công");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Lỗi: " + ex.ToString());
+                        return false;
                     }
                 }
             }
+            return true;
+        }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (ValidateInput())
+            {
+                if (IsDuplicateID.isDuplicateID("Phong", "MaPhong", txtRoomID.Text.Trim()))
+                {
+                    DialogResult ds = MessageBox.Show("Xác nhận thêm phòng mới này vào danh sách", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (ds == DialogResult.Yes)
+                    {
+
+                        try
+                        {
+                            addRoom();
+                            MessageBox.Show("Thêm phòng thành công");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Lỗi: " + ex.ToString());
+                        }
+                    }
+                }
+                else
+                    MessageBox.Show("Mã phòng đã tồn tại!");
+            }
             else
-                MessageBox.Show("Mã phòng đã tồn tại!");
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo");
         }
     }
 }
