@@ -53,7 +53,7 @@ namespace QLKS_Winform
             // Thêm dấu % để tìm kiếm gần đúng (VD: nhập '098' ra số '098...')
             SqlParameter[] param =
             {
-                new SqlParameter("@keyword","%"+ cot +"%")
+                new SqlParameter("@keyword","%"+ giaTriTim +"%")
             };
 
             DataTable dt = DataProvider.ExcuteQuery(query, param);
@@ -81,12 +81,41 @@ namespace QLKS_Winform
 
         private void btnFindPhone_Click(object sender, EventArgs e)
         {
-            SearchData("k.SDT", txtId.Text.Trim());
+            SearchData("k.SDT", txtPhone.Text.Trim());
         }
 
         private void btnFindCCCD_Click(object sender, EventArgs e)
         {
-            SearchData("k.CCCD", txtId.Text.Trim());
+            SearchData("k.CCCD", txtCCCD.Text.Trim());
+        }
+
+        private void dgvResult_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtId.Clear();
+            txtName.Clear();
+            txtPhone.Clear();
+            txtCCCD.Clear();
+        }
+
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCCCD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
         }
     }
 }
