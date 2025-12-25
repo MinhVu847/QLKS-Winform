@@ -45,8 +45,8 @@ namespace QLKS_Winform
                     p.GiaPhong AS 'Price',
                     d.NgayDat AS 'Check In Date'
                 FROM KhachHang k
-                LEFT JOIN DatPhong d ON k.MaKH = d.MaKH
-                LEFT JOIN Phong p ON d.MaPhong = p.MaPhong
+                JOIN DatPhong d ON k.MaKH = d.MaKH
+                JOIN Phong p ON d.MaPhong = p.MaPhong
                 WHERE " + cot + " LIKE @keyword";
 
             // Sử dụng DataProvider 

@@ -54,6 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionString.cs" />
+    <Compile Include="UC_Analytics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Analytics.Designer.cs">
+      <DependentUpon>UC_Analytics.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_FindClient.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     <Compile Include="UC_RoomManagement.Designer.cs">
       <DependentUpon>UC_RoomManagement.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UC_Analytics.resx">
+      <DependentUpon>UC_Analytics.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_FindClient.resx">
       <DependentUpon>UC_FindClient.cs</DependentUpon>
     </EmbeddedResource>
