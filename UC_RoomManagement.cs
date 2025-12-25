@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,7 +21,19 @@ namespace QLKS_Winform
         }
         void loadData()
         {
-            
+            int giaPhong = 0;
+            if (cbbPrice.SelectedIndex >= 0)
+                giaPhong = Convert.ToInt32(cbbPrice.Text.Trim());
+            SqlParameter[] param =
+            {
+                new SqlParameter("@MaPhong", txtSeachRoomID.Text.Trim()),
+                new SqlParameter("@TenPhong", txtSeachRoomName.Text.Trim()),
+                new SqlParameter("@LoaiPhong", cbbSeachRoomType.Text.Trim()),
+                new SqlParameter("@SoGiuong", cbbSeachNumOfBeds.Text.Trim()),
+                new SqlParameter("@GiaPhong", giaPhong),
+                new SqlParameter("@TrangThai", cbbPrice.Text.Trim())
+            };
+            dgvRoom.DataSource = DataProvider.ExcuteQuery(Query.getInfoRoom, param);
         }
 
         //thêm phòng
@@ -102,7 +115,7 @@ namespace QLKS_Winform
                 new SqlParameter("@MaPhong", txtSeachRoomID.Text.Trim()),
                 new SqlParameter("@TenPhong", txtSeachRoomName.Text.Trim()),
                 new SqlParameter("@LoaiPhong", cbbSeachRoomType.Text.Trim()),
-                new SqlParameter("@SoGiuong", txtSeachNumOfBeds.Text.Trim()),
+                new SqlParameter("@SoGiuong", cbbSeachNumOfBeds.Text.Trim()),
                 new SqlParameter("@GiaPhong", giaPhong),
                 new SqlParameter("@TrangThai", cbbStatus.Text.Trim())
             };
@@ -125,6 +138,11 @@ namespace QLKS_Winform
             }
             else
                 errorProvider1.SetError(txtPirce, "");
+        }
+
+        private void UC_RoomManagement_VisibleChanged(object sender, EventArgs e)
+        {
+            loadData();
         }
     }
 }
