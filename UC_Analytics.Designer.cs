@@ -83,7 +83,7 @@
             this.btnAnalytic.Name = "btnAnalytic";
             this.btnAnalytic.Size = new System.Drawing.Size(164, 42);
             this.btnAnalytic.TabIndex = 68;
-            this.btnAnalytic.Text = "Find";
+            this.btnAnalytic.Text = "Analytic";
             this.btnAnalytic.UseVisualStyleBackColor = false;
             this.btnAnalytic.Click += new System.EventHandler(this.btnAnalytic_Click);
             // 
