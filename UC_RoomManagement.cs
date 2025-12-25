@@ -96,14 +96,15 @@ namespace QLKS_Winform
 
         void Edit()
         {
-            int giaPhong = Convert.ToInt32(txtPirce.Text);// ép sang int để thêm vào sql
+            int giaPhong = Convert.ToInt32(cbbPrice.Text);// ép sang int để thêm vào sql
             SqlParameter[] parameters =
             {
-                new SqlParameter("@MaPhong", txtRoomID.Text.Trim()),
-                new SqlParameter("@TenPhong", txtRoomName.Text.Trim()),
-                new SqlParameter("@LoaiPhong", cbbRoomType.Text.Trim()),
-                new SqlParameter("@SoGiuong", cbbNumberOfBeds.Text.Trim()),
-                new SqlParameter("@GiaPhong", giaPhong)
+                new SqlParameter("@MaPhong", txtSeachRoomID.Text.Trim()),
+                new SqlParameter("@TenPhong", txtSeachRoomName.Text.Trim()),
+                new SqlParameter("@LoaiPhong", cbbSeachRoomType.Text.Trim()),
+                new SqlParameter("@SoGiuong", txtSeachNumOfBeds.Text.Trim()),
+                new SqlParameter("@GiaPhong", giaPhong),
+                new SqlParameter("@TrangThai", cbbStatus.Text.Trim())
             };
             DataProvider.ExcuteNonQuery(Query.EditRoom, parameters);
             clearData();
