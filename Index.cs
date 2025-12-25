@@ -165,5 +165,10 @@ namespace QLKS_Winform
         {
             showUserControl(uC_FindClient1);
         }
+
+        private void btnAltic_Click(object sender, EventArgs e)
+        {
+            showUserControl(uC_Analytics1);
+        }
     }
 }

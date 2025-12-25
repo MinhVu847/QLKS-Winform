@@ -42,14 +42,15 @@
             this.plLogo = new System.Windows.Forms.Panel();
             this.ptrLogo = new System.Windows.Forms.PictureBox();
             this.plData = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.uC_Analytics1 = new QLKS_Winform.UC_Analytics();
+            this.uC_FindClient1 = new QLKS_Winform.UC_FindClient();
             this.uC_MyAccount1 = new QLKS_Winform.UC_MyAccount();
             this.uC_RoomManagement1 = new QLKS_Winform.UC_RoomManagement();
             this.uC_CheckOut1 = new QLKS_Winform.UC_CheckOut();
             this.uC_CheckIn1 = new QLKS_Winform.UC_CheckIn();
             this.uC_Employees1 = new QLKS_Winform.UC_Employees();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.uC_FindClient1 = new QLKS_Winform.UC_FindClient();
             this.plMenu.SuspendLayout();
             this.plLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptrLogo)).BeginInit();
@@ -179,6 +180,7 @@
             this.btnAltic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAltic.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAltic.UseVisualStyleBackColor = true;
+            this.btnAltic.Click += new System.EventHandler(this.btnAltic_Click);
             // 
             // btnChkout
             // 
@@ -291,6 +293,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.plData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.plData.Controls.Add(this.uC_Analytics1);
             this.plData.Controls.Add(this.uC_FindClient1);
             this.plData.Controls.Add(this.uC_MyAccount1);
             this.plData.Controls.Add(this.uC_RoomManagement1);
@@ -301,6 +304,43 @@
             this.plData.Name = "plData";
             this.plData.Size = new System.Drawing.Size(1050, 574);
             this.plData.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.SlateGray;
+            this.panel1.Location = new System.Drawing.Point(230, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1050, 59);
+            this.panel1.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.SlateGray;
+            this.panel2.Location = new System.Drawing.Point(230, 634);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1050, 87);
+            this.panel2.TabIndex = 3;
+            // 
+            // uC_Analytics1
+            // 
+            this.uC_Analytics1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_Analytics1.Location = new System.Drawing.Point(0, 0);
+            this.uC_Analytics1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uC_Analytics1.Name = "uC_Analytics1";
+            this.uC_Analytics1.Size = new System.Drawing.Size(1050, 574);
+            this.uC_Analytics1.TabIndex = 7;
+            this.uC_Analytics1.Visible = false;
+            // 
+            // uC_FindClient1
+            // 
+            this.uC_FindClient1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_FindClient1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uC_FindClient1.Location = new System.Drawing.Point(0, 0);
+            this.uC_FindClient1.Margin = new System.Windows.Forms.Padding(4);
+            this.uC_FindClient1.Name = "uC_FindClient1";
+            this.uC_FindClient1.Size = new System.Drawing.Size(1050, 574);
+            this.uC_FindClient1.TabIndex = 6;
+            this.uC_FindClient1.Visible = false;
             // 
             // uC_MyAccount1
             // 
@@ -352,33 +392,6 @@
             this.uC_Employees1.TabIndex = 0;
             this.uC_Employees1.Visible = false;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.SlateGray;
-            this.panel1.Location = new System.Drawing.Point(230, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1050, 59);
-            this.panel1.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.SlateGray;
-            this.panel2.Location = new System.Drawing.Point(230, 634);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1050, 87);
-            this.panel2.TabIndex = 3;
-            // 
-            // uC_FindClient1
-            // 
-            this.uC_FindClient1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_FindClient1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uC_FindClient1.Location = new System.Drawing.Point(0, 0);
-            this.uC_FindClient1.Margin = new System.Windows.Forms.Padding(4);
-            this.uC_FindClient1.Name = "uC_FindClient1";
-            this.uC_FindClient1.Size = new System.Drawing.Size(1050, 574);
-            this.uC_FindClient1.TabIndex = 6;
-            this.uC_FindClient1.Visible = false;
-            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -427,5 +440,6 @@
         private UC_MyAccount uC_MyAccount1;
         private System.Windows.Forms.Panel panel2;
         private UC_FindClient uC_FindClient1;
+        private UC_Analytics uC_Analytics1;
     }
 }

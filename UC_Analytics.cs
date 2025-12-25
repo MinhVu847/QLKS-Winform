@@ -31,7 +31,7 @@ namespace QLKS_Winform
 
                 //truyền ngày tháng từ giao diện
                 cmd.Parameters.AddWithValue("@fromDate", dtpFrom.Value.Date);
-                cmd.Parameters.AddWithValue("@toDate", dtpFrom.Value.Date);
+                cmd.Parameters.AddWithValue("@toDate", dtpTo.Value.Date);
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
@@ -49,11 +49,9 @@ namespace QLKS_Winform
                     row["TenPhong"],
                     row["NgayThanhToan"],
                     row["TongTien"]
-
                     );
                     
-            }
-            
+            }         
             // gắn dataset vào report
             rptRevenue rpt = new rptRevenue();
             rpt.SetDataSource(ds);
@@ -61,8 +59,6 @@ namespace QLKS_Winform
             //hiển thị lên view
             crvRevenue.ReportSource = rpt;
             crvRevenue.Refresh();
-
-
         }
     }
 }

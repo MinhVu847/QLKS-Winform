@@ -53,21 +53,21 @@
             this.crvRevenue.ActiveViewIndex = -1;
             this.crvRevenue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crvRevenue.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crvRevenue.Location = new System.Drawing.Point(46, 201);
+            this.crvRevenue.Location = new System.Drawing.Point(19, 152);
             this.crvRevenue.Name = "crvRevenue";
-            this.crvRevenue.Size = new System.Drawing.Size(931, 305);
+            this.crvRevenue.Size = new System.Drawing.Size(1015, 397);
             this.crvRevenue.TabIndex = 1;
             // 
             // dtpFrom
             // 
-            this.dtpFrom.Location = new System.Drawing.Point(46, 113);
+            this.dtpFrom.Location = new System.Drawing.Point(51, 101);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(200, 20);
             this.dtpFrom.TabIndex = 2;
             // 
             // dtpTo
             // 
-            this.dtpTo.Location = new System.Drawing.Point(296, 113);
+            this.dtpTo.Location = new System.Drawing.Point(300, 101);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(200, 20);
             this.dtpTo.TabIndex = 3;
@@ -78,7 +78,7 @@
             this.btnAnalytic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnalytic.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnalytic.ForeColor = System.Drawing.Color.White;
-            this.btnAnalytic.Location = new System.Drawing.Point(541, 103);
+            this.btnAnalytic.Location = new System.Drawing.Point(544, 91);
             this.btnAnalytic.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnalytic.Name = "btnAnalytic";
             this.btnAnalytic.Size = new System.Drawing.Size(164, 42);
@@ -89,8 +89,7 @@
             // 
             // UC_Analytics
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.btnAnalytic);
             this.Controls.Add(this.dtpTo);
             this.Controls.Add(this.dtpFrom);
