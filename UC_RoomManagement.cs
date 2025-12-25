@@ -20,30 +20,38 @@ namespace QLKS_Winform
         }
         void loadData()
         {
+            
+        }
 
+        //thêm phòng
+        void clearData()
+        {
+            foreach (Control control in grbRoomManage.Controls)
+            {
+                if (control is TextBox textBox)
+                    textBox.Clear();
+                else if (control is ComboBox comboBox)
+                    comboBox.SelectedIndex = -1;
+            }
         }
         void addRoom()
         {
+            int giaPhong = Convert.ToInt32(txtPirce.Text);// ép sang int để thêm vào sql
             SqlParameter[] parameters =
             {
                 new SqlParameter("@MaPhong", txtRoomID.Text.Trim()),
                 new SqlParameter("@TenPhong", txtRoomName.Text.Trim()),
                 new SqlParameter("@LoaiPhong", cbbRoomType.Text.Trim()),
-                new SqlParameter("@SoGiuong", cbbRoomType.Text.Trim()),
+                new SqlParameter("@SoGiuong", cbbNumberOfBeds.Text.Trim()),
                 new SqlParameter("@TrangThai", "Trống"),
-                new SqlParameter("@@GiaPhong", txtPrice.Text.Trim()),
+                new SqlParameter("@GiaPhong", giaPhong),
             };
             DataProvider.ExcuteNonQuery(Query.AddRoom, parameters);
-            foreach(Control control in grbRoomManage.Controls)
-            {
-                if(control is TextBox textBox)
-                    textBox.Clear();
-                else if(control is ComboBox comboBox)
-                    comboBox.SelectedIndex = -1;
-            }
+            clearData();
             loadData();
         }
         
+        //ktra xem nhập đủ thông tin chưa
         bool ValidateInput()
         {
             foreach(Control control in grbRoomManage.Controls)
@@ -84,6 +92,39 @@ namespace QLKS_Winform
             }
             else
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo");
+        }
+
+        void Edit()
+        {
+            int giaPhong = Convert.ToInt32(cbbPrice.Text);// ép sang int để thêm vào sql
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@MaPhong", txtSeachRoomID.Text.Trim()),
+                new SqlParameter("@TenPhong", txtSeachRoomName.Text.Trim()),
+                new SqlParameter("@LoaiPhong", cbbSeachRoomType.Text.Trim()),
+                new SqlParameter("@SoGiuong", txtSeachNumOfBeds.Text.Trim()),
+                new SqlParameter("@GiaPhong", giaPhong),
+                new SqlParameter("@TrangThai", cbbStatus.Text.Trim())
+            };
+            DataProvider.ExcuteNonQuery(Query.EditRoom, parameters);
+            clearData();
+            loadData();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtPirce_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                errorProvider1.SetError(txtPirce, "Chỉ được phép nhập số");
+                e.Handled = true;
+            }
+            else
+                errorProvider1.SetError(txtPirce, "");
         }
     }
 }

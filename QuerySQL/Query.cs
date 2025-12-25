@@ -63,7 +63,7 @@ namespace QLKS_Winform.QuerySQL
 
                                         update Phong set TrangThai = N'Đang Chờ' where MaPhong = @MaPhong";
 
-        //Hiển thị thông tin trong datagridview
+        //Hiển thị thông tin trong datagridview check out
         public static string GetCustomerInfoQuery = @"select p.MaPhong, kh.MaKH, kh.HoTen, kh.CCCD,kh.DiaChi, p.TenPhong, p.LoaiPhong, p.GiaPhong, dp.NgayDat, dp.NgayTra from KhachHang kh
                                                         join DatPhong dp on kh.MaKH = dp.MaKH
                                                         join Phong p on p.MaPhong = dp.MaPhong
@@ -94,5 +94,19 @@ namespace QLKS_Winform.QuerySQL
         //Thêm phòng
         public static string AddRoom = @"insert into Phong(MaPhong, TenPhong, LoaiPhong, SoGiuong, TrangThai, GiaPhong)
 values (@MaPhong, @TenPhong, @LoaiPhong, @SoGiuong, @TrangThai, @GiaPhong);";
+
+        //sửa phòng
+        public static string EditRoom = @"update Phong 
+set TenPhong = @TenPhong, LoaiPhong = @LoaiPhong, SoGiuong = @SoGiuong, GiaPhong = @GiaPhong
+WHERE MaPhong = @MaPhong";
+
+        //hiển thị phòng
+        public static string getInfoRoom = @"select * from Phong
+where (@MaPhong = '' OR MaPhong = @MaPhong)
+	AND (@TenPhong = '' OR TenPhong LIKE '%' @TenPhong '%')
+	AND (@LoaiPhong = '' OR LoaiPhong = @LoaiPhong)
+	AND (@SoGiuong = '' OR SoGiuong = @SoGiuong)
+	AND (@GiaPhong = '' OR GiaPhong = @GiaPhong)
+	AND (@TrangThai = '' OR TrangThai = @TrangThai)";
     }
 }
