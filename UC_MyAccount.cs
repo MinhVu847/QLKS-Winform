@@ -57,7 +57,7 @@ namespace QLKS_Winform
                 //kiểm tra có trùng mk cũ k
                 if (newPass == realPass)
                 {
-                    MessageBox.Show("Mật khẩu mới không được giống mật khẩu cũ!", "Thông báo");
+                    MessageBox.Show("Mật khẩu mới không được giống mật khẩu cũ!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     txtPass.Focus();
                     return;
                 }
