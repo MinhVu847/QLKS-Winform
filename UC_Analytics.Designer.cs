@@ -33,6 +33,8 @@
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.btnAnalytic = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -60,25 +62,31 @@
             // 
             // dtpFrom
             // 
-            this.dtpFrom.Location = new System.Drawing.Point(51, 101);
+            this.dtpFrom.CalendarFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFrom.CustomFormat = "dd/MM/yyyy";
+            this.dtpFrom.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFrom.Location = new System.Drawing.Point(19, 111);
             this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(200, 20);
+            this.dtpFrom.Size = new System.Drawing.Size(170, 22);
             this.dtpFrom.TabIndex = 2;
             // 
             // dtpTo
             // 
-            this.dtpTo.Location = new System.Drawing.Point(300, 101);
+            this.dtpTo.CalendarFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpTo.CustomFormat = "dd/MM/yyyy";
+            this.dtpTo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpTo.Location = new System.Drawing.Point(220, 111);
             this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(200, 20);
+            this.dtpTo.Size = new System.Drawing.Size(169, 22);
             this.dtpTo.TabIndex = 3;
             // 
             // btnAnalytic
             // 
             this.btnAnalytic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
             this.btnAnalytic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnalytic.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnalytic.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnalytic.ForeColor = System.Drawing.Color.White;
-            this.btnAnalytic.Location = new System.Drawing.Point(544, 91);
+            this.btnAnalytic.Location = new System.Drawing.Point(870, 94);
             this.btnAnalytic.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnalytic.Name = "btnAnalytic";
             this.btnAnalytic.Size = new System.Drawing.Size(164, 42);
@@ -87,9 +95,31 @@
             this.btnAnalytic.UseVisualStyleBackColor = false;
             this.btnAnalytic.Click += new System.EventHandler(this.btnAnalytic_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(16, 86);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 17);
+            this.label2.TabIndex = 69;
+            this.label2.Text = "From:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(217, 86);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 17);
+            this.label3.TabIndex = 70;
+            this.label3.Text = "To:";
+            // 
             // UC_Analytics
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAnalytic);
             this.Controls.Add(this.dtpTo);
             this.Controls.Add(this.dtpFrom);
@@ -98,6 +128,7 @@
             this.Name = "UC_Analytics";
             this.Size = new System.Drawing.Size(1050, 574);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -108,5 +139,7 @@
         private System.Windows.Forms.DateTimePicker dtpFrom;
         private System.Windows.Forms.DateTimePicker dtpTo;
         private System.Windows.Forms.Button btnAnalytic;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

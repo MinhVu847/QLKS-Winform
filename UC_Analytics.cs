@@ -17,6 +17,7 @@ namespace QLKS_Winform
         public UC_Analytics()
         {
             InitializeComponent();
+            SetupDateTimePickers();
         }
 
         private void btnAnalytic_Click(object sender, EventArgs e)
@@ -35,13 +36,13 @@ namespace QLKS_Winform
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
-            }    
+            }
 
             //đổ dữ liệu vào dataset
             dsRevenue ds = new dsRevenue();
 
             //copy dữ liệu từ sql --> dataset
-            foreach(DataRow row in dt.Rows)
+            foreach (DataRow row in dt.Rows)
             {
                 ds.dtDoanhThu.Rows.Add(
                     row["MaHD"],
@@ -50,8 +51,8 @@ namespace QLKS_Winform
                     row["NgayThanhToan"],
                     row["TongTien"]
                     );
-                    
-            }         
+
+            }
             // gắn dataset vào report
             rptRevenue rpt = new rptRevenue();
             rpt.SetDataSource(ds);
@@ -59,6 +60,17 @@ namespace QLKS_Winform
             //hiển thị lên view
             crvRevenue.ReportSource = rpt;
             crvRevenue.Refresh();
+        }
+
+        private void SetupDateTimePickers()
+        {
+            // dtpFrom
+            dtpFrom.Format = DateTimePickerFormat.Custom;
+            dtpFrom.CustomFormat = "  dd/MM/yyyy";  // ← CHỈ HIỆN SỐ
+
+            // dtpTo
+            dtpTo.Format = DateTimePickerFormat.Custom;
+            dtpTo.CustomFormat = "  dd/MM/yyyy";  // ← CHỈ HIỆN SỐ
         }
     }
 }
