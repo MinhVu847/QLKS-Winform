@@ -66,11 +66,11 @@ namespace QLKS_Winform
         {
             // dtpFrom
             dtpFrom.Format = DateTimePickerFormat.Custom;
-            dtpFrom.CustomFormat = "  dd/MM/yyyy";  // ← CHỈ HIỆN SỐ
+            dtpFrom.CustomFormat = "dd/MM/yyyy";  
 
             // dtpTo
             dtpTo.Format = DateTimePickerFormat.Custom;
-            dtpTo.CustomFormat = "  dd/MM/yyyy";  // ← CHỈ HIỆN SỐ
+            dtpTo.CustomFormat = "dd/MM/yyyy";
         }
     }
 }
