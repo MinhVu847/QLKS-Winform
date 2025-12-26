@@ -62,9 +62,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtDOBEmpl = new System.Windows.Forms.DateTimePicker();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpl)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblID
@@ -158,6 +160,7 @@
             this.txtPhoneNo.Size = new System.Drawing.Size(239, 29);
             this.txtPhoneNo.TabIndex = 4;
             this.txtPhoneNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtID_KeyDown);
+            this.txtPhoneNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNo_KeyPress);
             // 
             // cbbPosition
             // 
@@ -472,6 +475,10 @@
             this.dtDOBEmpl.TabIndex = 3;
             this.dtDOBEmpl.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtID_KeyDown);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // UC_Employees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -487,6 +494,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -526,5 +534,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DateTimePicker dtDOBEmpl;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -227,5 +227,16 @@ namespace QLKS_Winform
                 e.SuppressKeyPress = true;
             }
         }
+
+        private void txtPhoneNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                errorProvider1.SetError(txtPhoneNo, "Chỉ được phép nhập số");
+                e.Handled = true;
+            }
+            else
+                errorProvider1.SetError(txtPhoneNo, "");
+        }
     }
 }
