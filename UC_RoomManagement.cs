@@ -144,5 +144,10 @@ namespace QLKS_Winform
         {
             loadData();
         }
+
+        private void dgvRoom_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtRoomID.Text = e.RowIndex.ToString();
+        }
     }
 }

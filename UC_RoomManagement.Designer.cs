@@ -450,6 +450,7 @@
             this.dgvRoom.RowTemplate.Height = 24;
             this.dgvRoom.Size = new System.Drawing.Size(681, 355);
             this.dgvRoom.TabIndex = 0;
+            this.dgvRoom.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoom_CellClick);
             // 
             // errorProvider1
             // 
