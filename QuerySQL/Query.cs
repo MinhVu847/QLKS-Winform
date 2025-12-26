@@ -97,8 +97,11 @@ values (@MaPhong, @TenPhong, @LoaiPhong, @SoGiuong, @TrangThai, @GiaPhong);";
 
         //sửa phòng
         public static string EditRoom = @"update Phong 
-set TenPhong = @TenPhong, LoaiPhong = @LoaiPhong, SoGiuong = @SoGiuong, GiaPhong = @GiaPhong
+set TenPhong = @TenPhong, LoaiPhong = @LoaiPhong, SoGiuong = @SoGiuong, GiaPhong = @GiaPhong, TrangThai = N'Trống'
 WHERE MaPhong = @MaPhong";
+
+        //Xóa phòng
+        public static string DeleteRoom = @"Update Phong set TrangThai = N'Đang sửa' where MaPhong = @MaPhong";
 
         //hiển thị phòng
         public static string getInfoRoom = @"select * from Phong

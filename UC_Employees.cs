@@ -27,17 +27,25 @@ namespace QLKS_Winform
             dgvEmpl.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             SqlParameter[] param =
             {
-                new SqlParameter("@MaNV", txtSeachID.Text),
-                new SqlParameter("@HoTen", txtSeachEmplName.Text),
-                new SqlParameter("@SDT", txtSeachPhoneNo.Text),
-                new SqlParameter("@ChucVu", cbbSeachPosition.Text),
-                new SqlParameter("@EmployeeStatus", cbbSeachEmpl.Text)
+                new SqlParameter("@MaNV", txtSeachID.Text.Trim()),
+                new SqlParameter("@HoTen", txtSeachEmplName.Text.Trim()),
+                new SqlParameter("@SDT", txtSeachPhoneNo.Text.Trim()),
+                new SqlParameter("@ChucVu", cbbSeachPosition.Text.Trim()),
+                new SqlParameter("@EmployeeStatus", cbbSeachEmpl.Text.Trim())
             };
             dgvEmpl.DataSource = DataProvider.ExcuteQuery(Query.SeachEmpl, param);
+
+            dgvEmpl.Columns["MaNV"].HeaderText = "ID";
+            dgvEmpl.Columns["HoTen"].HeaderText = "Name";
+            dgvEmpl.Columns["GioiTinh"].HeaderText = "Gender";
+            dgvEmpl.Columns["NgaySinh"].HeaderText = "Date Of Birth";
+            dgvEmpl.Columns["SDT"].HeaderText = "Phone No";
+            dgvEmpl.Columns["ChucVu"].HeaderText = "Position";
+            dgvEmpl.Columns["MatKhau"].HeaderText = "Password";
         }
         private void btnAddClient_Click(object sender, EventArgs e)
         {
-            if (!checkEmpl())
+            if (!IsDuplicateID.isDuplicateID("NhanVien", "MaNV", txtID.Text.Trim()))
             {
                 if (checkInfo())
                 {
@@ -56,31 +64,21 @@ namespace QLKS_Winform
         //Thêm nhân viên
         void AddEmpl()
         {
-            SqlParameter[] param = {
-                    new SqlParameter("@MaNV", txtID.Text),
-                    new SqlParameter("@HoTen", txtEmplName.Text),
-                    new SqlParameter("@GioiTinh", cbbGender.Text),
-                    new SqlParameter("@NgaySinh", dtDOBEmpl.Value.Date),
-                    new SqlParameter("@SDT", txtPhoneNo.Text),
-                    new SqlParameter("@ChucVu", cbbPosition.Text),
-                    new SqlParameter("@MatKhau", txtPass.Text)
-                };
-            DataProvider.ExcuteNonQuery(Query.AddEmpl, param);
-            loadData();
-        }
-        //Kiểm tra tồn tại
-        bool checkEmpl()
-        {
-            string queryCheck = Query.ShowEmpl + "\n WHERE MaNV = @ID";
-            SqlParameter[] param = 
+            try
             {
-                    new SqlParameter("@ID", txtID.Text)
-            };
-            object data = DataProvider.ExcuteScalar(queryCheck, param);//ktra xem mã nhân viên có tồn tại hay không
-            if (data != null)
-                return true;
-            else
-                return false;
+                SqlParameter[] param = {
+                    new SqlParameter("@MaNV", txtID.Text.Trim()),
+                    new SqlParameter("@HoTen", txtEmplName.Text.Trim()),
+                    new SqlParameter("@GioiTinh", cbbGender.Text.Trim()),
+                    new SqlParameter("@NgaySinh", dtDOBEmpl.Value.Date),
+                    new SqlParameter("@SDT", txtPhoneNo.Text.Trim()),
+                    new SqlParameter("@ChucVu", cbbPosition.Text.Trim()),
+                    new SqlParameter("@MatKhau", txtPass.Text.Trim())
+                };
+                DataProvider.ExcuteNonQuery(Query.AddEmpl, param);
+                loadData();
+            }catch(Exception ex) 
+            { MessageBox.Show("Lỗi: " + ex.Message); }
         }
 
         private void dgvEmpl_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -96,7 +94,7 @@ namespace QLKS_Winform
 
         private void btnEditClient_Click(object sender, EventArgs e)
         {
-            if (checkEmpl())
+            if (IsDuplicateID.isDuplicateID("NhanVien", "MaNV", txtID.Text.Trim()))
             {
                 if (checkInfo())
                 {
@@ -126,21 +124,27 @@ namespace QLKS_Winform
         //Sửa thông tin
         void EditEmpl()
         {
-            SqlParameter[] param =
+            try
             {
-                new SqlParameter("@MaNV", txtID.Text),
-                new SqlParameter("@HoTen", txtEmplName.Text),
-                new SqlParameter("@GioiTinh", cbbGender.Text),
+                SqlParameter[] param =
+                {
+                new SqlParameter("@MaNV", txtID.Text.Trim()),
+                new SqlParameter("@HoTen", txtEmplName.Text.Trim()),
+                new SqlParameter("@GioiTinh", cbbGender.Text.Trim()),
                 new SqlParameter("@NgaySinh", dtDOBEmpl.Value.Date),
-                new SqlParameter("@SDT", txtPhoneNo.Text)
+                new SqlParameter("@SDT", txtPhoneNo.Text.Trim())
             };
-            DataProvider.ExcuteNonQuery(Query.EditEmpl, param);
-            loadData();
+                DataProvider.ExcuteNonQuery(Query.EditEmpl, param);
+                loadData();
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
         }
 
         private void btnDelClient_Click(object sender, EventArgs e)
         {
-            if (checkEmpl())
+            if (IsDuplicateID.isDuplicateID("NhanVien", "MaNV", txtID.Text.Trim()))
             {
                 DialogResult dr = MessageBox.Show("Bạn có chắc muốn xóa nhân viên này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
@@ -158,12 +162,16 @@ namespace QLKS_Winform
         //Xóa nhân viên
         void DelEmpl()
         {
-            SqlParameter[] param =
+            try
             {
-                new SqlParameter("@MaNV", txtID.Text)
-            };
-            DataProvider.ExcuteNonQuery(Query.DelEmpl, param);
-            loadData();
+                SqlParameter param = new SqlParameter("@MaNV", txtID.Text.Trim());
+                DataProvider.ExcuteNonQuery(Query.DelEmpl, param);
+                loadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
         }
 
         //Tìm kiếm nhân viên
@@ -199,6 +207,24 @@ namespace QLKS_Winform
                 cbbPosition.SelectedIndex = 0;
                 cbbSeachEmpl.SelectedIndex = 0;
                 loadData();
+            }
+        }
+
+        private void txtID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Nếu là Control cuối cùng (nút bấm), thì thực hiện Click
+                if (sender == txtPass) // Giả sử txtPass là ô cuối
+                {
+                    btnAdd.PerformClick();
+                }
+                else
+                {
+                    // Nếu chưa phải ô cuối, nhấn Enter sẽ có tác dụng như nhấn Tab
+                    this.SelectNextControl((Control)sender, true, true, true, true);
+                }
+                e.SuppressKeyPress = true;
             }
         }
     }

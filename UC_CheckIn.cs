@@ -23,7 +23,7 @@ namespace QLKS_Winform
         {
             if (ValidateInput())
             {
-                if (!IsCustomerIdExists(txtID.Text))
+                if (!IsDuplicateID.isDuplicateID("KhachHang", "MaKH", txtID.Text.Trim()))
                 {
                     checkIN();
                     MessageBox.Show("Check in thành công", "Thông báo");
@@ -48,34 +48,23 @@ namespace QLKS_Winform
             return true;
         }
 
-        //Ktra mã khách hàng đã tồn tại chưa
-        bool IsCustomerIdExists(string ID)
-        {
-            string query = "Select * from khachHang where MaKH = @MaKH";
-            SqlParameter pa = new SqlParameter("@MaKH", ID);
-            DataTable dt = DataProvider.ExcuteQuery(query, pa);
-            if (dt.Rows.Count > 0)
-                return true;
-            return false;
-        }
-
         //check in
         void checkIN()
         {
             string MaDP = AutoID.nextID("DatPhong", "MaDP", "DP", 3);//tự tăng mã đặt phòng
             SqlParameter[] parameters =
             {
-                new SqlParameter("@MaKH", txtID.Text),
-                new SqlParameter("@HoTen", txtClientName.Text),
-                new SqlParameter("@GioiTinh", cbbGender.Text),
-                new SqlParameter("@CCCD", txtNatiID.Text),
-                new SqlParameter("@SDT", txtPhoneNo.Text),
-                new SqlParameter("@DiaChi", txtAddress.Text),
+                new SqlParameter("@MaKH", txtID.Text.Trim()),
+                new SqlParameter("@HoTen", txtClientName.Text.Trim()),
+                new SqlParameter("@GioiTinh", cbbGender.Text.Trim()),
+                new SqlParameter("@CCCD", txtNatiID.Text.Trim()),
+                new SqlParameter("@SDT", txtPhoneNo.Text.Trim()),
+                new SqlParameter("@DiaChi", txtAddress.Text.Trim()),
                 new SqlParameter("@MaDP", MaDP),
                 new SqlParameter("@MaPhong", roomID),//truyền mã mã phòng
                 new SqlParameter("@NgayDat", dtCin.Value.ToString()),
                 new SqlParameter("@MaNV", ConnectionString.MaNV),
-                new SqlParameter("@GhiChu", txtNote.Text),
+                new SqlParameter("@GhiChu", txtNote.Text.Trim()),
             };
             DataProvider.ExcuteNonQuery(Query.CheckIn, parameters);
             foreach (Control control in this.Controls)
@@ -89,6 +78,7 @@ namespace QLKS_Winform
             }
             loadData();
         }
+
         private void cbbRoomType_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbbNumOfBeds.SelectedIndex = -1;
@@ -100,13 +90,14 @@ namespace QLKS_Winform
             loadData();
         }
 
+        //Lấy Giá tiềm và mã phòng
         string getPriceRoomID()
         {
             SqlParameter[] parameters =
             {
-                new SqlParameter("@LoaiPhong", cbbRoomType.Text),
-                new SqlParameter("@SoGiuong", cbbNumOfBeds.Text),
-                new SqlParameter("@TenPhong", cbbRoomName.Text),
+                new SqlParameter("@LoaiPhong", cbbRoomType.Text.Trim()),
+                new SqlParameter("@SoGiuong", cbbNumOfBeds.Text.Trim()),
+                new SqlParameter("@TenPhong", cbbRoomName.Text.Trim()),
             };
             DataTable dt = DataProvider.ExcuteQuery(Query.ShowPrice, parameters);
             if (dt.Rows.Count > 0)
@@ -116,13 +107,14 @@ namespace QLKS_Winform
             }
             return "";
         }
+
         void loadData()
         {
             SqlParameter[] parameters =
             {
-                new SqlParameter("@LoaiPhong", cbbRoomType.Text),
-                new SqlParameter("@SoGiuong", cbbNumOfBeds.Text),
-                new SqlParameter("@TenPhong", cbbRoomName.Text)
+                new SqlParameter("@LoaiPhong", cbbRoomType.Text.Trim()),
+                new SqlParameter("@SoGiuong", cbbNumOfBeds.Text.Trim()),
+                new SqlParameter("@TenPhong", cbbRoomName.Text.Trim())
             };
             DataTable dt = DataProvider.ExcuteQuery(Query.CheckRoom, parameters);
             if (cbbRoomType.Text == "")//nếu text của cbbRoomType rỗng thì thực hiện lọc dữ liệu để tìm loại phòng còn trống 
@@ -152,6 +144,7 @@ namespace QLKS_Winform
                     cbbRoomName.Items.Add(row["TenPhong"].ToString());
             }
         }
+
         private void cbbNumOfBeds_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbbRoomType.Text != "" && cbbNumOfBeds.Text != "" && cbbRoomName.Text != "")

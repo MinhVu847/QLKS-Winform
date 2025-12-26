@@ -44,7 +44,7 @@
             this.cbbRoomType = new System.Windows.Forms.ComboBox();
             this.cbbNumberOfBeds = new System.Windows.Forms.ComboBox();
             this.grbRoomManage = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grbRoomSeach = new System.Windows.Forms.GroupBox();
             this.cbbPrice = new System.Windows.Forms.ComboBox();
             this.cbbStatus = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@
             this.dgvRoom = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.grbRoomManage.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.grbRoomSeach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -192,6 +192,7 @@
             this.btnDelete.TabIndex = 60;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -210,6 +211,7 @@
             // 
             // cbbRoomType
             // 
+            this.cbbRoomType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbRoomType.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbRoomType.FormattingEnabled = true;
             this.cbbRoomType.Items.AddRange(new object[] {
@@ -225,6 +227,7 @@
             // 
             // cbbNumberOfBeds
             // 
+            this.cbbNumberOfBeds.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbNumberOfBeds.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbNumberOfBeds.FormattingEnabled = true;
             this.cbbNumberOfBeds.Items.AddRange(new object[] {
@@ -263,54 +266,56 @@
             this.grbRoomManage.TabStop = false;
             this.grbRoomManage.Text = "Room Management";
             // 
-            // groupBox2
+            // grbRoomSeach
             // 
-            this.groupBox2.Controls.Add(this.cbbPrice);
-            this.groupBox2.Controls.Add(this.cbbStatus);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.txtClear);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.cbbSeachNumOfBeds);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.cbbSeachRoomType);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.txtSeachRoomName);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.txtSeachRoomID);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.dgvRoom);
-            this.groupBox2.Location = new System.Drawing.Point(332, 72);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(718, 502);
-            this.groupBox2.TabIndex = 66;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Room Search";
+            this.grbRoomSeach.Controls.Add(this.cbbPrice);
+            this.grbRoomSeach.Controls.Add(this.cbbStatus);
+            this.grbRoomSeach.Controls.Add(this.label12);
+            this.grbRoomSeach.Controls.Add(this.txtClear);
+            this.grbRoomSeach.Controls.Add(this.label10);
+            this.grbRoomSeach.Controls.Add(this.cbbSeachNumOfBeds);
+            this.grbRoomSeach.Controls.Add(this.label9);
+            this.grbRoomSeach.Controls.Add(this.cbbSeachRoomType);
+            this.grbRoomSeach.Controls.Add(this.label8);
+            this.grbRoomSeach.Controls.Add(this.txtSeachRoomName);
+            this.grbRoomSeach.Controls.Add(this.label11);
+            this.grbRoomSeach.Controls.Add(this.txtSeachRoomID);
+            this.grbRoomSeach.Controls.Add(this.label7);
+            this.grbRoomSeach.Controls.Add(this.dgvRoom);
+            this.grbRoomSeach.Location = new System.Drawing.Point(332, 72);
+            this.grbRoomSeach.Margin = new System.Windows.Forms.Padding(2);
+            this.grbRoomSeach.Name = "grbRoomSeach";
+            this.grbRoomSeach.Padding = new System.Windows.Forms.Padding(2);
+            this.grbRoomSeach.Size = new System.Drawing.Size(718, 502);
+            this.grbRoomSeach.TabIndex = 66;
+            this.grbRoomSeach.TabStop = false;
+            this.grbRoomSeach.Text = "Room Search";
             // 
             // cbbPrice
             // 
+            this.cbbPrice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbPrice.Items.AddRange(new object[] {
-            "Trống",
-            "Đang chờ"});
             this.cbbPrice.Location = new System.Drawing.Point(247, 94);
             this.cbbPrice.Margin = new System.Windows.Forms.Padding(2);
             this.cbbPrice.Name = "cbbPrice";
             this.cbbPrice.Size = new System.Drawing.Size(160, 29);
             this.cbbPrice.TabIndex = 75;
+            this.cbbPrice.SelectedIndexChanged += new System.EventHandler(this.cbbSeachRoomType_SelectedIndexChanged);
             // 
             // cbbStatus
             // 
+            this.cbbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbStatus.Items.AddRange(new object[] {
             "Trống",
-            "Đang chờ"});
+            "Đang chờ",
+            "Đang sửa"});
             this.cbbStatus.Location = new System.Drawing.Point(431, 92);
             this.cbbStatus.Margin = new System.Windows.Forms.Padding(2);
             this.cbbStatus.Name = "cbbStatus";
             this.cbbStatus.Size = new System.Drawing.Size(160, 29);
             this.cbbStatus.TabIndex = 74;
+            this.cbbStatus.SelectedIndexChanged += new System.EventHandler(this.cbbSeachRoomType_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -336,6 +341,7 @@
             this.txtClear.TabIndex = 72;
             this.txtClear.Text = "Clear";
             this.txtClear.UseVisualStyleBackColor = false;
+            this.txtClear.Click += new System.EventHandler(this.txtClear_Click);
             // 
             // label10
             // 
@@ -350,6 +356,7 @@
             // 
             // cbbSeachNumOfBeds
             // 
+            this.cbbSeachNumOfBeds.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSeachNumOfBeds.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSeachNumOfBeds.FormattingEnabled = true;
             this.cbbSeachNumOfBeds.Items.AddRange(new object[] {
@@ -361,6 +368,7 @@
             this.cbbSeachNumOfBeds.Name = "cbbSeachNumOfBeds";
             this.cbbSeachNumOfBeds.Size = new System.Drawing.Size(160, 29);
             this.cbbSeachNumOfBeds.TabIndex = 69;
+            this.cbbSeachNumOfBeds.SelectedIndexChanged += new System.EventHandler(this.cbbSeachRoomType_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -375,6 +383,7 @@
             // 
             // cbbSeachRoomType
             // 
+            this.cbbSeachRoomType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSeachRoomType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSeachRoomType.FormattingEnabled = true;
             this.cbbSeachRoomType.Items.AddRange(new object[] {
@@ -387,6 +396,7 @@
             this.cbbSeachRoomType.Name = "cbbSeachRoomType";
             this.cbbSeachRoomType.Size = new System.Drawing.Size(160, 29);
             this.cbbSeachRoomType.TabIndex = 67;
+            this.cbbSeachRoomType.SelectedIndexChanged += new System.EventHandler(this.cbbSeachRoomType_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -407,6 +417,7 @@
             this.txtSeachRoomName.Name = "txtSeachRoomName";
             this.txtSeachRoomName.Size = new System.Drawing.Size(160, 29);
             this.txtSeachRoomName.TabIndex = 64;
+            this.txtSeachRoomName.TextChanged += new System.EventHandler(this.txtSeachRoomID_TextChanged);
             // 
             // label11
             // 
@@ -427,6 +438,7 @@
             this.txtSeachRoomID.Name = "txtSeachRoomID";
             this.txtSeachRoomID.Size = new System.Drawing.Size(160, 29);
             this.txtSeachRoomID.TabIndex = 5;
+            this.txtSeachRoomID.TextChanged += new System.EventHandler(this.txtSeachRoomID_TextChanged);
             // 
             // label7
             // 
@@ -459,7 +471,7 @@
             // UC_RoomManagement
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.grbRoomSeach);
             this.Controls.Add(this.grbRoomManage);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -470,8 +482,8 @@
             this.VisibleChanged += new System.EventHandler(this.UC_RoomManagement_VisibleChanged);
             this.grbRoomManage.ResumeLayout(false);
             this.grbRoomManage.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.grbRoomSeach.ResumeLayout(false);
+            this.grbRoomSeach.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -495,7 +507,7 @@
         private System.Windows.Forms.ComboBox cbbRoomType;
         private System.Windows.Forms.ComboBox cbbNumberOfBeds;
         private System.Windows.Forms.GroupBox grbRoomManage;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grbRoomSeach;
         private System.Windows.Forms.ComboBox cbbSeachNumOfBeds;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbbSeachRoomType;

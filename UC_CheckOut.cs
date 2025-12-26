@@ -18,6 +18,7 @@ namespace QLKS_Winform
         {
             InitializeComponent();
         }
+
         string MaDP;
         string MaKH;
         string MaPhong;
@@ -25,13 +26,28 @@ namespace QLKS_Winform
 
         void loadData()
         {
-            dgvCustomer.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            SqlParameter[] parameters = {
-                new SqlParameter("@MaKH", txtCustomerID.Text),
-                new SqlParameter("@MaPhong", txtRoomID.Text),
-                new SqlParameter("@CustomerStatus", cboCustomerStatus.Text)
-            };
-            dgvCustomer.DataSource = DataProvider.ExcuteQuery(Query.GetCustomerInfoQuery, parameters);
+            try
+            {
+                dgvCustomer.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                SqlParameter[] parameters = {
+                new SqlParameter("@MaKH", txtCustomerID.Text.Trim()),
+                new SqlParameter("@MaPhong", txtRoomID.Text.Trim()),
+                new SqlParameter("@CustomerStatus", cboCustomerStatus.Text.Trim())
+                };
+                dgvCustomer.DataSource = DataProvider.ExcuteQuery(Query.GetCustomerInfoQuery, parameters);
+
+                dgvCustomer.Columns["MaPhong"].HeaderText = "Room ID";
+                dgvCustomer.Columns["MaKH"].HeaderText = "Client ID";
+                dgvCustomer.Columns["HoTen"].HeaderText = "Client Name";
+                dgvCustomer.Columns["CCCD"].HeaderText = "National ID";
+                dgvCustomer.Columns["DiaChi"].HeaderText = "Address";
+                dgvCustomer.Columns["TenPhong"].HeaderText = "Room Name";
+                dgvCustomer.Columns["LoaiPhong"].HeaderText = "Room Type";
+                dgvCustomer.Columns["GiaPhong"].HeaderText = "Price";
+                dgvCustomer.Columns["NgayDat"].HeaderText = "Booking Date";
+                dgvCustomer.Columns["NgayTra"].HeaderText = "Check-out Date";
+            }
+            catch (Exception ex) { MessageBox.Show("Lỗi: " + ex.Message); }
         }
 
         private void cboCustomerStatus_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,16 +105,20 @@ namespace QLKS_Winform
             }
             catch (Exception) { }
         }
-        void CheckIn()
+
+        //Check out
+        void CheckOut()
         {
-            string MaHD = AutoID.nextID("HoaDon", "MaHD", "HD", 3);//lấy mã hóa đơn lớn nhất rồi cộng thêm 1
-            if(TongTien <= 0)
+            try
             {
-                MessageBox.Show("Tổng tiền không hợp lệ!");
-                return;
-            }
-            SqlParameter[] parameters =
-            {
+                string MaHD = AutoID.nextID("HoaDon", "MaHD", "HD", 3);//lấy mã hóa đơn lớn nhất rồi cộng thêm 1
+                if (TongTien <= 0)
+                {
+                    MessageBox.Show("Tổng tiền không hợp lệ!");
+                    return;
+                }
+                SqlParameter[] parameters =
+                {
                 new SqlParameter("@MaHD", MaHD),
                 new SqlParameter("@NgayTra", dtCheckOut.Value),
                 new SqlParameter("@MaDP", MaDP),
@@ -107,9 +127,11 @@ namespace QLKS_Winform
                 new SqlParameter("@MaKH", MaKH),
                 new SqlParameter("@TongTien", TongTien)
             };
-            DataProvider.ExcuteNonQuery(Query.GetCustomerForCheckoutQuery, parameters);
-            loadData();
+                DataProvider.ExcuteNonQuery(Query.GetCustomerForCheckoutQuery, parameters);
+                loadData();
+            }catch (Exception ex) { MessageBox.Show("Lỗi: " + ex.Message); }
         }
+
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(MaDP) || string.IsNullOrEmpty(MaKH))//ktra xem mã khách hàng được gán chưa
@@ -117,19 +139,28 @@ namespace QLKS_Winform
                 MessageBox.Show("Vui lòng chọn khách hàng cụ thể từ danh sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
             string query = @"SELECT COUNT(MaDP) FROM DatPhong
                             WHERE MaDP = @MaDP AND NgayTra IS NOT NULL";
-            SqlParameter parameters = new SqlParameter("@MaDP", MaDP);
-            int count = (int)DataProvider.ExcuteScalar(query, parameters);//ktra xem phòng đấy được trả chưa
+
+            int count = 0;
+            try
+            {
+                SqlParameter parameters = new SqlParameter("@MaDP", MaDP);
+                count = (int)DataProvider.ExcuteScalar(query, parameters);//ktra xem phòng đấy được trả chưa
+            }
+            catch(Exception ex) { MessageBox.Show("Lỗi: " + ex.Message); }
+
             if (count > 0)
             {
                 MessageBox.Show("Lượt đặt phòng này đã được thanh toán trước đó!", "Thông báo");
                 return;
             }
+
             DialogResult dr = MessageBox.Show($"Tổng tiền: {TongTien:N0} VNĐ. Xác nhận thanh toán?", "Xác nhận", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
-                CheckIn();
+                CheckOut();
                 MessageBox.Show("Trả phòng thành công!", "Thông báo");
                 MaDP = ""; MaKH = ""; MaPhong = ""; TongTien = 0;
             }

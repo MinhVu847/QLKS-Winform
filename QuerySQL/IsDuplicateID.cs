@@ -14,8 +14,8 @@ namespace QLKS_Winform.QuerySQL
             string query = "SELECT " + idField + " FROM " + tableName + " WHERE " + idField + " = @id";
             SqlParameter parameters = new SqlParameter("@id", idCheck);
             if (DataProvider.ExcuteScalar(query, parameters) != null)
-                return false;
-            return true;
+                return true;
+            return false;
         }
     }
 }

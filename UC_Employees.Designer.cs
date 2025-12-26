@@ -40,12 +40,11 @@
             this.txtPhoneNo = new System.Windows.Forms.TextBox();
             this.cbbPosition = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.dtDOBEmpl = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.cbbGender = new System.Windows.Forms.ComboBox();
             this.btnDelClient = new System.Windows.Forms.Button();
             this.btnEditClient = new System.Windows.Forms.Button();
-            this.btnAddClient = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.txtSeachID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSeachPhoneNo = new System.Windows.Forms.TextBox();
@@ -62,6 +61,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dtDOBEmpl = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpl)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -74,7 +74,7 @@
             this.lblID.Location = new System.Drawing.Point(26, 21);
             this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(26, 17);
+            this.lblID.Size = new System.Drawing.Size(33, 23);
             this.lblID.TabIndex = 0;
             this.lblID.Text = "ID:";
             // 
@@ -85,7 +85,7 @@
             this.lblEmplName.Location = new System.Drawing.Point(26, 81);
             this.lblEmplName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmplName.Name = "lblEmplName";
-            this.lblEmplName.Size = new System.Drawing.Size(48, 17);
+            this.lblEmplName.Size = new System.Drawing.Size(62, 23);
             this.lblEmplName.TabIndex = 1;
             this.lblEmplName.Text = "Name:";
             // 
@@ -96,7 +96,7 @@
             this.lblGender.Location = new System.Drawing.Point(26, 141);
             this.lblGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(57, 17);
+            this.lblGender.Size = new System.Drawing.Size(74, 23);
             this.lblGender.TabIndex = 3;
             this.lblGender.Text = "Gender:";
             // 
@@ -107,7 +107,7 @@
             this.lblPhone.Location = new System.Drawing.Point(26, 264);
             this.lblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(73, 17);
+            this.lblPhone.Size = new System.Drawing.Size(92, 23);
             this.lblPhone.TabIndex = 5;
             this.lblPhone.Text = "Phone No:";
             // 
@@ -118,7 +118,7 @@
             this.lblAddress.Location = new System.Drawing.Point(25, 380);
             this.lblAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(70, 17);
+            this.lblAddress.Size = new System.Drawing.Size(90, 23);
             this.lblAddress.TabIndex = 4;
             this.lblAddress.Text = "Password:";
             // 
@@ -127,33 +127,37 @@
             this.txtEmplName.Location = new System.Drawing.Point(29, 102);
             this.txtEmplName.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmplName.Name = "txtEmplName";
-            this.txtEmplName.Size = new System.Drawing.Size(239, 25);
-            this.txtEmplName.TabIndex = 9;
+            this.txtEmplName.Size = new System.Drawing.Size(239, 29);
+            this.txtEmplName.TabIndex = 1;
+            this.txtEmplName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtID_KeyDown);
             // 
             // txtID
             // 
             this.txtID.Location = new System.Drawing.Point(29, 42);
             this.txtID.Margin = new System.Windows.Forms.Padding(4);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(239, 25);
-            this.txtID.TabIndex = 8;
+            this.txtID.Size = new System.Drawing.Size(239, 29);
+            this.txtID.TabIndex = 0;
+            this.txtID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtID_KeyDown);
             // 
             // txtPass
             // 
             this.txtPass.Location = new System.Drawing.Point(28, 401);
             this.txtPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(239, 25);
-            this.txtPass.TabIndex = 13;
+            this.txtPass.Size = new System.Drawing.Size(239, 29);
+            this.txtPass.TabIndex = 6;
             this.txtPass.Text = "123456";
+            this.txtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtID_KeyDown);
             // 
             // txtPhoneNo
             // 
             this.txtPhoneNo.Location = new System.Drawing.Point(29, 285);
             this.txtPhoneNo.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhoneNo.Name = "txtPhoneNo";
-            this.txtPhoneNo.Size = new System.Drawing.Size(239, 25);
-            this.txtPhoneNo.TabIndex = 12;
+            this.txtPhoneNo.Size = new System.Drawing.Size(239, 29);
+            this.txtPhoneNo.TabIndex = 4;
+            this.txtPhoneNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtID_KeyDown);
             // 
             // cbbPosition
             // 
@@ -171,8 +175,9 @@
             "Kế toán"});
             this.cbbPosition.Location = new System.Drawing.Point(29, 343);
             this.cbbPosition.Name = "cbbPosition";
-            this.cbbPosition.Size = new System.Drawing.Size(239, 25);
-            this.cbbPosition.TabIndex = 21;
+            this.cbbPosition.Size = new System.Drawing.Size(239, 29);
+            this.cbbPosition.TabIndex = 5;
+            this.cbbPosition.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtID_KeyDown);
             // 
             // label7
             // 
@@ -181,18 +186,9 @@
             this.label7.Location = new System.Drawing.Point(25, 316);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 17);
+            this.label7.Size = new System.Drawing.Size(78, 23);
             this.label7.TabIndex = 20;
             this.label7.Text = "Position:";
-            // 
-            // dtDOBEmpl
-            // 
-            this.dtDOBEmpl.CustomFormat = "yyyy/MM/dd";
-            this.dtDOBEmpl.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtDOBEmpl.Location = new System.Drawing.Point(29, 223);
-            this.dtDOBEmpl.Name = "dtDOBEmpl";
-            this.dtDOBEmpl.Size = new System.Drawing.Size(239, 25);
-            this.dtDOBEmpl.TabIndex = 19;
             // 
             // label4
             // 
@@ -201,7 +197,7 @@
             this.label4.Location = new System.Drawing.Point(26, 198);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 17);
+            this.label4.Size = new System.Drawing.Size(52, 23);
             this.label4.TabIndex = 18;
             this.label4.Text = "DOB:";
             // 
@@ -215,8 +211,9 @@
             "Khác"});
             this.cbbGender.Location = new System.Drawing.Point(29, 162);
             this.cbbGender.Name = "cbbGender";
-            this.cbbGender.Size = new System.Drawing.Size(239, 25);
-            this.cbbGender.TabIndex = 17;
+            this.cbbGender.Size = new System.Drawing.Size(239, 29);
+            this.cbbGender.TabIndex = 2;
+            this.cbbGender.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtID_KeyDown);
             // 
             // btnDelClient
             // 
@@ -227,7 +224,7 @@
             this.btnDelClient.Location = new System.Drawing.Point(238, 448);
             this.btnDelClient.Name = "btnDelClient";
             this.btnDelClient.Size = new System.Drawing.Size(97, 32);
-            this.btnDelClient.TabIndex = 16;
+            this.btnDelClient.TabIndex = 9;
             this.btnDelClient.Text = "Delete";
             this.btnDelClient.UseVisualStyleBackColor = false;
             this.btnDelClient.Click += new System.EventHandler(this.btnDelClient_Click);
@@ -241,32 +238,32 @@
             this.btnEditClient.Location = new System.Drawing.Point(123, 448);
             this.btnEditClient.Name = "btnEditClient";
             this.btnEditClient.Size = new System.Drawing.Size(97, 32);
-            this.btnEditClient.TabIndex = 15;
+            this.btnEditClient.TabIndex = 8;
             this.btnEditClient.Text = "Edit";
             this.btnEditClient.UseVisualStyleBackColor = false;
             this.btnEditClient.Click += new System.EventHandler(this.btnEditClient_Click);
             // 
-            // btnAddClient
+            // btnAdd
             // 
-            this.btnAddClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
-            this.btnAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddClient.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddClient.ForeColor = System.Drawing.Color.White;
-            this.btnAddClient.Location = new System.Drawing.Point(6, 448);
-            this.btnAddClient.Name = "btnAddClient";
-            this.btnAddClient.Size = new System.Drawing.Size(97, 32);
-            this.btnAddClient.TabIndex = 14;
-            this.btnAddClient.Text = "Add";
-            this.btnAddClient.UseVisualStyleBackColor = false;
-            this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(27)))), ((int)(((byte)(53)))));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(6, 448);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(97, 32);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAddClient_Click);
             // 
             // txtSeachID
             // 
             this.txtSeachID.Location = new System.Drawing.Point(129, 18);
             this.txtSeachID.Margin = new System.Windows.Forms.Padding(4);
             this.txtSeachID.Name = "txtSeachID";
-            this.txtSeachID.Size = new System.Drawing.Size(239, 25);
-            this.txtSeachID.TabIndex = 24;
+            this.txtSeachID.Size = new System.Drawing.Size(239, 29);
+            this.txtSeachID.TabIndex = 0;
             this.txtSeachID.TextChanged += new System.EventHandler(this.txtSeachID_TextChanged);
             this.txtSeachID.VisibleChanged += new System.EventHandler(this.txtSeachID_VisibleChanged);
             // 
@@ -277,7 +274,7 @@
             this.label1.Location = new System.Drawing.Point(18, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 17);
+            this.label1.Size = new System.Drawing.Size(33, 23);
             this.label1.TabIndex = 18;
             this.label1.Text = "ID:";
             // 
@@ -286,8 +283,8 @@
             this.txtSeachPhoneNo.Location = new System.Drawing.Point(129, 92);
             this.txtSeachPhoneNo.Margin = new System.Windows.Forms.Padding(4);
             this.txtSeachPhoneNo.Name = "txtSeachPhoneNo";
-            this.txtSeachPhoneNo.Size = new System.Drawing.Size(239, 25);
-            this.txtSeachPhoneNo.TabIndex = 27;
+            this.txtSeachPhoneNo.Size = new System.Drawing.Size(239, 29);
+            this.txtSeachPhoneNo.TabIndex = 2;
             this.txtSeachPhoneNo.TextChanged += new System.EventHandler(this.txtSeachID_TextChanged);
             // 
             // label2
@@ -297,7 +294,7 @@
             this.label2.Location = new System.Drawing.Point(18, 61);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 17);
+            this.label2.Size = new System.Drawing.Size(62, 23);
             this.label2.TabIndex = 19;
             this.label2.Text = "Name:";
             // 
@@ -306,8 +303,8 @@
             this.txtSeachEmplName.Location = new System.Drawing.Point(129, 55);
             this.txtSeachEmplName.Margin = new System.Windows.Forms.Padding(4);
             this.txtSeachEmplName.Name = "txtSeachEmplName";
-            this.txtSeachEmplName.Size = new System.Drawing.Size(239, 25);
-            this.txtSeachEmplName.TabIndex = 25;
+            this.txtSeachEmplName.Size = new System.Drawing.Size(239, 29);
+            this.txtSeachEmplName.TabIndex = 1;
             this.txtSeachEmplName.TextChanged += new System.EventHandler(this.txtSeachID_TextChanged);
             // 
             // label6
@@ -317,7 +314,7 @@
             this.label6.Location = new System.Drawing.Point(18, 99);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 17);
+            this.label6.Size = new System.Drawing.Size(92, 23);
             this.label6.TabIndex = 23;
             this.label6.Text = "Phone No:";
             // 
@@ -339,7 +336,7 @@
             this.label3.Location = new System.Drawing.Point(18, 138);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 17);
+            this.label3.Size = new System.Drawing.Size(78, 23);
             this.label3.TabIndex = 31;
             this.label3.Text = "Position:";
             // 
@@ -372,8 +369,8 @@
             "Kế toán"});
             this.cbbSeachPosition.Location = new System.Drawing.Point(129, 134);
             this.cbbSeachPosition.Name = "cbbSeachPosition";
-            this.cbbSeachPosition.Size = new System.Drawing.Size(239, 25);
-            this.cbbSeachPosition.TabIndex = 34;
+            this.cbbSeachPosition.Size = new System.Drawing.Size(239, 29);
+            this.cbbSeachPosition.TabIndex = 3;
             this.cbbSeachPosition.SelectedIndexChanged += new System.EventHandler(this.cbbSeachPosition_SelectedIndexChanged);
             // 
             // timeStop
@@ -391,8 +388,8 @@
             "Terminated Employees"});
             this.cbbSeachEmpl.Location = new System.Drawing.Point(445, 16);
             this.cbbSeachEmpl.Name = "cbbSeachEmpl";
-            this.cbbSeachEmpl.Size = new System.Drawing.Size(239, 25);
-            this.cbbSeachEmpl.TabIndex = 35;
+            this.cbbSeachEmpl.Size = new System.Drawing.Size(239, 29);
+            this.cbbSeachEmpl.TabIndex = 4;
             this.cbbSeachEmpl.SelectedIndexChanged += new System.EventHandler(this.cbbSeachPosition_SelectedIndexChanged);
             // 
             // lblListEmp
@@ -400,7 +397,7 @@
             this.lblListEmp.AutoSize = true;
             this.lblListEmp.Location = new System.Drawing.Point(396, 19);
             this.lblListEmp.Name = "lblListEmp";
-            this.lblListEmp.Size = new System.Drawing.Size(34, 17);
+            this.lblListEmp.Size = new System.Drawing.Size(43, 23);
             this.lblListEmp.TabIndex = 36;
             this.lblListEmp.Text = "List:";
             // 
@@ -412,7 +409,7 @@
             this.btnClear.Location = new System.Drawing.Point(577, 129);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(97, 32);
-            this.btnClear.TabIndex = 37;
+            this.btnClear.TabIndex = 5;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -434,19 +431,19 @@
             this.groupBox1.Location = new System.Drawing.Point(340, 72);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(710, 502);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Employee Search";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dtDOBEmpl);
             this.groupBox2.Controls.Add(this.cbbPosition);
             this.groupBox2.Controls.Add(this.txtID);
             this.groupBox2.Controls.Add(this.lblAddress);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.txtEmplName);
             this.groupBox2.Controls.Add(this.lblPhone);
-            this.groupBox2.Controls.Add(this.dtDOBEmpl);
             this.groupBox2.Controls.Add(this.lblGender);
             this.groupBox2.Controls.Add(this.lblEmplName);
             this.groupBox2.Controls.Add(this.label4);
@@ -454,19 +451,30 @@
             this.groupBox2.Controls.Add(this.lblID);
             this.groupBox2.Controls.Add(this.cbbGender);
             this.groupBox2.Controls.Add(this.txtPass);
-            this.groupBox2.Controls.Add(this.btnAddClient);
+            this.groupBox2.Controls.Add(this.btnAdd);
             this.groupBox2.Controls.Add(this.btnDelClient);
             this.groupBox2.Controls.Add(this.btnEditClient);
             this.groupBox2.Location = new System.Drawing.Point(0, 72);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(340, 502);
-            this.groupBox2.TabIndex = 34;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Employee Management";
+            this.groupBox2.Text = "Employee Manager";
+            // 
+            // dtDOBEmpl
+            // 
+            this.dtDOBEmpl.CustomFormat = " dd/MM/yyyy";
+            this.dtDOBEmpl.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtDOBEmpl.Location = new System.Drawing.Point(30, 224);
+            this.dtDOBEmpl.Name = "dtDOBEmpl";
+            this.dtDOBEmpl.ShowUpDown = true;
+            this.dtDOBEmpl.Size = new System.Drawing.Size(238, 29);
+            this.dtDOBEmpl.TabIndex = 3;
+            this.dtDOBEmpl.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtID_KeyDown);
             // 
             // UC_Employees
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -496,7 +504,7 @@
         private System.Windows.Forms.TextBox txtPhoneNo;
         private System.Windows.Forms.Button btnDelClient;
         private System.Windows.Forms.Button btnEditClient;
-        private System.Windows.Forms.Button btnAddClient;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ComboBox cbbGender;
         private System.Windows.Forms.TextBox txtSeachID;
         private System.Windows.Forms.Label label1;
@@ -506,7 +514,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgvEmpl;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dtDOBEmpl;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
@@ -518,5 +525,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DateTimePicker dtDOBEmpl;
     }
 }
