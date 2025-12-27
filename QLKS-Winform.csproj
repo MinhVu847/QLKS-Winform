@@ -53,6 +53,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bills.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bills.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BillsCheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BillsCheckOut.Designer.cs">
+      <DependentUpon>BillsCheckOut.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConnectionString.cs" />
     <Compile Include="dsRevenue.cs">
       <DependentUpon>dsRevenue.xsd</DependentUpon>
@@ -128,6 +140,13 @@
     <Compile Include="UC_RoomManagement.Designer.cs">
       <DependentUpon>UC_RoomManagement.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Bills.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Bills.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BillsCheckOut.resx">
+      <DependentUpon>BillsCheckOut.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptRevenue.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptRevenue.cs</LastGenOutput>

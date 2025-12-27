@@ -23,6 +23,7 @@ namespace QLKS_Winform
         string MaKH;
         string MaPhong;
         int TongTien;
+        string MaHD;
 
         void loadData()
         {
@@ -111,7 +112,7 @@ namespace QLKS_Winform
         {
             try
             {
-                string MaHD = AutoID.nextID("HoaDon", "MaHD", "HD", 3);//lấy mã hóa đơn lớn nhất rồi cộng thêm 1
+                MaHD = AutoID.nextID("HoaDon", "MaHD", "HD", 3);//lấy mã hóa đơn lớn nhất rồi cộng thêm 1
                 if (TongTien <= 0)
                 {
                     MessageBox.Show("Tổng tiền không hợp lệ!");
@@ -161,8 +162,30 @@ namespace QLKS_Winform
             if (dr == DialogResult.Yes)
             {
                 CheckOut();
+                InBill();
                 MessageBox.Show("Trả phòng thành công!", "Thông báo");
                 MaDP = ""; MaKH = ""; MaPhong = ""; TongTien = 0;
+            }
+        }
+
+        //In hóa đơn
+        void InBill()
+        {
+            try
+            {
+                //Khởi tạo đối tượng báo cáo (Bills là tên file Bills.rpt)
+                Bills rpt = new Bills();
+
+                //Truyền mã hóa đơn vào Parameter pMaHD đã tạo trong Crystal Report
+                rpt.SetParameterValue("pMaHD", MaHD);
+                //Hiện Form in hóa đơn
+                BillsCheckOut f = new BillsCheckOut();
+                f.crBills.ReportSource = rpt;
+                f.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi in hóa đơn: " + ex.Message);
             }
         }
 
