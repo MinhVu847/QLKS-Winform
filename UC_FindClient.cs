@@ -50,7 +50,7 @@ namespace QLKS_Winform
                 WHERE " + cot + " LIKE @keyword";
 
             // Sử dụng DataProvider 
-            // Thêm dấu % để tìm kiếm gần đúng (VD: nhập '098' ra số '098...')
+            // Thêm dấu % để tìm kiếm gần đúng(nhập 1/n ra full data)
             SqlParameter[] param =
             {
                 new SqlParameter("@keyword","%"+ giaTriTim +"%")
