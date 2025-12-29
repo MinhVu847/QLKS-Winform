@@ -43,6 +43,9 @@ namespace QLKS_Winform
         }
         bool checklogin()
         {
+            if (txtUser.Text == "Admin" && txtPass.Text == "999") //tk mk admin được lưu trong code
+                return true;
+
             SqlParameter[] parameter =
             {
                 new SqlParameter("@manv", txtUser.Text),
