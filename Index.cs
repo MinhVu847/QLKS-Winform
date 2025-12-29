@@ -50,9 +50,12 @@ namespace QLKS_Winform
                 btnChkout.Cursor = default;
                 btnSting.Enabled= false;
                 btnSting.Cursor = default;
+                btnRoomManage.Enabled = false;
+                btnRoomManage.Cursor = default;
                 OffCorlor(btnChkin);
                 OffCorlor(btnChkout);
                 OffCorlor(btnSting);
+                OffCorlor(btnRoomManage);
             }
             else if(ConnectionString.ChucVu=="Bảo vệ" || ConnectionString.ChucVu=="Buồng phòng")
             {
