@@ -12,7 +12,7 @@ namespace QLKS_Winform
 {
     public partial class Index : Form
     {
-        // Khai báo ngoài phạm vi của các phương thức 
+        // Biến lưu giữ button đang được chọn
         private Control button = null;
         public Index()
         {
@@ -79,8 +79,7 @@ namespace QLKS_Winform
         }
         private void OffCorlor(Button bt)
         {
-            bt.BackColor = Color.FromArgb(10, 23, 49);
-            
+            bt.BackColor = Color.FromArgb(10, 23, 49);          
         }
 
         private void Index_Load(object sender, EventArgs e)
@@ -95,20 +94,18 @@ namespace QLKS_Winform
             btnAccount.Click += Button_Click;
         }
         private void Button_Click(object sender, EventArgs e)
-        {
-            
+        {        
             if (button != null)                      
-                button.BackColor = Color.FromArgb(14, 27, 53); // Màu nền ban đầu          
+                button.BackColor = Color.FromArgb(14, 27, 53); //Trả lại màu nên ban đầu cho button vừa click khi có button mới được click    
 
             // Bước 2: Thiết lập nút hiện tại là nút được chọn
             Control clickedControl = (Control)sender; // 'sender' là nút vừa được click
 
-            // Thiết lập màu nền đậm hơn (Active Color)
+            // Thiết lập màu nền đậm hơn 
             clickedControl.BackColor = Color.FromArgb(30, 36, 61); // Màu đậm hơn
 
-            // Bước 3: Cập nhật biến theo dõi
-            button = clickedControl;
-              
+            //Cập nhật biến theo dõi
+            button = clickedControl;            
         }
 
         private void btnEx_Click(object sender, EventArgs e)
@@ -123,11 +120,11 @@ namespace QLKS_Winform
         {
             foreach (Control c in plData.Controls)
             {
-                c.Visible = false;
+                c.Visible = false; //ẩn hết các user control của các chức năng khác
             }
 
-            uc.Visible = true;
-            uc.BringToFront();
+            uc.Visible = true; // hiện chức năng được chỉ định
+            uc.BringToFront(); //Đẩy lên trên đầu giao diện
         }
         private void btnSting_Click(object sender, EventArgs e)
         {
