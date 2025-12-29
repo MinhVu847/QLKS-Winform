@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace QLKS_Winform
 {
@@ -52,6 +53,9 @@ namespace QLKS_Winform
         void checkIN()
         {
             string MaDP = AutoID.nextID("DatPhong", "MaDP", "DP", 3);//tự tăng mã đặt phòng
+            object maNVValue = string.IsNullOrEmpty(ConnectionString.MaNV)
+                       ? (object)DBNull.Value
+                       : ConnectionString.MaNV;
             SqlParameter[] parameters =
             {
                 new SqlParameter("@MaKH", txtID.Text.Trim()),
@@ -63,7 +67,7 @@ namespace QLKS_Winform
                 new SqlParameter("@MaDP", MaDP),
                 new SqlParameter("@MaPhong", roomID),//truyền mã mã phòng
                 new SqlParameter("@NgayDat", dtCin.Value.ToString()),
-                new SqlParameter("@MaNV", ConnectionString.MaNV),
+                new SqlParameter("@MaNV", maNVValue),
                 new SqlParameter("@GhiChu", txtNote.Text.Trim()),
             };
             DataProvider.ExcuteNonQuery(Query.CheckIn, parameters);

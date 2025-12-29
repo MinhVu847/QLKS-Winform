@@ -113,6 +113,9 @@ namespace QLKS_Winform
             try
             {
                 MaHD = AutoID.nextID("HoaDon", "MaHD", "HD", 3);//lấy mã hóa đơn lớn nhất rồi cộng thêm 1
+                object maNVValue = string.IsNullOrEmpty(ConnectionString.MaNV)
+                       ? (object)DBNull.Value
+                       : ConnectionString.MaNV;
                 if (TongTien <= 0)
                 {
                     MessageBox.Show("Tổng tiền không hợp lệ!");
@@ -123,7 +126,7 @@ namespace QLKS_Winform
                 new SqlParameter("@MaHD", MaHD),
                 new SqlParameter("@NgayTra", dtCheckOut.Value),
                 new SqlParameter("@MaDP", MaDP),
-                new SqlParameter("@MaNV", ConnectionString.MaNV),
+                new SqlParameter("@MaNV", maNVValue),
                 new SqlParameter("@MaPhong", MaPhong),
                 new SqlParameter("@MaKH", MaKH),
                 new SqlParameter("@TongTien", TongTien)
