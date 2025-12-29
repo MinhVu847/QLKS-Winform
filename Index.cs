@@ -108,8 +108,6 @@ namespace QLKS_Winform
 
             // Bước 3: Cập nhật biến theo dõi
             button = clickedControl;
-
-            // thêm form hiện ra
               
         }
 
