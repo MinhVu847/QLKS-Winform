@@ -78,22 +78,22 @@ namespace QLKS_Winform
             {
                 int giaPhong = Convert.ToInt32(dgvCustomer.CurrentRow.Cells["GiaPhong"].Value);
 
-                // 2. Tính khoảng cách thời gian
+                //Tính khoảng cách thời gian
                 TimeSpan kcach = dtCheckOut.Value - Convert.ToDateTime(dgvCustomer.CurrentRow.Cells["NgayDat"].Value);
 
-                // 3. Lấy tổng số ngày dưới dạng số thực
+                //Lấy tổng số ngày dưới dạng số thực
                 double soNgayThucTe = kcach.TotalDays;
 
                 //Làm tròn và ép sang kiểu nguyên
                 int soNgayTinhTien = (int)Math.Ceiling(soNgayThucTe);
 
-                // Đảm bảo tối thiểu là 1 ngày
+                //Đảm bảo tối thiểu là 1 ngày
                 if (soNgayTinhTien <= 0)
                 {
                     soNgayTinhTien = 1;
                 }
 
-                // 5. Tính tổng tiền
+                //Tính tổng tiền
                 TongTien = soNgayTinhTien * giaPhong;
 
                 SqlParameter[] parameters =
